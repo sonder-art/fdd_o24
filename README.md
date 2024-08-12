@@ -1,17 +1,17 @@
 # fdd_p24
-Repositorio de la clase de Fuendes de Datos (Otonyo 23)
+Repositorio de la clase de Fuendes de Datos (Otonyo 24)
 
-![fdd_p24](fdd_p24.png)
+![fdd_o24](fdd_o24.png)
 
 ## Recursos
-[Drive/Documentos de la Clase](https://drive.google.com/drive/folders/1DXsOaW1AnoSYKPAhmYsH04TMPCoBIq8z?usp=sharing)  
+[Drive/Documentos de la Clase](https://drive.google.com/drive/folders/1jXoPT67KLQDv8CKpvi975d1Og8xvprMh?usp=sharing)  
 
-[Syllabus](https://docs.google.com/document/d/1sRP2-RGkVfakVQfbZ5_rnIBnFdklFVELDoaUghJ_IqY/edit?usp=drive_link)  
+[Syllabus](https://docs.google.com/document/d/1oc3sIgp-okRBkQpDI4-ysLDtoXEO_FAt213sZnlHOfE/edit?usp=sharing)  
 
-[Calendario y Anuncios](https://docs.google.com/spreadsheets/d/1E3v_WsajgmMvfv24STjDRoEef9i4bILkK7NsD2ZbFVY/edit?usp=drive_link)  
+[Calendario y Anuncios](https://docs.google.com/spreadsheets/d/11FxBBve1Ip2RI0vQr7mGpS33BSb8UU2g9j0UjK8MuW4/edit?usp=sharing)  
 
 ## Github
-[Github](https://github.com/sonder-art/fdd_p24)
+[Github](https://github.com/sonder-art/fdd_o24)
 ## Discord
 [Discord](https://discord.gg/VBpqCu7sEQ)
 
