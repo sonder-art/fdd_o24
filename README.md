@@ -13,6 +13,6 @@ Repositorio de la clase de Fuendes de Datos (Otonyo 24)
 ## Github
 [Github](https://github.com/sonder-art/fdd_o24)
 ## Discord
-[Discord](https://discord.gg/VBpqCu7sEQ)
+[Discord](https://discord.gg/kvbVDN2DRX)
 
 
