@@ -1,2 +1,0 @@
-https://hub.docker.com/u/elcachorrohumano
-https://hub.docker.com/repository/docker/elcachorrohumano/intro_docker_jers/general

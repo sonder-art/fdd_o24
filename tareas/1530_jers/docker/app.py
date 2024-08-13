@@ -1,1 +1,0 @@
-print("App de Docker de 1530_jers")

@@ -1,4 +1,0 @@
-https://hub.docker.com/u/victorh22
-
-https://hub.docker.com/repository/docker/victorh22/fdd_p24/general
-
