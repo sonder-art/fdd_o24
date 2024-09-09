@@ -1,0 +1,10 @@
+# Ignorar archivos generados por macOS
+.DS_Store
+
+# Ignorar archivos temporales de editores y sistemas
+Thumbs.db
+*.log
+.idea/
+.vscode/
+*.swp
+
