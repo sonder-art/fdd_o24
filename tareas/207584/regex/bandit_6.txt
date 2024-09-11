@@ -1,0 +1,5 @@
+##Level 7 -> 8
+1. find / -type f -user bandit7 -group bandit6 -size 33c 
+    Use el comando find como en el ejercicio anterior, lo diferente fue que use / que es para buscar en todo el servidor
+2. cat /var/lib/dpkg/info/bandit7.password 
+    Para ver la contraseña

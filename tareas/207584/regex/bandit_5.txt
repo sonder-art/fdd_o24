@@ -1,0 +1,4 @@
+##Level 5->6
+1. cd inhere 
+2. find -size 1033c ! -executable (Use el comando find y especifique que el tamñano fuera de 1033 y no fuera ejecutable)
+3. vim maybehere07/.file2 (abri el archivo con vim para ver la contraseña)
