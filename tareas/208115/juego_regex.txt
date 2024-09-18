@@ -1,0 +1,30 @@
+Emilia Hernández Medina 	208115
+Nivel "It never ends": 
+fu(?!\S) 
+Con esto hicimos un negative look ahead (ósea que más adelante no haya \S)
+\S son los non-whitespace caracteres (puntos, números y letras) 
+Es decir, checa que más adelante del fu  no haya caracteres de letras, números o puntos.
+
+Nivel "Ranges":
+^[^mujhgtilt]+$
+^...$ es para que revise en toda la palabra que no estén las letras que están en el corchete. 
+
+Nivel "Backrefs": 
+^\w*(\w{3})\w*\1\w*$
+Empieza con cualquier letras, identifica un patrón de tres letras y checa que se vuelva a repetir ese mismo bloque (hace referencia a él el 1) en lo que queda de la palabra. 
+
+Nivel "Abba": 
+^(?!.*(\w)(\w)\2\1)\w+$
+Revisa que adelante no haya cuales quiera  letras después cualquier letra 'i' después una letra 'j', después 'j' y después 'i'. El 1 hace referencia a la primera letra que se identificó ('i') y el 2 a la segunda de este patrón ('j'). 
+
+Nivel "A man, a plan": 
+^(\w)(\w)?(\w)?(\w)?\3?\2?\1$
+Identifica palíndromos. La primera y la última letra son obligatorias, mientras que puede haber o no una segunda o tercera letra que se repita. De ahí la notación: (\w)?
+
+Nivel "Prime": 
+^x{2}$|^x{3}$|^x{5}$|^x{7}$|^x{11}$|^x{13}$|^x{17}$|^x{19}$|^x{23}$|^x{29}$|^x{31}$|^x{37}$|^x{41}$|^x{43}$|^x{47}$|^x{53}$|^x{59}$|^x{61}$|^x{67}$|x{71}$
+Listé todos los posibles lengths primos que nos dan. 
+
+Nivel "Four": 
+^.*(\w)\w\1\w\1\w\1.*$
+Busca un carácter que se repita 4 veces intercalándose con otras letras. Al principio y al final, puede hacer cualesquiera otras letras. 
