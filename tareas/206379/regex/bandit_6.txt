@@ -1,0 +1,12 @@
+Level 5:
+-> cd inhere
+->  find -type f -readable -size 1033c ! -executable -exec file {} + | grep 'text'
+-> cd maybehere07
+-> cat .file2
+-> Password para level 6: HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
+
+Level 6:
+-> cd /
+-> find / -user bandit7 -group bandit6 -size 33c -type f (Hay un archivo donde no te niega el permiso)
+-> cat /var/lib/dpkg/info/bandit7.password
+-> password para level 7: morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj

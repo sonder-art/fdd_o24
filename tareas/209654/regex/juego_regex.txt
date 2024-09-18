@@ -1,0 +1,47 @@
+Miguel de Jesús Palacios Rivera 209654
+0.-
+foo
+Las palabras contenían el substring foo en algún momento, mientras que las palabras que no debían ser matchadas no lo contenían
+1.-
+ick$
+Las palabras de ambos conjuntos contenían el substring ick, pero las que debían de ser matcheadas los contenían hasta el final
+2.-
+fu\b
+Con la prohibición de $ se puede usar \b para comprobar que hay un límite de palabra, lo que significa que la palabra acaba después de
+poner \b. Las palabras que no debían ser matchaeadas efectivamente no son matcheadas porque no hay un límite de palabra al contener más carácteres
+3.-
+^[^g-z]+$
+El símbolo ^ indica que se debe comenzar desde el principio de la cadena, [^g-z] representa cualquier carácter excepto las letras
+minúsculas entre g y z, + implica que el patrón anterior debe aparecer una o más veces y $ señala que s edebe llegar hasta el final.
+4.-
+([a-z]{3})[a-z]*\1
+([a-z]{3}) busca exactamente tres letras minúsculas consecutivas y las guarda como un grupo de captura, [a-z]* permite que haya cero
+o más letras minúsculas adicionales después de esas tres letras y \1 verifica que el mismo grupo de tres letras capturadas
+anteriormente se repita más adelante en la cadena.
+5.-
+^(?!.*([a-z])([a-z])\2\1)
+Esta expresión regular comienza asegurándose de que la cadena inicie desde el principio. Utiliza un negative lookahead, lo que
+significa que se asegura de que un determinado patrón no ocurra en ningún lugar de la cadena. El patrón dentro del lookahead
+busca cualquier número de caracteres, seguido de dos letras minúsculas consecutivas. Estas letras se capturan en dos grupos.
+Luego, la expresión comprueba que la segunda letra capturada aparezca inmediatamente después de la primera, pero en orden inverso.
+6.-
+^(.)(.).*\2\1$
+El símbolo ^, que marca el inicio de la línea, obligando a que la coincidencia comience al principio de la cadena. A continuación,
+(.) captura el primer carácter de la cadena, mientras que el siguiente (.) captura el segundocarácter. Luego, .* permite que
+cualquier número de caracteres aparezca en el medio de la cadena. Después de esto, \2 se refiere al segundo carácter capturado al
+principio de la cadena, y la expresión espera encontrar este carácter en esta posición cercana al final. Finalmente, \1 busca que el
+último carácter coincida con el primer carácter capturado al principio de la cadena. El símbolo $ asegura que la coincidencia termine
+justo en el final de la línea.
+7.-
+^(?!(x+x)\1+$)
+^ indica que la coincidencia debe comenzar al inicio de la cadena. Luego un lookahead negativo (?!...), que solo
+observa si el patrón descrito a continuación no aparece. El patrón dentro del lookahead comienza con un grupo de captura (x+x),
+que busca una secuencia de una o más x seguidas de otra secuencia de una o más x. Busca al menos dos x consecutivas.
+A continuación, \1 se refiere al contenido capturado por el primer grupo, es decir, la secuencia de x capturada previamente.
+La expresión \1+ verifica si el mismo patrón capturado por el grupo de x se repite una o más veces hasta el final de la cadena,
+indicado por el símbolo $, que marca el final de la línea.
+8.-
+(.)(.\1){3}
+Comienza capturando un carácter cualquiera con el primer grupo de captura. Luego, busca una secuencia de un carácter seguido por
+el mismo carácter que fue capturado previamente. Esta secuencia de dos caracteres debe repetirse tres veces, según lo indicado por
+el cuantificador {3}.
