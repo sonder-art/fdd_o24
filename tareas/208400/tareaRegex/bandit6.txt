@@ -1,0 +1,3 @@
+Para el nivel 5->6 lo que tuve que hacer cd al directorio de inhere y ya despues tuve que hacer un find . que encuentre un tipo f de file con -size de 1033c. Ya despues se utiliza un cat para entrar a ese archivo.
+
+Para el nivel 6->7 primero necesitamos hacer el find / porque eso busca en todo el directorio. Ya despues utilizamos el -type f para que sea file, despues el -user para especificar el usuario y el - group para el grupo. Despues usamos el -size 33c para encontrar el archivo de ese tamaño.
