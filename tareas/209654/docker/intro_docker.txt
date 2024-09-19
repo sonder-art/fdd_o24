@@ -1,0 +1,8 @@
+Miguel de Jesús Palacios Rivera 209654
+
+Cuenta de docker:
+https://hub.docker.com/u/mikep117?_gl=1*16ssgyg*_ga*OTExNjM4MjgwLjE3MjYxMDAyODY.*_ga_XJWPQMJYHQ*MTcyNjc1OTMwNC42LjEuMTcyNjc1OTM2MS4zLjAuMA..
+
+Link a imagen:
+https://hub.docker.com/layers/mikep117/intro_docker_209654/intro_docker/images/sha256-eea1ab135cb676a0493ad4b2f6133acacd3f60e0fb85d9924ca7e696ccf8894e?tab=layers
+
