@@ -1,0 +1,33 @@
+COMANDOS DE DOCKER:
+
+-> docker pull (Jala una imagen de docker hub localmente) 
+
+-> docker run (corre una imagen en un contenedor)
+ 
+   (tiene banderas como -d para correrlo detached y asi poder seguir usando la terminal mientras corre el contenedor)
+
+   (Si no existe la imagen y usas docker run hace el pull y el run al mismo tiempo si es que la imagen existe en dockerhub)
+
+   (Si usamos -p es para especificar el puerto al que vamos a "pegar" el local para poder alcanzar el contenedor. Ex: 6000:6379, el primero es el local, con el que vamos a acceder y el segundo es el puerto del contenedor)
+
+   (Si usamos --name y especificamos un nuevo nombre, cambia en el apartado de names para poder llamar al contenedor)
+
+
+-> docker stop (mata un contenedor, solo pones el id del contenedor)
+
+-> docker ps (muestra los contenedores que estan corriendo) (si usas -a te muestra todos los contenedores creados, no solo los que estan corriendo)
+
+-> docker exec -it (permite correr una terminal dentro del contenedor especificado. Ex: docker exec -it my_container /bin/bash)
+
+-> docker start (permite continuar las operaciones de un contenedor parado sin necesidad de crear otro contenedor ya que con docker run crea una nueva instancia de contenedor cada que lo haces) (Docker run opera con imagenes dadas mientras que docker start opera con contenedores parados)
+
+-> docker logs (permite ver los logs del contenedor de tu eleccion)
+
+-> docker images (muestra las imagenes que tienes creadas)
+
+-> docker build (construye una imagen a partir de un dockerfile)
+
+
+
+
+

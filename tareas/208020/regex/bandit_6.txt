@@ -1,0 +1,11 @@
+5.	Nivel 5  Nivel 6
+a.	Hay machismos archivos dentro de archivos. Si vamos uno por uno, sería imposible terminar. Usamos el comando du para que nos dé el tamaño de cada archivo. Además, le agregamos las banderas -ba (-b nos da el tamaño en bytes y -a nos muestra archivos ocultos por si las dudas). Ahora queremos solo el que tiene tamañano 1033 bytes. Así que usamos grep para filtrar los resultados. bandit5@bandit:~/inhere$ du -ba | grep 1033
+b.	ssh bandit5@bandit.labs.overthewire.org -p 2220
+i.	también se puede con: ssh bandit.labs.overthewire.org -p 2220 -l bandit5
+c.	HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
+6.	Nivel 6  Nivel 7
+a.	Aquí utilizamos el commando find con múltiples banderas para ayudarnos a filtrar toda la información. La solucón es: find / -type f -user bandit7 -group bandit6 -size 33c 2> /dev/null. Find nos ayuda a buscar. ‘/’ es para que busque en todo el servidor (desde la raíz). -type f: type filtra por tipo de archivo, en este caso f=fyle (un archivo). -user bandit7, filltra los archivos que sean propiedad del usuario bandit7. - group bandit6, filtra los archis que sean propiedad del grupo bandit6. -size 33c, filtra por tamaño, en este caso que sea de 33 bytes (c = bytes). Si solo ponemos eso nos salen muchos archivos de los cuales no tenemos permiso. Para evadir eso ponemos 2> /dev/null. Esa bandera va a ocultar los mensajes de error. Esto nos regresa la dirección del archivo que buscamos. Usamos cat para abrirlo y ahí está la contraseña. cat /var/lib/dpkg/info/bandit7.password
+b.	ssh bandit6@bandit.labs.overthewire.org -p 2220
+i.	también se puede con: ssh bandit.labs.overthewire.org -p 2220 -l bandit6
+c.	morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
+
