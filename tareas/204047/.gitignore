@@ -1,0 +1,15 @@
+# Ignorar archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos temporales
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Ignorar archivos de compilación
+*.o
+*.out
+*.class
+node_modules/
