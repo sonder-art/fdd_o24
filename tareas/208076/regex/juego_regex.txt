@@ -1,0 +1,17 @@
+Nivel Warmup: foo - Escribí nada más foo, como vimos en clase para buscar el texto "foo"
+
+Nivel Anchors: $ick - Utilicé la expresión regular ick$ para expresar que quiero buscar todos los textos donde acaben en "ick"
+
+Nivel It never ends: fu\b - Le pregunté a ChatGPT si había opciones para buscar un texto específico al final del string. Me dió muchas opciones que no me sirvieron, como \z. Al final si me proporcionó uno que me sirvió: la expresión regular \b. Entonces la expresión regular es fu\b
+
+Nivel Ranges: ^[abcdef]+$ - Utilicé el caracter ^ para indicar que es el inicio del texto y lo junté con los corchetes que indican un conjunto. A eso le agregué el + que indica uno o más, para asegurar que haya al menos una de las letras. Y señalé que quería que acabara el string con un $.
+
+Nivel Backrefs: ([a-z]{3}).*/1 - Utilicé los parentésis para indicar un grupo de captura. En ese grupo de captura le especifiqué que los primeras 3 letras que viera los agrupara en un grupo. Después, le puse .* para decirle que no importa si hay cero o más caracteres posteriormente y al final, agregué el comando \1 para que viera si estaba el primer grupo de captura creado otra vez.
+
+Nivel Abba: ^(?!.*(.)(.)\2\1) - Utilicé el caracter ^ para indicar que quiero que se evalúe lo que le voy a poner al incicio de la string. El ?! es un negative lookahead, es decir, quiero que el patrón no exista en la string. Después le puse .* para indicarle al regex que quiero que busque en todo el string. A continuación, capturé 2 grupos, el punto significa que el primer grupo captura el primer caracter que vea y el segundo el segundo caracter que vea. El \2 hace referencia al segundo grupo capturado y el \1 hace referencia al primer grupo capturado.
+
+Nivel A man, a plan: ^[a-o q-z]?(.)(.).?\2\1 - Primero utilicé el caracter ^ para indicar que quiero que busque un patrón desde el primera letra del string. El [a-o q-z]? hace que el primer caracter sea opcional o no, excluí la p porque hay el regex no jala en una de las soluciones del problema cuando empieza con p. El (.)(.).? captura los siguientes 2 caracteres y el .? indica que es opcional que haya un caracter adicional. El \2 y el \1 significa que quiero que indique si se repite el caracter del grupo 2 y el caracter del grupo 1.
+
+Nivel Prime: ^(?!(xx+?)\1+$) - El caracter ^ lo utilicé para indicar que quiero que busque el patrón desde el inicio de la string. El ?! indica que no quiero que se repita el siguiente patrón con un negative lookahead. Los caracteres xx+? indican que primero quiero que matchee la primera x y después que haga match con una o más x consecutivas pero de forma non-greedy, por lo tanto captura las primeras 2 x y después la tercera de forma lazy. El \1+ nos dice que el patrón debería repetirse 1 o más veces despues de la primera.
+
+Nivel Four: ([aeiou])(.\1){3} - Capturé un grupo con cualquier vocal. Después el segundo grupo captura cualquier caracter, pero el caracter del primer grupo y el {3} indica que quiero que suceda 3 veces.    
