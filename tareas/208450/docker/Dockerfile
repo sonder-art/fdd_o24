@@ -14,6 +14,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . /app
 
 # Define el comando por defecto para ejecutar la aplicación
-# Termina el Dockerfile, debes de agregar las lineas necesarias
-# para que al momento de dat `docker run -it {contenedor}` se imprima lo pedido
 CMD ["python", "app.py"]
