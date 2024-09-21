@@ -1,0 +1,29 @@
+Nivel 5:
+
+* Me moví a la carpeta `inhere` y busqué archivos que tuvieran un tamaño de 1033 bytes y que no fueran ejecutables. De esta manera:
+
+* find -type f -size 1033c! -executable
+
+* Esto me llevó a.file2, dentro de la carpeta `./maybehere07`. Una vez dentro, pedí que me mostrara el contenido con `cat` y obtuve la contraseña:
+
+* cat.file2
+
+
+Nivel 6:
+
+* Busqué un archivo que cumpliera con estas condiciones:
+
+* Tuviera un tamaño de 33 bytes
+
+* Fuera del usuario bandit7
+
+* Perteneciera al grupo bandit6
+
+* Utilicé la siguiente orden:
+
+* find / -user bandit7 -group bandit6 -size 33c
+
+* Finalmente, con esta orden lo localicé. Se encontraba en `/var/lib/dpkg/info/` y una vez que busqué contenido, la contraseña fue la siguiente:
+
+* cat /var/lib/dpkg/info/bandit7.password
+

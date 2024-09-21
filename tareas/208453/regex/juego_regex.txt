@@ -1,0 +1,51 @@
+It never ends:
+
+fu(?!\S)
+
+Hicimos un negative look ahead = no haya \S más adelante
+
+\S serían los non-whitespace caracteres (puntos, números y letras).
+
+Osea que lo que hace es que revisa que más adelante del “fu” no haya caracteres de letras, números o puntos.
+
+
+Ranges:
+
+^[^mujhgtilt]+$
+
+El ^…$ es para que revise en toda la palabra que no estén las letras que están en el corchete.
+
+
+Backrefs:
+
+^\w*(\w{3})\w*\w*$
+
+empieza con cualquier letra, identifica un patrón de 3 letras y revisa que se vuelva a repetir (hace referencia a él el 1 ) en lo que queda de la palabra.
+
+
+Abba: 
+
+^(?!.*(\w)(\w)\2\1)\w+$
+
+aquí revisa que adelante no haya cualesquiera letras después de cualquier “i” después una letra “j” después “j” y después “i”. El 1 hace referencia a la 1ra letra identificada “i” y el 2 a la segunda de este patrón “j”.
+
+
+A man, a plan: 
+
+^(\w)(\w)?(\w)?(\w)?\3?\2?\1$
+
+Identifica palíndromos. La primera y la última letra son obligatorias, mientras que puede haber mas letras palíndromas. De ahí la notación: (\w)? 
+
+
+Prime: 
+
+^x{2}$|^x{3}$|^x{5}$|^x{7}$|^x{11}$|^x{13}$|^x{17}$|^x{19}$|^x{23}$|^x{29}$|^x{31}$|^x{37}$|^x{41}$|^x{43}$|^x{47}$|^x{53}$|^x{59}$|^x{61}$|^x{67}$|x{71}$
+
+Posibles tamaños de primos
+
+
+Four: 
+
+^.*(\w)\w\1\w\1\w\1.*$
+
+busca un carácter que se repita 4 veces intercalando con otras letras. Al principio y al final puede haber cualesquiera otras letras.
