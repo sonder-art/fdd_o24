@@ -12,6 +12,7 @@ COMANDOS DE DOCKER:
 
    (Si usamos --name y especificamos un nuevo nombre, cambia en el apartado de names para poder llamar al contenedor)
 
+   (Si usamos -v se monta un volumen. Ex: docker run -v origen:/app (o directorio de docker) nombre de contenedor . , asi podemos modificar las      aplicaciones sin volver a construir ) 
 
 -> docker stop (mata un contenedor, solo pones el id del contenedor)
 
@@ -25,7 +26,9 @@ COMANDOS DE DOCKER:
 
 -> docker images (muestra las imagenes que tienes creadas)
 
--> docker build (construye una imagen a partir de un dockerfile)
+-> docker build (construye una imagen a partir de un dockerfile
+
+-> docker exec -it my_container /bin/bash (permite meterme a un docker que ya esta corriendo y abre una terminal dentro de ese contenedor))
 
 
 
