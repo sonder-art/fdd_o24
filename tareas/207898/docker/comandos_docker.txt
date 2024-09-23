@@ -1,0 +1,28 @@
+pull: Jala una imagen desde un repo
+
+run: crea y ejecuta un container desde una imagen
+
+stop: detiene el proceso de un container
+
+start: Inicia un container que estaba en stop
+
+ps: Muestra containers que estan en ejecución
+
+exec -it: ejecuta comando dentro de un container
+
+images: Muestra las imagenes 
+
+run -d: ejecuta en segundo plano
+
+run -p: Mapea puertos de un container al host
+
+ps -a: Muestra los containers que estan detenidos y en ejecucion 
+
+rm: Remove un container detenido
+
+rmi: Elimina una imagen
+
+build -t: Construye la imagen a partir de un Dockerfile con t tag
+
+exit: Sale del container
+
