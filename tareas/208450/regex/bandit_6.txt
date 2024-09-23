@@ -1,0 +1,33 @@
+Nivel 5 -
+ssh bandit5@bandit.labs.overthewire.org -p 2220
+password: 4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
+ls 
+cd inhere
+ls
+file *
+du
+find . -type f
+du -b -a 
+du -b -a | grep 1033
+cat ./maybehere07/.file2
+password: HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
+Primero liste los archivos y entré al directorio 'inhere', volví a listar los archivos y vi que eran puros directorios. Después de entrar a una carpeta y ver que había más directorios y archivos fui a investigar sobre los comandos que bandit sugería que usáramos para este nivel. Intenté listar los documentos que fueran de tipo archivo (-type f) pero la búsqueda no fue exitosa. Después encontré que du nos da el 'disk usage' y con las opciones podemos ver el espacio que ocupan en bytes. Por lo que, utilizando lo aprendido de regex (y la función 'grep'), pude listar todos los archivos en los directorios y subdirectorios y su tamaño en bytes (con -b y -a). Con grep busque en cada línea un tamaño que fueran 1033 bytes, que era lo indicado en la página de bandit. La búsqueda solo devolvió un archivo, mostré en la terminal su contenido con 'cat' y hallé la contraseña.
+
+Nivel 6 -
+ssh bandit6@bandit.labs.overthewire.org -p 2220
+password: HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
+ls
+ls -l -a
+cd ..
+cd ..
+find / -type f -user bandit7 -group bandit6 -size 33c
+find / -user bandit7 -group bandit6 -size 33c -type f 2>/dev/null
+cat /var/lib/dpkg/info/bandit7.password 
+password: morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
+La descripción en la página de bandit decía que el archivo estaba en algún lugar del servidor y tenía tres propiedades. Por lo que, después de intentar listar los archivos en el directorio y no encontrar nada, fui a investigar sobre las propiedades de archivos como su propietario-usuario, propietario-grupo y tamaño. Me fui al directorio raíz porque el archivo podía estar en todo el sistema. Después solo uní la información que obtuve (las opciones como -user, -group, -size) y la que daba la página y las aplique en un comando que encuentre de todos los archivos uno que tenga esas propiedades. Después de que me "denegaron" el acceso, investigué como evitarlo y descubrí que utilizando 2>/dev/null puedo ocultar los mensajes de "errores". Por lo que ya obtuve el archivo en el sistema y solamente lo mostré en la terminal con cat.
+
+Nivel 7 -
+ssh bandit7@bandit.labs.overthewire.org -p 2220
+password: morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
+Contraseña lista para entrar al nivel 7.
+...
