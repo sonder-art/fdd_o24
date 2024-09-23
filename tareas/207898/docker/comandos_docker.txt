@@ -2,6 +2,8 @@ pull: Jala una imagen desde un repo
 
 run: crea y ejecuta un container desde una imagen
 
+run -options: especifica puertos, volumenes o nombres
+
 stop: detiene el proceso de un container
 
 start: Inicia un container que estaba en stop
@@ -9,6 +11,8 @@ start: Inicia un container que estaba en stop
 ps: Muestra containers que estan en ejecución
 
 exec -it: ejecuta comando dentro de un container
+
+logs: Muestra los logs
 
 images: Muestra las imagenes 
 
