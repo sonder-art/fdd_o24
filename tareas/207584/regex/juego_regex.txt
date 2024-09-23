@@ -30,3 +30,7 @@ Lo nuevo que use fue lo de .*?, permite que cualquier cosa este entre los primer
 Prime
 ^(?!(..+)\1+$)
 Con ?! estamos buscando cadenas que no coincidan, ..+ captura al menos 2 caracteres
+
+Four 
+([aeiou]).\1.\1.\1
+Capture las vocales que se repiten 4 veces 
