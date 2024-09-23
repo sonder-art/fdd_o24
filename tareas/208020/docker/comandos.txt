@@ -15,6 +15,7 @@ Comandos
 4. docker run <imagen>: Crea y ejecuta un contenedor a partir de una imagen.
 -d: Ejecuta el contenedor en modo desapegado (detached), lo que significa que se ejecutará en segundo plano y no bloqueará tu terminal.
 -p: Publica un puerto del contenedor en un puerto de la máquina anfitriona. La sintaxis es -p <puerto_anfitrión>:<puerto_contenedor>
+--rm en Docker se utiliza para eliminar automáticamente el contenedor después de que se haya detenido su ejecución.
 5. docker run -it <imagen>: Crea y ejecuta un contenedor en modo interactivo.
 6. docker ps: Muestra los contenedores en ejecución.
 docker ps -a: Muestra todos los contenedores, tanto los en ejecución como los detenidos.
