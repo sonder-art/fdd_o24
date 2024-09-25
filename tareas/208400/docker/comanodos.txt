@@ -13,5 +13,3 @@ docker start: se utiliza para iniciar un contenedor que previamente habia sido c
 docker logs: se utiliza para ver los registros de generados por un contenedor ya sea de slaida o de error.
 
 docker exec -it: permite ejecutar un comando dentro del contenedor como si estuvieses usando una terminal dentro de el.
-
-docker build: construye una imagen a partir de un dockerfile
