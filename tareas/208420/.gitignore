@@ -1,0 +1,24 @@
+# Ignorar archivos de sistema
+.DS_Store
+
+# Ignorar archivos temporales de editor
+*.swp
+*.swo
+
+# Ignorar archivos de configuración del sistema
+*.log
+*.tmp
+
+# Ignorar directorios de dependencias
+node_modules/
+vendor/
+
+# Ignorar archivos compilados
+*.o
+*.obj
+*.exe
+*.out
+*.class
+
+# Ignorar archivos de entorno
+.env

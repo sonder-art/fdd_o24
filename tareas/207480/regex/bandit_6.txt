@@ -1,0 +1,309 @@
+5--6
+Me conecte.
+Vi que eran muchos directorios y archivos
+Le pregunte a chat como buscar un file de x tamanio y use ese
+find -type f -size 1033c
+ya me dio la direccion del file con la contra
+era archivo oculto donde estaba
+asi que lo lei con lo aprendido antes
+obtuve contra.
+
+6--7
+Conecto.
+Veo instrucciones y dice que file con contra esta en un
+usuario y grupo, le pregunto a chat como meterme a eso
+Use este comando find / -type f -user X -group Y 2>/dev/null
+Me dio path a archivo
+use cat con el path
+y ya me arrojo la contra.
+
+
+Codigo:
+Windows Subsystem for Linux is now available in the Microsoft Store!
+You can upgrade by running 'wsl.exe --update' or by visiting https://aka.ms/wslstorepage
+Installing WSL from the Microsoft Store will give you the latest WSL updates, faster.
+For more information please visit https://aka.ms/wslstoreinfo
+
+Welcome to Ubuntu 24.04 LTS (GNU/Linux 5.10.102.1-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Wed Sep 11 13:26:34 CST 2024
+
+  System load:  0.0                Processes:             9
+  Usage of /:   0.5% of 250.98GB   Users logged in:       0
+  Memory usage: 1%                 IPv4 address for eth0: 192.168.155.152
+  Swap usage:   0%
+
+This message is shown once a day. To disable it please create the
+/home/sapien/.hushlogin file.
+sapien@LAPTOP-IO0L7SUU:~$ ssh -p 2220 bandit5@bandit.labs.overthewire.org
+                         _                     _ _ _
+                        | |__   __ _ _ __   __| (_) |_
+                        | '_ \ / _` | '_ \ / _` | | __|
+                        | |_) | (_| | | | | (_| | | |_
+                        |_.__/ \__,_|_| |_|\__,_|_|\__|
+
+
+                      This is an OverTheWire game server.
+            More information on http://www.overthewire.org/wargames
+
+bandit5@bandit.labs.overthewire.org's password:
+
+      ,----..            ,----,          .---.
+     /   /   \         ,/   .`|         /. ./|
+    /   .     :      ,`   .'  :     .--'.  ' ;
+   .   /   ;.  \   ;    ;     /    /__./ \ : |
+  .   ;   /  ` ; .'___,/    ,' .--'.  '   \' .
+  ;   |  ; \ ; | |    :     | /___/ \ |    ' '
+  |   :  | ; | ' ;    |.';  ; ;   \  \;      :
+  .   |  ' ' ' : `----'  |  |  \   ;  `      |
+  '   ;  \; /  |     '   :  ;   .   \    .\  ;
+   \   \  ',  /      |   |  '    \   \   ' \ |
+    ;   :    /       '   :  |     :   '  |--"
+     \   \ .'        ;   |.'       \   \ ;
+  www. `---` ver     '---' he       '---" ire.org
+
+
+Welcome to OverTheWire!
+
+If you find any problems, please report them to the #wargames channel on
+discord or IRC.
+
+--[ Playing the games ]--
+
+  This machine might hold several wargames.
+  If you are playing "somegame", then:
+
+    * USERNAMES are somegame0, somegame1, ...
+    * Most LEVELS are stored in /somegame/.
+    * PASSWORDS for each level are stored in /etc/somegame_pass/.
+
+  Write-access to homedirectories is disabled. It is advised to create a
+  working directory with a hard-to-guess name in /tmp/.  You can use the
+  command "mktemp -d" in order to generate a random and hard to guess
+  directory in /tmp/.  Read-access to both /tmp/ is disabled and to /proc
+  restricted so that users cannot snoop on eachother. Files and directories
+  with easily guessable or short names will be periodically deleted! The /tmp
+  directory is regularly wiped.
+  Please play nice:
+
+    * don't leave orphan processes running
+    * don't leave exploit-files laying around
+    * don't annoy other players
+    * don't post passwords or spoilers
+    * again, DONT POST SPOILERS!
+      This includes writeups of your solution on your blog or website!
+
+--[ Tips ]--
+
+  This machine has a 64bit processor and many security-features enabled
+  by default, although ASLR has been switched off.  The following
+  compiler flags might be interesting:
+
+    -m32                    compile for 32bit
+    -fno-stack-protector    disable ProPolice
+    -Wl,-z,norelro          disable relro
+
+  In addition, the execstack tool can be used to flag the stack as
+  executable on ELF binaries.
+
+  Finally, network-access is limited for most levels by a local
+  firewall.
+
+--[ Tools ]--
+
+ For your convenience we have installed a few useful tools which you can find
+ in the following locations:
+
+    * gef (https://github.com/hugsy/gef) in /opt/gef/
+    * pwndbg (https://github.com/pwndbg/pwndbg) in /opt/pwndbg/
+    * peda (https://github.com/longld/peda.git) in /opt/peda/
+    * gdbinit (https://github.com/gdbinit/Gdbinit) in /opt/gdbinit/
+    * pwntools (https://github.com/Gallopsled/pwntools)
+    * radare2 (http://www.radare.org/)
+
+--[ More information ]--
+
+  For more information regarding individual wargames, visit
+  http://www.overthewire.org/wargames/
+
+  For support, questions or comments, contact us on discord or IRC.
+
+  Enjoy your stay!
+
+bandit5@bandit:~$ ls
+inhere
+bandit5@bandit:~$ cd inhere
+bandit5@bandit:~/inhere$ ls
+maybehere00  maybehere03  maybehere06  maybehere09  maybehere12  maybehere15  maybehere18
+maybehere01  maybehere04  maybehere07  maybehere10  maybehere13  maybehere16  maybehere19
+maybehere02  maybehere05  maybehere08  maybehere11  maybehere14  maybehere17
+bandit5@bandit:~/inhere$ cat maybehere00
+cat: maybehere00: Is a directory
+bandit5@bandit:~/inhere$ cd maybehere00
+bandit5@bandit:~/inhere/maybehere00$ ls
+-file1  -file2  -file3  spaces file1  spaces file2  spaces file3
+bandit5@bandit:~/inhere/maybehere00$ cat file1
+cat: file1: No such file or directory
+bandit5@bandit:~/inhere/maybehere00$ cat -file1
+cat: invalid option -- 'f'
+Try 'cat --help' for more information.
+bandit5@bandit:~/inhere/maybehere00$ cat ./-file1
+WRswI03L5YXDJ3oVnNL9akOOZciJTjH8ZzqniOAqdfDHUQnxtwk6QOfrFacgVEvhzlY9d0VI0mo05vQYDCWjVMkR9ZVuXVxOVmeizUr4BQyYKaFjcxYoB5BryUBvd45xN2aPOkErEbKHWNnaYOtnbsHkRCiDeQvKm39mU3RUS1dqU4BaNwNmnNQxVqGFDc40UukmwXiuZkzADnNk5YpEYuheTBuIXRefSalkLQkXs7kyxiD0Q24SqEYwZuZ9RVNEuXM64YrIJa8ZPcLDJtdIymipP1clhFLzTtV1Eh7ZjdC17o7bDZKEiD2iQKkp73UmNypnYgxMhbUOLmDpit2dJHbEsiQNNN7kDe2DSBhiBRW3jxCzqJmkPM8bkxIOl4vrjuuZOsD51JgTL9njPrp6EhSciYh0oA9flulzuo2GC3HM0DDK4GoKlpkvmVsDCtJwGCN8Q7aSVdtEWc2JbF5YuhGouWqKdvH6RTMlpO7ETqj5MJAyMZEtfr4jmXEtM5qzQjQuPdbAdoTVb3asp8bONM7yTLq13DRWhxnQYiJXDHcCqxUTbw8AJ4MvUbMJnIahkswv6NJsuWtaoQGuyHzPGAabmrRQNvKtZbwNBfojltOVNjvGDc1IPDE5OsFsR8uCXNQ5SUqmUhtLZgVftqtDD6Mppcj5gaeRXFrqIblkM5W710qcPlQkDKKHeWBpYcpFGr4kQTt0OIrEyPTV49qEhJuE0H8Hip5B8ALvY40O4RqvJyQvvA4eRIkudoLmqh4DGH3JZHIbsLqgWhUbKthMAjpvFnwaXkoMigDzIOJf5BTCJu7gCJRnA6t4mDUFNVSlMbHqGF2t3GrzpqjY4JHhdTvVQcJc898wZSJiCbUvahWtRQkMB21SdFPSQqe7KKAD31TRWt510ncw81yJHtIZaIVIrsIEmc0DLURkLM6NXYp65aVdSJhlPuLHxqzVpEThHutC7h4Ivq6DV2vJz4GCJxP7JYOGMgBDJRydHrI0B93fPZA8JKQlEkHtAsO61c969JEtDdXvgutTg9
+bandit5@bandit:~/inhere/maybehere00$ .\-file2
+.-file2: command not found
+bandit5@bandit:~/inhere/maybehere00$ cat ./-file2
+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
+bandit5@bandit:~/inhere/maybehere00$ find -type f -size 1033c
+bandit5@bandit:~/inhere/maybehere00$ cd ..
+bandit5@bandit:~/inhere$ find -type f -size 1033c
+./maybehere07/.file2
+bandit5@bandit:~/inhere$ cd maybehere07
+bandit5@bandit:~/inhere/maybehere07$ cd ./-file2
+-bash: cd: ./-file2: Not a directory
+bandit5@bandit:~/inhere/maybehere07$ ls
+-file1  -file2  -file3  spaces file1  spaces file2  spaces file3
+bandit5@bandit:~/inhere/maybehere07$ cat file2
+cat: file2: No such file or directory
+bandit5@bandit:~/inhere/maybehere07$ cat ./-file2
+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
+bandit5@bandit:~/inhere/maybehere07$ cat ./maybehere07/.file2
+cat: ./maybehere07/.file2: No such file or directory
+bandit5@bandit:~/inhere/maybehere07$ -a
+-a: command not found
+bandit5@bandit:~/inhere/maybehere07$ ls
+-file1  -file2  -file3  spaces file1  spaces file2  spaces file3
+bandit5@bandit:~/inhere/maybehere07$ ls -a
+.  ..  -file1  .file1  -file2  .file2  -file3  .file3  spaces file1  spaces file2  spaces file3
+bandit5@bandit:~/inhere/maybehere07$ cat ./maybehere07/.file2
+cat: ./maybehere07/.file2: No such file or directory
+bandit5@bandit:~/inhere/maybehere07$ cat .file2
+HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        bandit5@bandit:~/inhere/maybehere07$ cd ..
+bandit5@bandit:~/inhere$ find -type f -size 1033c
+./maybehere07/.file2
+bandit5@bandit:~/inhere$ cat ./maybehere07/.file2
+HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        bandit5@bandit:~/inhere$ exit
+logout
+Connection to bandit.labs.overthewire.org closed.
+sapien@LAPTOP-IO0L7SUU:~$ ssh -p 2220 bandit6@bandit.labs.overthewire.org
+                         _                     _ _ _
+                        | |__   __ _ _ __   __| (_) |_
+                        | '_ \ / _` | '_ \ / _` | | __|
+                        | |_) | (_| | | | | (_| | | |_
+                        |_.__/ \__,_|_| |_|\__,_|_|\__|
+
+
+                      This is an OverTheWire game server.
+            More information on http://www.overthewire.org/wargames
+
+bandit6@bandit.labs.overthewire.org's password:
+
+      ,----..            ,----,          .---.
+     /   /   \         ,/   .`|         /. ./|
+    /   .     :      ,`   .'  :     .--'.  ' ;
+   .   /   ;.  \   ;    ;     /    /__./ \ : |
+  .   ;   /  ` ; .'___,/    ,' .--'.  '   \' .
+  ;   |  ; \ ; | |    :     | /___/ \ |    ' '
+  |   :  | ; | ' ;    |.';  ; ;   \  \;      :
+  .   |  ' ' ' : `----'  |  |  \   ;  `      |
+  '   ;  \; /  |     '   :  ;   .   \    .\  ;
+   \   \  ',  /      |   |  '    \   \   ' \ |
+    ;   :    /       '   :  |     :   '  |--"
+     \   \ .'        ;   |.'       \   \ ;
+  www. `---` ver     '---' he       '---" ire.org
+
+
+Welcome to OverTheWire!
+
+If you find any problems, please report them to the #wargames channel on
+discord or IRC.
+
+--[ Playing the games ]--
+
+  This machine might hold several wargames.
+  If you are playing "somegame", then:
+
+    * USERNAMES are somegame0, somegame1, ...
+    * Most LEVELS are stored in /somegame/.
+    * PASSWORDS for each level are stored in /etc/somegame_pass/.
+
+  Write-access to homedirectories is disabled. It is advised to create a
+  working directory with a hard-to-guess name in /tmp/.  You can use the
+  command "mktemp -d" in order to generate a random and hard to guess
+  directory in /tmp/.  Read-access to both /tmp/ is disabled and to /proc
+  restricted so that users cannot snoop on eachother. Files and directories
+  with easily guessable or short names will be periodically deleted! The /tmp
+  directory is regularly wiped.
+  Please play nice:
+
+    * don't leave orphan processes running
+    * don't leave exploit-files laying around
+    * don't annoy other players
+    * don't post passwords or spoilers
+    * again, DONT POST SPOILERS!
+      This includes writeups of your solution on your blog or website!
+
+--[ Tips ]--
+
+  This machine has a 64bit processor and many security-features enabled
+  by default, although ASLR has been switched off.  The following
+  compiler flags might be interesting:
+
+    -m32                    compile for 32bit
+    -fno-stack-protector    disable ProPolice
+    -Wl,-z,norelro          disable relro
+
+  In addition, the execstack tool can be used to flag the stack as
+  executable on ELF binaries.
+
+  Finally, network-access is limited for most levels by a local
+  firewall.
+
+--[ Tools ]--
+
+ For your convenience we have installed a few useful tools which you can find
+ in the following locations:
+
+    * gef (https://github.com/hugsy/gef) in /opt/gef/
+    * pwndbg (https://github.com/pwndbg/pwndbg) in /opt/pwndbg/
+    * peda (https://github.com/longld/peda.git) in /opt/peda/
+    * gdbinit (https://github.com/gdbinit/Gdbinit) in /opt/gdbinit/
+    * pwntools (https://github.com/Gallopsled/pwntools)
+    * radare2 (http://www.radare.org/)
+
+--[ More information ]--
+
+  For more information regarding individual wargames, visit
+  http://www.overthewire.org/wargames/
+
+  For support, questions or comments, contact us on discord or IRC.
+
+  Enjoy your stay!
+
+bandit6@bandit:~$ ls
+bandit6@bandit:~$ find -user bandit7
+bandit6@bandit:~$ find -type f -size 1033c
+bandit6@bandit:~$ ls
+bandit6@bandit:~$ groups
+bandit6
+bandit6@bandit:~$ users
+bandit0 bandit0 bandit0 bandit0 bandit0 bandit0 bandit0 bandit0 bandit1 bandit1 bandit1 bandit1 bandit1 bandit10 bandit10 bandit10 bandit11 bandit11 bandit11 bandit11 bandit11 bandit11 bandit11 bandit12 bandit12 bandit12 bandit12 bandit12 bandit12 bandit12 bandit12 bandit12 bandit12 bandit12 bandit12 bandit12 bandit12 bandit12 bandit12 bandit13 bandit13 bandit13 bandit14 bandit14 bandit15 bandit16 bandit16 bandit16 bandit16 bandit16 bandit16 bandit16 bandit16 bandit16 bandit17 bandit19 bandit19 bandit19 bandit19 bandit2 bandit2 bandit2 bandit20 bandit20 bandit20 bandit20 bandit20 bandit20 bandit20 bandit20 bandit22 bandit22 bandit23 bandit23 bandit23 bandit23 bandit23 bandit23 bandit23 bandit23 bandit24 bandit25 bandit25 bandit27 bandit3 bandit3 bandit3 bandit3 bandit3 bandit3 bandit30 bandit31 bandit4 bandit4 bandit4 bandit4 bandit4 bandit4 bandit4 bandit4 bandit4 bandit4 bandit4 bandit5 bandit5 bandit5 bandit5 bandit5 bandit5 bandit5 bandit5 bandit5 bandit5 bandit5 bandit5 bandit6 bandit6 bandit6 bandit6 bandit6 bandit6 bandit6 bandit6 bandit6 bandit6 bandit6 bandit6 bandit6 bandit6 bandit6 bandit6 bandit7 bandit7 bandit7 bandit8 bandit8 bandit8 bandit9 bandit9 bandit9 bandit9 bandit9 krypton3
+bandit6@bandit:~$ groups bandit6
+bandit6 : bandit6
+bandit6@bandit:~$ whoami
+bandit6
+bandit6@bandit:~$ su - bandit7
+Password:
+su: Authentication failure
+bandit6@bandit:~$ users
+bandit0 bandit0 bandit0 bandit0 bandit0 bandit0 bandit0 bandit0 bandit0 bandit0 bandit1 bandit1 bandit1 bandit1 bandit1 bandit10 bandit10 bandit11 bandit11 bandit11 bandit11 bandit11 bandit11 bandit11 bandit12 bandit12 bandit12 bandit12 bandit12 bandit12 bandit12 bandit12 bandit12 bandit12 bandit12 bandit12 bandit12 bandit12 bandit12 bandit12 bandit12 bandit13 bandit13 bandit13 bandit14 bandit14 bandit14 bandit15 bandit16 bandit16 bandit16 bandit16 bandit16 bandit16 bandit16 bandit16 bandit16 bandit17 bandit17 bandit19 bandit19 bandit19 bandit19 bandit2 bandit2 bandit2 bandit20 bandit20 bandit20 bandit20 bandit20 bandit20 bandit20 bandit21 bandit22 bandit22 bandit23 bandit23 bandit23 bandit23 bandit23 bandit23 bandit23 bandit23 bandit24 bandit25 bandit25 bandit26 bandit27 bandit3 bandit3 bandit3 bandit3 bandit3 bandit3 bandit3 bandit31 bandit32 bandit32 bandit4 bandit4 bandit4 bandit4 bandit4 bandit4 bandit4 bandit4 bandit4 bandit4 bandit4 bandit4 bandit4 bandit5 bandit5 bandit5 bandit5 bandit5 bandit5 bandit5 bandit5 bandit5 bandit5 bandit5 bandit5 bandit5 bandit5 bandit5 bandit6 bandit6 bandit6 bandit6 bandit6 bandit6 bandit6 bandit6 bandit6 bandit6 bandit6 bandit6 bandit6 bandit7 bandit7 bandit8 bandit8 bandit8 bandit8 bandit9 bandit9 bandit9 bandit9 krypton3
+bandit6@bandit:~$ find / -type f -user bandit7 -group bandit6 2>/dev/null
+/var/lib/dpkg/info/bandit7.password
+bandit6@bandit:~$ cat /var/lib/dpkg/info/bandit7.password
+morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
+bandit6@bandit:~$
