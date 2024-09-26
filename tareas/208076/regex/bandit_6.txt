@@ -1,0 +1,7 @@
+Nivel 5:
+Ejecuté ls para ver el directorio y cd para cambiarme al directorio inhere. Después, le pregunté a ChatGPT cómo podía buscar un archivo de tamaño de 1033 bytes y me comentó que era con el comando find . -type f -size 1033c. El type f es para que me especifiqué archivos y no directorios. Luego, me salió que se encontraba en la subcarpeta maybehere07, entonces me trasladé a esa carpeta usando cd y usé cat ./.file02 para que me mostrara la contraseña del nivel 6.
+
+Nivel 6:
+find / -user bandit7 -group bandit6 -size 33c 2>/dev/null - 
+Utilicé el comando find como en el ejercicio pasado. Esta vez utilicé las banderas -user para buscar archivo con user bandit7, después la bandera group para buscar archivos con dueño bandit6, también la bandera -size para indicar que quería archivos de tamaño 33 bytes y le agregué 2>/dev/null para que no me spamearan en la terminal mensajes de permission denied. Entonces usé el comando de cat para ir al archivo que me salía.
+
