@@ -1,4 +1,54 @@
-git 
+# Virtualenv
+Debes crear un virtualenv en tu local siguiendo las siguientes instrucciones. Investiga las instrucciones y adaptalas al repositorio actual. 
+
+## Ejercicio
+Crea un pyenv para este repo y anota las instrucciones en formato de codigo de markdown en este README (abajo), tanto para instalar el env como para activarlo. La idea es que si se te olvida o alguien mas descarga este repo puedas copiar y pegarlas sin ningun problema. No hagas add o commit por que falta crear los ignores (instrucciones mas adelante).  
+
+Para asegurarte que funciono correctamente debe ser capaz de ejecutar python app.py sin problemas.
+
+### Instrucciones
+python -m venv .venv 
+#Esto creará una carpeta .venv en tu directorio actual, que contiene todos los archivos necesarios para el entorno virtual.
+
+
+source .venv/bin/activate
+#Activa el entorno virtual 
+
+
+pip install -r requirements_pandas.txt
+#El comando instalará todas las bibliotecas y paquetes necesarios especificados en el archivo requirements_pandas.txt
+
+
+#### Instalacion
+pip install -r requirements_pandas.txt
+#### Activar virtualenv
+source .venv/bin/activate
+python app.py #Verifica que el entorno esté correctamente configurado ejecutando
+
+
+# Conda
+Instrucciones para crear un ambiente de conda environment.yml. Adapta las instrucciones al repositorio actual, no son exactas.
+
+## Ejercicio
+Crea un conda env para este repo y anota las instrucciones en formato de codigo de markdown en este README (abajo), tanto para instalar el env como para activarlo. La idea es que si se te olvida o alguien mas descarga este repo puedas copiar y pegarlas sin ningun problema. No hagas add o commit por que falta crear los ignores (instrucciones mas adelante).  
+
+Para asegurarte que funciono correctamente debe ser capaz de ejecutar python app.py sin problemas.
+
+
+### Instrucciones
+#### Instalacion
+Para crear el entorno conda a partir del archivo environment_pandas.yml, usa el siguiente comando:
+
+conda env create -f environment_pandas.yml
+
+Esto leerá el archivo environment_pandas.yml y configurará un nuevo entorno con todas las dependencias especificadas.
+#### Activar conda env
+Una vez creado el entorno, activalo con: 
+
+conda activate myenv
+
+
+Para ver que si funciono y se creó como debia corre el file de app.py
 
 # .gitignore
 Algunos ambientes virtuales como `pyenv` pueden crear carpetas, asegurate de no subir estas carpetas. Esto lo puedes lograr omitiendo el add a estas careptas y aregandolas al .gitignore.  
