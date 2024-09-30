@@ -2,7 +2,7 @@
 .env
 .venv
 env/
-.venv/
+/home/nike2004/fuentes_datos/fdd_024_NicolasAlvarez/.venv
 ENV/
 env.bak/
 venv.bak/
