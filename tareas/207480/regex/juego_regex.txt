@@ -1,0 +1,64 @@
+Warmup
+Vi que todos tenian foo, lo puse y jalo
+foo
+
+Anchors
+Vi que todos terminaban en ick
+Asi que lo puse con $ para que fuera el final
+ick$
+
+
+it never ends 
+Todos terminaban en fu
+como no se podia $ lo cambie a \b que indica fin de bloque
+fu\b
+
+Ranges
+A prueba y error
+Iniciara con [abcdef] y se repitiera una o mas veces cualquiera
+de estos y podia haber o no un [abcd] al final repetido
+^[abcdef]+[abcd]*$
+
+Backrefs
+Vi que todos iniciaban con un patron de 3 letras que se repite
+Entonces el codigo inicia y agarra las primeras 3 letas, luego
+puede haber cualquier caracter hasta que se repita el primer bloque
+que son las primeras 3 letras
+^(\w{3}).*\1
+
+Abba
+Vi que lo que no tenia que matchear tenia palindromos de 
+tamano 4
+Entonces que no busque eso, inicia y regresa todos los que 
+no tengan un patron de palindromo de tamano 4, pudiendo haber
+letras antes del patron
+(\w) guarda la letra el segundo la segunda y luego si si es
+palindromo ese cacho jala el backreference con \2 y \1 que son
+esos (\w)
+^(?!.*(\w)(\w)\2\1)
+
+
+A man a plan
+Aqui queriamos palindromos que varian de tam 4 a 7
+Inicia y igual guarda la primera letra... hasta la 3era
+que puede haber o no para eos es el ?
+Luego puede haber una o ninguna letra, el 3er caracter referen
+ciado o no y ya segundo y primero, que son necesarios pues tamanio
+minimo es 4
+^(\w)(\w)(\w?).?\3?\2\1$
+
+Prime
+Forze el code vi que eran escrituras de x en tamano primo
+pero no supe como hacerlo que automatico el tamano primo lo matchie asi
+que hice todos los casos. Este me costo pues al principio
+crei que era como tal xx...(17)...xx cuando en realidad es x escrito 17 veces
+el codigo solo son muchos ors con las repeticiones de las x
+\b(x{2}|x{3}|x{5}|x{7}|x{11}|x{13}|x{17}|x{19}|x{23}|x{29}|x{31}|x{37}|x{41}|x{43}|x{47}|x{53}|x{59}|x{61}|x{67}|x{71})\b
+
+Four
+vi que habia una letra que se repetia 4 veces
+Entonces inicia, puede haber cualquier cantidad de caracteres.
+guarda uno y si lo encuentra 4 veces mas 
+con un caracter distinto de separacion entre los repetidos
+lo matchea
+^.*(\w).\1.\1.\1

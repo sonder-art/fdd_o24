@@ -1,0 +1,21 @@
+Miguel de Jesús Palacios Rivera 209654
+Level 5 to level 6
+ls
+cd inhere
+find . -readable -size 1033c ! -executable
+cat ./maybehere07/.file2
+HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
+find .: Inicia la búsqueda en el directorio actual.
+-readable: Incluye archivos que son legibles.
+-size 1033c: Incluye archivos que tienen exactamente 1033 bytes.
+! -executable: Excluye archivos que son ejecutables.
+Level 6 to level 7
+find / -size 33c  -user bandit7 -group bandit6
+cat /var/lib/dpkg/info/bandit7.password
+morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
+find /: Inicia la búsqueda en el directorio raíz /. Esto significa que la búsqueda se realizará en todo el sistema de archivos.
+-size 33c: Busca archivos que tengan un tamaño exacto de 33 bytes. El sufijo c indica que el tamaño está en bytes.
+-user bandit7: Filtra los archivos que pertenecen al usuario bandit7. Solo se seleccionan los archivos cuyo propietario es bandit7.
+-group bandit6: Filtra los archivos que pertenecen al grupo bandit6. Solo se seleccionan los archivos cuyo grupo es bandit6.
+cat /var/lib/dpkg/info/bandit7.password permite leer el unico archivo al cuál nos dio acceso el servidor al hacer la búsqueda
+

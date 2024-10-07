@@ -1,0 +1,32 @@
+Emilia Hernández Medina		208115
+--Bandit 5: 
+
+Vi los archivos que había en la careta inhere. Busque un archivo que tuviera el tamaño de 1033 bytes y que no fuera ejecutable. Leí ese archivo. 
+
+inhere
+bandit5@bandit:~$ cd inhere
+bandit5@bandit:~/inhere$ find -type f -size 1033c ! -executable
+./maybehere07/.file2
+bandit5@bandit:~/inhere$ cat - .file2
+^C
+bandit5@bandit:~/inhere$ cd maybehere07
+bandit5@bandit:~/inhere/maybehere07$ cat .file2
+HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
+
+--Bandit 6: 
+
+Busqué el archivo con las características que nos pedía. Salieron muchos permission denied, no se por qué, pero sí me dio la solución. 
+
+bandit6@bandit:~$ find-type f -size 33c -user bandit7
+find-type: command not found
+bandit6@bandit:~$ find -type f -size 33c -user bandit7
+bandit6@bandit:~$ find / -user bandit7 -group bandit6 -size 33c
+find: ‘/sys/kernel/tracing’: Permission denied
+..
+find: ‘/var/lib/udisks2’: Permission denied
+/var/lib/dpkg/info/bandit7.password
+find: ‘/var/lib/snapd/void’: Permission denied
+...
+find: ‘/var/cache/apparmor/2425d902.0’: Permission denied
+bandit6@bandit:~$ cat /var/lib/dpkg/info/bandit7.password
+morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj

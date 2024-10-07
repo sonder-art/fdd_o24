@@ -1,0 +1,23 @@
+Level 1: Anchors
+-> k$ (palabras que acaben con K)
+
+Level 2: It never ends:
+-> \b\w*fu\b (\b marca el inicio de la palabra, w* asegura 0 o mas caracteres, fu requiere que la palabra acabe con fu y \bmarca el fin de la palabra
+
+Level 3: Ranges:
+-> ^[a-f]*$ (String solo puede tener las letras de la a-f en el)
+
+Level 4: Backrefs:
+-> (...).*\1 (Capta un patron de tres caracteres que tiene que coincidir en algun punto del string otra vez)
+
+Level 5: Abba:
+-> ^(?!(.)+\1)|ef (Hace un lookahead negativo en donde quita el match si se repiten caracteres seguido y da match si tiene ef tambien)
+
+Level 6: A man, A plan:
+-> ^(.)[^p].*\1$ (Captura la letra del inicio, excluyendo la p y busca que se repita hasta al final del string)
+
+Level 7: Prime:
+-> ^(?!(xx+)\1+$) (No da match a todos los strings que tienen patrones de xx que se repiten mas de una vez)
+
+Level 8: Four:
+-> ([aeio]).{5}\1 (Da match a todos los caracteres que tienen 5 letras de separacion antes de la siguiente vocal)

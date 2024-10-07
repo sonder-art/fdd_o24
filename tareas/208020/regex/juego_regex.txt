@@ -1,0 +1,12 @@
+Warmup - foo -- las palabras contienen foo
+Anchors - k$ -- las palabras terminan en k
+It never ends -- fu(?!.) - las palabras tienen fu y no les sigue ninguna palabra
+Ranges - ^[a-f]*$ -- contienen solo letras de la 'a' a la 'f' en cualquier cantidad
+Backrefs - (...).*\1 -- repiten dos veces tres caracteres consecutivos
+Abba - ^(?!.*(.)(.)\2\1) -- palabras que no contienen una secuencia de dos caracteres consecutivos que aparecen después en el string en orden inverso 
+A man, a plan - ^(.)(.).*\2\1$ -- palabras que empiezan con dos palabras, seguidas cualquier número de caracteres y terminan con los caracteres que empezaron pero en orden inverso
+Prime - ^(?!(xx+)\1+$) -- excluye las palabras que pueden ser expresadas por una repetición de patrón, es decir el número de caracteres es múltiplo
+Four - ([aeiou]).{5}\1 -- palabras que repiten la misma vocal después de 5 caracteres exactament
+
+https://alf.nu/RegexGolf#accesstoken=BNYCmHUFL8OHEO5NbGng
+

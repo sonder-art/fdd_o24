@@ -1,0 +1,6 @@
+link cuenta docker hub:
+https://hub.docker.com/u/pablogdelmoral?_gl=1*ez4dr6*_gcl_au*NzIyNDYzNDMyLjE3MjY2OTg3ODc.*_ga*ODU5MTc3ODYzLjE3MjY2OTg3ODg.*_ga_XJWPQMJYHQ*MTcyNzczNDc4MC4zLjEuMTcyNzczNDk4OC40OC4wLjA.
+
+
+Link del docker image en docker hub:
+https://hub.docker.com/layers/pablogdelmoral/dockerhub208453tarea/latest/images/sha256:e2783867648ea65742b4511b26666f1eebd8b61e8b40f3659d519c12a38c08d2?uuid=55a695f1-575c-41fa-a8b4-b0f328629dce%0A

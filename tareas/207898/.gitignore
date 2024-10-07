@@ -1,0 +1,20 @@
+# Archivos generados por macOS
+.DS_Store
+
+# Archivos temporales o de sistema
+Thumbs.db
+.idea/
+*.swp
+*.swo
+*.log
+
+# Archivos de Python (si es el caso)
+__pycache__/
+*.pyc
+*.pyo
+
+# Archivos de editores
+.vscode/
+*.sublime-project
+*.sublime-workspace
+

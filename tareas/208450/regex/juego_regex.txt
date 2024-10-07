@@ -1,0 +1,26 @@
+Warmup (3)
+Noté que las cadenas que debían aceptar la condición contenían 'foo' y las demás no, por lo que utilicé el Regex=foo.
+
+Anchors (2)
+Vi que las cadenas terminaban en 'k', por lo que utilicé el Regex=k$
+
+It never ends (7)
+No podía utilizar el '$' por lo que utilice el negative look ahead para indicar que después del 'fu' no hubiera otro caracter. Regex=fu(?!.)
+
+Rangers (8)
+Primero vi que las cadenas comenzaban con letras de la a a la f. Después note que ninguna cadena de las que tienen que cumplir la condición tenía letras más allá de la f en el abecedario y fortuitamente las que no tenían que coincidir si. Así que mi condición fue que tengan 4 letras de la a-f ya que ninguna de las cadenas que no deben cumplir las tenía. Regex=[a-f]{4}
+
+Backrefs (9)
+Analicé las cadenas a procesar y, después de un tiempo, note que en todas ellas se repetían las primeras tres letras en algún otro sitio de la cadena, no era el caso de las cadenas que no había que procesar. Por eso escribí la expresión regular que tomara los cualesquiera primeros tres caracteres (con .) de la cadena y buscara que se repitieran. Tuve que investigar como hacerlo y descubrí que formando un grupo y haciendo una backref (\1) podía tener los tres caracteres, luego lo que hubiera (había casos en los que no había espacio entre la repetición de los caracteres) y después, de nuevo, los tres caracteres. Regex=(...).*\1
+
+Abba (14)
+Noté que las cadenas que no debía procesar contenían un doble carácter en algún sitio de la cadena. Pero también era el caso de dos cadenas que sí había que procesar (ambas contenían 'fu'), por lo que opté por utilizar un OR (|) que uniera estos dos predicados. De esta forma, si se repitiera un caracter en una de las cadenas a procesar, el regex buscaría si tienen 'fu' en cualquier parte y las procesaría. Para que no se repitieran los caracteres utilicé un negative look ahead (?!) en el que cualquier caracter, con una o más repeticiones (y utilizando la referencia al primer grupo) no se repitiera. Asegure que la cadena se procesara desde el comienzo de la cadena. Regex=^(?!(.)+\1)|fu.
+
+A man, a plan (16)
+Pude ver que las cadenas a procesar comenzaban con dos caracteres y terminaban con los mismos dos caracteres invertidos, no era el caso de las cadenas a no procesar. Para realizar esto, me aseguré que la expresión regular capturara los primeros dos caracteres en grupos diferentes al inicio de la cadena, después que pudiera haber cualquier número de caracteres en el medio (o ninguno) y finalmente que haga la referencia a los primeros dos grupos invertidos (segundo y primer caracter, en ese orden). Regex=^(.)(.)(.*)\2\1$
+
+Prime (14)
+Noté que las cadenas a procesar eran n-equis, con n un número primo hasta el 71, mientras que las cadenas a no procesar eran los números no primos hasta el 32. Tuve que entender mucho que hacen las backreferences, porque mi solución encuentra dos o más x's (con (xx+)) y luego, mediante una backreference, intenta encontrar si ese patrón (dos o más x's) se repite en la cadena 1 o más veces con (\1+). No es que el primer patrón que encuentra de n-x's es el que toma, si no que va checando para todos los posibles patrones y viendo si hay múltiplos de esos patrones, así sabe que no son primos. Una vez logrado eso, agregamos un negative look ahead para negar esos no-primos que encontramos y agregamos la condición de que la cadena tenga que terminar en ese patron y que el patrón que encuentre este al comienzo de esta. Regex=^(?!(xx+)\1+$)
+
+Four (13)
+Analicé las cadenas a procesar y noté un patrón que se repetía: en la cadena habían tríos de letras que se repetían la primera y la última. Es decir, un patrón tipo ...xyx...xzx..., en el que las equis son la misma letra (caracter) y las 'y' y 'z' son diferentes. Por lo que mi regex hace que encuentre una letra, la guarde, después que haya otra letra, que se repita la letra guardada, que haya 0 o más caracteres entre eso y que se repita el mismo patrón, es decir, la letra que guardamos, cualquier letra y de nuevo la letra que guardamos. Regex=(.).\1.*\1.\1

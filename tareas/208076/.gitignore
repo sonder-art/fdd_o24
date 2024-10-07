@@ -1,0 +1,5 @@
+# Ignorar archivos ejecutables de Windows
+*.exe
+
+# Ignorar archivos de librerías de Windows
+*.dll

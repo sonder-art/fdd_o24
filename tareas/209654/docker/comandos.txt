@@ -1,0 +1,37 @@
+Miguel de Jesús Palacios Rivera 209654
+El contenedor es el ambiente de ejecución de la imagen. El contenedo tiene un file system, la config del ambiente y la app.
+
+
+docker pull: Descarga una imagen desde un repositorio (por defecto Docker Hub) a tu máquina local.
+
+docker run: Crea y ejecuta un contenedor a partir de una imagen.
+
+docker run --options: Ejecuta un contenedor con opciones adicionales, como puertos, volúmenes o nombres personalizados.
+
+docker stop: Detiene un contenedor en ejecución.
+
+docker start: Inicia un contenedor que está detenido.
+
+docker ps: Muestra los contenedores en ejecución.
+
+docker exec -it: Ejecuta un comando dentro de un contenedor en ejecución de forma interactiva, como abrir una terminal (bash).
+
+docker logs: Muestra los registros (logs) generados por un contenedor.
+
+docker images: Lista todas las imágenes de Docker disponibles en la máquina local.
+
+docker run -d: Ejecuta un contenedor en modo desacoplado (en segundo plano).
+
+docker run -p: Mapea los puertos de un contenedor al host (por ejemplo, -p 8080:80).
+
+docker ps -a: Muestra todos los contenedores, tanto en ejecución como detenidos.
+
+docker rm: Elimina un contenedor detenido.
+
+docker rmi: Elimina una imagen de Docker de tu máquina local.
+
+docker build -t: Crea una imagen a partir de un archivo Dockerfile y le asigna una etiqueta (-t).
+
+exit: sales del contenedor
+
+

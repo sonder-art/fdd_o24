@@ -1,0 +1,190 @@
+Nivel 5 -> 6:
+bandit5@bandit:~$ cp inhere
+cp: missing destination file operand after 'inhere'
+Try 'cp --help' for more information.
+bandit5@bandit:~$ --h
+--h: command not found
+bandit5@bandit:~$ -h
+-h: command not found
+bandit5@bandit:~$ pwd
+/home/bandit5
+bandit5@bandit:~$ cd /home/bandit5/inhere
+bandit5@bandit:~/inhere$ ls
+maybehere00  maybehere04  maybehere08  maybehere12  maybehere16
+maybehere01  maybehere05  maybehere09  maybehere13  maybehere17
+maybehere02  maybehere06  maybehere10  maybehere14  maybehere18
+maybehere03  maybehere07  maybehere11  maybehere15  maybehere19
+bandit5@bandit:~/inhere$ pwd
+/home/bandit5/inhere
+bandit5@bandit:~/inhere$ find -type f -size 1033c // buscar archivo de regular con 1033 bytes
+./maybehere07/.file2
+bandit5@bandit:~/inhere$ cat ./maybehere07/.file2
+HWasnPhtq9AVKe0dmk45nxy20cvUa6EG (Password)
+
+Nivel 6 -> 7:
+bandit6@bandit:~$ ls -a
+.  ..  .bash_logout  .bashrc  .profile
+bandit6@bandit:~$ cd .
+bandit6@bandit:~$ pwd
+/home/bandit6
+bandit6@bandit:~$ cd ..
+bandit6@bandit:/home$ ls
+bandit0   bandit2       bandit29      bandit7    drifter4     krypton1
+bandit1   bandit20      bandit29-git  bandit8    drifter5     krypton2
+bandit10  bandit21      bandit3       bandit9    drifter6     krypton3
+bandit11  bandit22      bandit30      drifter0   drifter7     krypton4
+bandit12  bandit23      bandit30-git  drifter1   drifter8     krypton5
+bandit13  bandit24      bandit31      drifter10  drifter9     krypton6
+bandit14  bandit25      bandit31-git  drifter12  formulaone0  krypton7
+bandit15  bandit26      bandit32      drifter13  formulaone1  ubuntu
+bandit16  bandit27      bandit33      drifter14  formulaone2
+bandit17  bandit27-git  bandit4       drifter15  formulaone3
+bandit18  bandit28      bandit5       drifter2   formulaone5
+bandit19  bandit28-git  bandit6       drifter3   formulaone6
+bandit6@bandit:/home$ cd .profile
+-bash: cd: .profile: No such file or directory
+bandit6@bandit:/home$ pwd
+/home
+bandit6@bandit:/home$ cd /home find -type f -size 33c
+-bash: cd: too many arguments
+bandit6@bandit:/home$ cd bandit6
+bandit6@bandit:~$ ls -a
+.  ..  .bash_logout  .bashrc  .profile
+bandit6@bandit:~$ pwd
+/home/bandit6
+bandit6@bandit:~$ find . -type f -size 33c
+bandit6@bandit:~$ cd ..
+bandit6@bandit:/home$ find . -type f -uid bandit7
+find: invalid argument `bandit7' to `-uid'
+bandit6@bandit:/home$ find . -type f -user bandit7
+find: ‘./drifter8/chroot’: Permission denied
+find: ‘./bandit5/inhere’: Permission denied
+find: ‘./bandit31-git’: Permission denied
+find: ‘./bandit29-git’: Permission denied
+find: ‘./ubuntu’: Permission denied
+find: ‘./bandit30-git’: Permission denied
+find: ‘./bandit28-git’: Permission denied
+find: ‘./drifter6/data’: Permission denied
+find: ‘./bandit27-git’: Permission denied
+bandit6@bandit:/home$ cd bandit6
+bandit6@bandit:~$ find / -user bandit7 -group bandit6 -size 33c -type f
+find: ‘/sys/kernel/tracing’: Permission denied
+find: ‘/sys/kernel/debug’: Permission denied
+find: ‘/sys/fs/pstore’: Permission denied
+find: ‘/sys/fs/bpf’: Permission denied
+find: ‘/snap’: Permission denied
+find: ‘/run/lock/lvm’: Permission denied
+find: ‘/run/systemd/inaccessible/dir’: Permission denied
+find: ‘/run/systemd/propagate/systemd-udevd.service’: Permission denied
+find: ‘/run/systemd/propagate/systemd-resolved.service’: Permission denied
+find: ‘/run/systemd/propagate/systemd-networkd.service’: Permission denied
+find: ‘/run/systemd/propagate/systemd-logind.service’: Permission denied
+find: ‘/run/systemd/propagate/irqbalance.service’: Permission denied
+find: ‘/run/systemd/propagate/chrony.service’: Permission denied
+find: ‘/run/systemd/propagate/polkit.service’: Permission denied
+find: ‘/run/systemd/propagate/ModemManager.service’: Permission denied
+find: ‘/run/systemd/propagate/fwupd.service’: Permission denied
+find: ‘/run/lvm’: Permission denied
+find: ‘/run/log/journal/ec27119cecabde24cec12615c2a9a184’: Permission denied
+find: ‘/run/cryptsetup’: Permission denied
+find: ‘/run/multipath’: Permission denied
+find: ‘/run/screen/S-bandit20’: Permission denied
+find: ‘/run/sudo’: Permission denied
+find: ‘/run/user/11012’: Permission denied
+find: ‘/run/user/11005’: Permission denied
+find: ‘/run/user/11016’: Permission denied
+find: ‘/run/user/11008’: Permission denied
+find: ‘/run/user/11000’: Permission denied
+find: ‘/run/user/11001’: Permission denied
+find: ‘/run/user/11004’: Permission denied
+find: ‘/run/user/11003’: Permission denied
+find: ‘/run/user/11022’: Permission denied
+find: ‘/run/user/11006/systemd/inaccessible/dir’: Permission denied
+find: ‘/run/user/11020’: Permission denied
+find: ‘/run/user/11013’: Permission denied
+find: ‘/run/user/11014’: Permission denied
+find: ‘/run/user/11024’: Permission denied
+find: ‘/run/user/11011’: Permission denied
+find: ‘/run/user/11023’: Permission denied
+find: ‘/run/user/11015’: Permission denied
+find: ‘/run/user/11009’: Permission denied
+find: ‘/run/user/11007’: Permission denied
+find: ‘/run/user/11019’: Permission denied
+find: ‘/run/user/11002’: Permission denied
+find: ‘/run/user/11010’: Permission denied
+find: ‘/run/user/11031’: Permission denied
+find: ‘/run/user/11021’: Permission denied
+find: ‘/run/user/11030’: Permission denied
+find: ‘/run/user/11028’: Permission denied
+find: ‘/run/user/11528’: Permission denied
+find: ‘/run/user/11029’: Permission denied
+find: ‘/run/user/11529’: Permission denied
+find: ‘/run/chrony’: Permission denied
+find: ‘/run/udisks2’: Permission denied
+find: ‘/boot/efi’: Permission denied
+find: ‘/boot/lost+found’: Permission denied
+find: ‘/home/drifter8/chroot’: Permission denied
+find: ‘/home/bandit5/inhere’: Permission denied
+find: ‘/home/bandit31-git’: Permission denied
+find: ‘/home/bandit29-git’: Permission denied
+find: ‘/home/ubuntu’: Permission denied
+find: ‘/home/bandit30-git’: Permission denied
+find: ‘/home/bandit28-git’: Permission denied
+find: ‘/home/drifter6/data’: Permission denied
+find: ‘/home/bandit27-git’: Permission denied
+find: ‘/proc/tty/driver’: Permission denied
+find: ‘/proc/411818/task/411818/fdinfo/6’: No such file or directory
+find: ‘/proc/411818/fdinfo/5’: No such file or directory
+find: ‘/drifter/drifter14_src/axTLS’: Permission denied
+find: ‘/etc/stunnel’: Permission denied
+find: ‘/etc/multipath’: Permission denied
+find: ‘/etc/sudoers.d’: Permission denied
+find: ‘/etc/credstore.encrypted’: Permission denied
+find: ‘/etc/ssl/private’: Permission denied
+find: ‘/etc/credstore’: Permission denied
+find: ‘/etc/xinetd.d’: Permission denied
+find: ‘/etc/polkit-1/rules.d’: Permission denied
+find: ‘/root’: Permission denied
+find: ‘/tmp’: Permission denied
+find: ‘/lost+found’: Permission denied
+find: ‘/dev/shm’: Permission denied
+find: ‘/dev/mqueue’: Permission denied
+find: ‘/var/spool/bandit24’: Permission denied
+find: ‘/var/spool/rsyslog’: Permission denied
+find: ‘/var/spool/cron/crontabs’: Permission denied
+find: ‘/var/lib/udisks2’: Permission denied
+
+-----------------------------------------------------------------------------------------------
+/VAR/LIB/DPKG/INFO/BANDIT7.PASSWORD.    //único al que tengo permisos
+-----------------------------------------------------------------------------------------------
+
+find: ‘/var/lib/snapd/void’: Permission denied
+find: ‘/var/lib/snapd/cookie’: Permission denied
+find: ‘/var/lib/ubuntu-advantage/apt-esm/var/lib/apt/lists/partial’: Permission denied
+find: ‘/var/lib/private’: Permission denied
+find: ‘/var/lib/update-notifier/package-data-downloads/partial’: Permission denied
+find: ‘/var/lib/amazon’: Permission denied
+find: ‘/var/lib/chrony’: Permission denied
+find: ‘/var/lib/apt/lists/partial’: Permission denied
+find: ‘/var/lib/polkit-1’: Permission denied
+find: ‘/var/log/unattended-upgrades’: Permission denied
+find: ‘/var/log/private’: Permission denied
+find: ‘/var/log/amazon’: Permission denied
+find: ‘/var/log/chrony’: Permission denied
+find: ‘/var/tmp’: Permission denied
+find: ‘/var/cache/private’: Permission denied
+find: ‘/var/cache/ldconfig’: Permission denied
+find: ‘/var/cache/pollinate’: Permission denied
+find: ‘/var/cache/apt/archives/partial’: Permission denied
+find: ‘/var/cache/apparmor/baad73a1.0’: Permission denied
+find: ‘/var/cache/apparmor/2425d902.0’: Permission denied
+bandit6@bandit:~$ ./var/lib/dpkg/info/bandit7.password
+-bash: ./var/lib/dpkg/info/bandit7.password: No such file or directory
+bandit6@bandit:~$ pwd
+/home/bandit6
+bandit6@bandit:~$ cat /home/bandit6/var/lib/dpkg/info/bandit7.password
+cat: /home/bandit6/var/lib/dpkg/info/bandit7.password: No such file or directory
+bandit6@bandit:~$ cat /var/lib/dpkg/info/bandit7.password
+morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj (Password)
+
+
