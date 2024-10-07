@@ -1,0 +1,8 @@
+https://hub.docker.com/u/barbaffer
+
+https://hub.docker.com/r/barbaffer/itam_fdd_o24_intro
+
+docker pull barbaffer/itam_fdd_o24_intro
+
+docker run --rm barbaffer/itam_fdd_o24_intro:latest
+
