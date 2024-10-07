@@ -1,0 +1,18 @@
+Comandos
+
+1. pull: baja una imagen desde un repo 
+2. run: crea y ejectura un container, a partir de una imagen
+3. run -options: especifica puertos, volumenes o nombres
+4. stop: detiene un container, q estaba en proceso
+5. start: inicia un container, q estaba en stop
+6. ps: muetras los containers en ejecucion
+7. exec -it: ejecuta comando, dentro de un cotainer, de forma interactiva
+8. logs: muetra los logs
+9. images: muestra todas las imagenes 
+10. run -d: ejecucion en segundo plano
+11. run -p: mapea puertos de un container al host
+12. ps -a: muetra los containers detenidos + en ejecucion
+13. rm: elimina un container detenido
+14. rmi: elimina una imagen 
+15. build -t: contruye la imagen a partir del Dockerfile con t tag
+16. exit: salida del container.
