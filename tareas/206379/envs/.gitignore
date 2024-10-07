@@ -1,0 +1,9 @@
+# Environments
+.env
+.venv
+env/
+/home/nike2004/fuentes_datos/fdd_024_NicolasAlvarez/.venv
+ENV/
+env.bak/
+venv.bak/
+.env_ejemplo
