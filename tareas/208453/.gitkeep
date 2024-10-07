@@ -1,0 +1,38 @@
+# Ignorar archivos de macOS
+.DS_Store
+
+# Ignorar archivos temporales o de caché
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Ignorar directorios de compilación y dependencias (si usas Node.js o front-end)
+node_modules/
+dist/
+build/
+
+# Ignorar archivos específicos de Python (si trabajas con Python)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignorar configuraciones locales de editores
+.vscode/
+.idea/
+
+# Ignorar entornos virtuales
+venv/
+.env
+
+# Ignorar archivos de dependencias (si usas Ruby o PHP, por ejemplo)
+Gemfile.lock
+composer.lock
+
+# Ignorar archivos de lock de proyectos (si usas npm o yarn)
+package-lock.json
+yarn.lock
+
+# Ignorar archivos de configuración específicos del proyecto
+*.lock
