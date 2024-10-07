@@ -1,0 +1,40 @@
+Comandos docker:
+Dockerfile -
+FROM - la imagen que queremos construir debemos basarla de otra imagen existente, así indicamos la imagen preexistente.
+ENV - configurar variables de ambiente en el Dockerfile (no recomendables).
+RUN - ejecuta cualquier comando de Linux.
+COPY - ejecuta en el huésped, copia los archivos del folder indicado a otro folder (en el contenedor).
+CMD - ejecuta un comando de Linux de entrada, lanza la aplicación indicada.
+ENTRYPOINT - ejecuta un script de shell.
+
+Terminal -
+docker build - construye la imagen a partir del Dockerfile, requiere -t para el repositorio y tag. El segundo parámetro es la localización de la imagen (por lo general se usa '.' Para indicar "en este directorio").
+
+Docker rm - elimina el contenedor que indiquemos
+docker rmi - elimina la imagen que indiquemos.
+
+docker pull - descarga la imagen desde el repositorio (DockerHub) a nuestra máquina.
+
+docker images - muestra las imágenes que tenemos almacenadas (construidas).
+
+docker run - instancia el contenedor al correr la imagen especificada, ejecuta el contenedor a partir de la imagen.
+
+docker run -p - la opción -p especifica el puerto huésped y el puerto del contenedor que lo "hostea".
+docker run -d - ejecuta la imagen en modo "detachment".
+
+docker ps - muestra el estado de todos los contenedores que están corriendo. La opción de -a muestra los contenedores que no están corriendo igualmente. 
+
+docker stop - detiene el proceso de ejecución del contenedor especificado, requiere el id del contenedor como parámetro.
+
+docker start - comienza la ejecución del contenedor especificado, requiere el id del contenedor como parámetro.
+
+docker exec -it - abre una sesión de terminal interactiva con un contenedor, se requiere el id del contenedor y el tipo de terminal como parámetro.
+
+exit - finaliza el proceso de la terminal del contenedor.
+
+docker logs - muestra la salida de los procesos que corren dentro del contenedor, se necesita el nombre o id del contenedor como parámetro.
+
+
+
+
+
