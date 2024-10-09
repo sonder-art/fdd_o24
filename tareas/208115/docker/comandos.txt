@@ -1,0 +1,23 @@
+RUN: corre en consola un comando de linux 
+COPY:se corre en el host
+CMD: se corre al darle run al docker 
+docker build -t (tag del nombre) nombre: como buildear un docker
+docker images: te da las imagenes
+docker rm ...: deletes docker contariner
+docker exec -it nombre /bin/bash te abre terminal
+
+siempre vovler a crear la imagen si cambias el Dockerfile
+
+docker run name: runs the container in the terminal. 
+docker run -d name: runs it in a detached mode, lo paras con docker stop
+docker ps -a: da todos los containers running o no running. Ahí puedes ver nombre para restart it. 
+docker start: corre un docker (run) 
+docker pull: pulls image of a repository to the local. 
+docker run -d -p6000:6749: lo asocias a un port. Bind port of your host: port of container. 
+
+Comands for troubleshooting: 
+
+docker run -d -name resdis-older redis:4.0: le cambias el nombre. redis older es el nuevo nombre y redis:4.0 el viejo. 
+docker exce -it container_id /bin/bash: virtual file system inside the containerexit: te sales de esa terminal
+docker run: crea un nuevo conatiner de la images
+docker start: una vez que ya lo creaste,  lo reastateas con este comando

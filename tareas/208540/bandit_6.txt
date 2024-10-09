@@ -1,0 +1,5 @@
+6. HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
+-> ls para ver el directorio, cd inhere para cambiarte al directorio inhere, ls -a para ver los archivos, incluyendo los ocultos, find -type f -size 1033c para buscar el archivo que cumpla con las especificaciones, cat ./maybehere07/.file2 para leer el contenido de ese archivo.
+7. morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
+-> find para buscar, -user para buscar al propietario del archivo, -group para ver al grupo propietario del archivo, -size para el tamaño del archivo. cat /var/lib/dpkg/info/bandit7.password para leer el contenido del archivo
+

@@ -1,0 +1,31 @@
+¿Qué es Docker?
+	Docker es una plataforma de software que permite crear, implementar y ejecutar aplicaciones dentro de contenedores
+
+¿Qué es un contenedor?
+	Los contenedores son entornos aislados que incluyen todo lo necesario para ejecutar una imagen (aplicación): código, bibliotecas, dependencias y configuraciones. Esto garantiza que la aplicación funcione de la misma manera en cualquier entorno, ya sea en la computadora local del desarrollador, en un servidor o en la nube.
+	Es una instancia ejecutable de una imagen, que es mutable y puede realizar tareas y procesos en tiempo real.
+
+¿Qué es una imagen?
+	Es una plantilla inmutable que contiene todo lo necesario para ejecutar una aplicación. Sirve como base para crear contenedores, pero no se ejecuta por sí misma.
+
+Comandos
+1. docker pull <imagen>: Descarga una imagen desde un registro de Docker.
+2. docker build -t <nombre_imagen> <ruta>: Crea una imagen a partir de un Dockerfile.
+3. docker images: Lista todas las imágenes descargadas o creadas en tu máquina local.
+4. docker run <imagen>: Crea y ejecuta un contenedor a partir de una imagen.
+-d: Ejecuta el contenedor en modo desapegado (detached), lo que significa que se ejecutará en segundo plano y no bloqueará tu terminal.
+-p: Publica un puerto del contenedor en un puerto de la máquina anfitriona. La sintaxis es -p <puerto_anfitrión>:<puerto_contenedor>
+--rm en Docker se utiliza para eliminar automáticamente el contenedor después de que se haya detenido su ejecución.
+5. docker run -it <imagen>: Crea y ejecuta un contenedor en modo interactivo.
+6. docker ps: Muestra los contenedores en ejecución.
+docker ps -a: Muestra todos los contenedores, tanto los en ejecución como los detenidos.
+7. docker stop <id_contenedor>: Detiene un contenedor en ejecución.
+8. docker start <id_contenedor>: Inicia un contenedor detenido.
+9. docker volume create <nombre_volumen>: Crea un volumen de almacenamiento.
+10. docker volume ls: Lista todos los volúmenes disponibles.
+11. docker exec -it <id_contenedor> <comando>: Ejecuta un comando dentro de un contenedor en ejecución.
+docker exec -it <id_contenedor> /bin/bash o /bin/sh: Abre una terminal dentro de un contenedor en ejecución para inspeccionar o interactuar con el entorno del contenedor.
+12. docker logs <id_contenedor>: Muestra los registros (logs) de un contenedor.
+docker logs -f <id_contenedor>: Sigue (en tiempo real) los logs del contenedor.
+
+

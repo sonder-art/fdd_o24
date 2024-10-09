@@ -1,0 +1,12 @@
+docker ps: Ver que contendedores están corriendo en ese momento junto con información de cada uno
+docker run: Pone a correr los contenedores, docker run -d en deatached mode. Es como el pull y start junto
+docker stop: Para el contenedor qque este corriendo
+docker run redis: (imagen): va a poner a correr el contenedor y agarrar la imágen inmediatamente
+docker run -p(local port):(container port) -> vincular ambos puertos
+docker pull: jala la imágen del repositorio al local 
+**Docker start y stop hace posible reincicar los contenedores**
+docker images: Te permite ver todas las imágenes localmente
+docker log + container id/nombre: permite ver los registros de salida
+docker exec -it + nombre de contenedor + comando: Te permite entrar y navegar dentro de un contenedor
+
+**Docker run pone a trabajar con imágenes y contenedores, doxker run no involucra imágenes. Docker run sirve para crear, dicker estart para "abrir"**

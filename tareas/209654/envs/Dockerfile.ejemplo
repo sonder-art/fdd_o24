@@ -1,0 +1,25 @@
+# Usa una imagen base de Python
+FROM python:3.9-slim
+
+# Establece el directorio de trabajo en /app
+WORKDIR /app
+
+# Codigo para manejar ambientes y el codigo necesario
+
+# Copia el archivo de requerimientos en el contenedor en /app
+COPY requirements_pandas.txt .
+
+# Instala virtualenv
+RUN pip install virtualenv
+
+# Crea un ambiente virtual llamado 'venv' dentro del contenedor
+RUN virtualenv venv
+
+# Activa el ambiente virtual e instala las dependencias en el ambiente virtual
+RUN . venv/bin/activate && pip install pandas && pip install ydata-profiling
+
+# Copia todo el contenido de tu aplicación a /app en el contenedor
+COPY . .
+
+# Define el comando por defecto para ejecutar la aplicación
+CMD . venv/bin/activate && python app.py
