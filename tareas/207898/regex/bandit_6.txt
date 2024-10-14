@@ -1,0 +1,10 @@
+Level 5: find . -type f -size 1033c ! -executable 
+Lo que hago es buscar un tipo f (File), que tenga 1033 bytes (c), y que no sea ejecutable.
+Contraseña: HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
+
+Level 6:  find / -user bandit7 -group bandit6 -size 33c
+Es buscar en todo el equipo el documento o file que tenga de user a bandit7, grupo bandit6, y que tenga 33 bytes.
+Contraseña: morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
+
+ssh bandit7@bandit.labs.overthewire.org -p 2220
+

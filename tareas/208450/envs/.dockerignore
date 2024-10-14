@@ -1,0 +1,48 @@
+# Ignora archivos y carpetas relacionados con el control de versiones
+.git
+.gitignore
+
+# Ignora entornos virtuales de Python
+.venv/
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.env_ejemplo
+env_ejemplo
+.conda/
+conda-env/
+miniconda/
+anaconda/
+.conda
+*.pyc
+__pycache__
+
+# Ignora archivos de ambiente local
+.env
+.env.*
+
+# Ignora archivos de logs
+*.log
+
+# Ignora archivos y carpetas relacionados con el desarrollo
+node_modules/
+npm-debug.log
+
+# Ignora archivos de Docker
+Dockerfile
+docker-compose.yml
+
+# Ignora archivos de documentación
+README.md
+docs/
+
+# Ignora archivos de prueba
+test/
+tests/
+
+# Ignora archivos específicos del sistema operativo
+.DS_Store
+Thumbs.db

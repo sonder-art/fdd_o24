@@ -1,0 +1,18 @@
+WARMUP foo:Porque todos los matches tienen en comun el substring foo
+
+Anchors k$: Porque todos los matches terminan con un ick o solo con una k. 
+
+It never ends: u\b porque el comando \b dice que no hay más chars después de la u, que es más o menos como si dijeramos que queremos que la palabra termine en u o que no haya más letras después de la u.
+
+Ranges ^[a-f]*$: Porque estamos diciendo que todos los matches son palabras que tienen letras entre a y f, puede que se repitan 0 o más veces, pero solo usa letras de 'a' a 'f', por lo que las palabras que tengan de 'g' en adelante no funcionan.
+
+Backrefs (...).*\1: Agarra el primer grupo de chars que encuentra que se repite en la palabra, y excluye a aquellas palabras que no tienen un substring que se repite
+
+Abba ^(?!(.)+\1)|fu: En este caso es lo contrario, pues estamos negando que no tengan substrings repetidos o que contengan fu
+
+A man, a plan ^(.)[^p].+\1$:Estamos poniendo que el primer char que encuentra tiene que ser repetido al final de la wordy que la palabra no tenga una p o que la tenga al inicio por culpa de springer.
+
+Prime ^(?!(..+)\1+$): Esto es porque, está diciendo que agarrando los primeros dos chars y el + dice que estos dos primeros chars se repiten una o más veces, este primer grupo de dos se repite una o más veces hasta llenar todo el String, pero como esto lo negamos al inicio, es lo que no se tiene que cumplir, por lo tanto sería como que haga match con aquellos Strings de las x que tengan una cantidad impar de x (pues no deja que todo el String se llene con una secuencia de 2 x, por lo que sobra una) y que elimine o quite a aquellas Strings que tengan una cantidad par de x. 
+
+Four ([aeio]).{5}\1: agarramos la primer vocal que veamos que este entre a, e, i, o, después, nos saltamos las siguientes 5 letras (o chars) y despues la 6ta letra tiene que ser la misma vocal (por el \1).
+

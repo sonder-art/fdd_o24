@@ -1,0 +1,29 @@
+# Ignorar archivos de configuración de Git
+.git
+.gitignore
+
+# Ignorar archivos temporales del sistema
+*.log
+*.tmp
+
+# Ignorar archivos de Python cache
+__pycache__/
+*.pyc
+
+# Ignorar entornos virtuales
+venv/
+.env/
+*.env
+
+# Ignorar archivos relacionados con IDEs
+.vscode/
+.idea/
+
+# Ignorar archivos de construcción
+build/
+dist/
+
+# Ignorar archivos de configuración locales
+.DS_Store
+
+.venv
