@@ -1,0 +1,42 @@
+#Excluir entornos virtuales de Python y Conda
+.venv/
+*/env/
+**/venv/
+**/.venv/
+**/env/
+**/.env/
+**/.envrc
+**/pyenv/
+**/.pyenv/
+**/.mypy_cache/
+**/.pytest_cache/
+
+# Archivos binarios de Python
+**/__pycache__/
+**/*.py[cod]
+
+# Archivos de caché de Jupyter Notebooks
+**/.ipynb_checkpoints/
+
+# Archivos de Conda
+**/.conda/
+**/.condarc
+**/.conda_envs/
+
+# Archivos de logs o temporales
+**/pip-log.txt
+**/pip-delete-this-directory.txt
+
+# Archivos de configuración de IDE
+**/.vscode/
+**/.idea/
+**/*.iml
+
+# Excluir archivos de configuración sensibles
+**/.env
+!.env_ejemplo
+.env_ejemplo
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db

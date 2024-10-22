@@ -1,0 +1,44 @@
+# Excluir entornos virtuales de Python y Conda
+**/venv/
+**/.venv/
+**/env/
+**/.env/
+**/.envrc
+**/pyenv/
+**/.pyenv/
+**/.mypy_cache/
+**/.pytest_cache/
+
+# Archivos binarios de Python
+**/__pycache__/
+**/*.py[cod]
+
+# Archivos de Conda
+**/.conda/
+**/.condarc
+**/.conda_envs/
+
+# Archivos de caché de Jupyter Notebooks
+**/.ipynb_checkpoints/
+
+# Archivos de logs o temporales
+**/pip-log.txt
+**/pip-delete-this-directory.txt
+**/logs/
+**/*.log
+
+# Archivos de configuración del IDE
+**/.vscode/
+**/.idea/
+**/*.iml
+
+# Excluir archivos de configuración sensibles (subir ejemplo en lugar del archivo real)
+**/.env
+!.env_ejemplo
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos generados por Docker
+Dockerfile.jupyter
