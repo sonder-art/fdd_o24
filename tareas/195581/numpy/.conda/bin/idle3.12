@@ -1,0 +1,5 @@
+#!/root/fdd_o24Alberto/tareas/195581/numpy/.conda/bin/python3.12
+
+from idlelib.pyshell import main
+if __name__ == '__main__':
+    main()
