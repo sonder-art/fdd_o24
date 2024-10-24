@@ -1,0 +1,38 @@
+### Comandos Básicos de Docker
+
+- Descargar una imagen de Docker Hub:
+  docker pull [nombre_de_la_imagen]
+
+- Ejecutar una imagen en un contenedor:
+  docker run -d -p [puerto_local]:[puerto_contenedor] --name [nombre_contenedor] -v /origen:/app [nombre_imagen]
+
+- Detener un contenedor:
+  docker stop [ID_contenedor]
+
+- Iniciar un contenedor detenido:
+  docker start [nombre_o_ID_contenedor]
+
+
+### Supervisión y Gestión
+
+- Ver contenedores en ejecución:
+  docker ps
+
+- Ver todos los contenedores (en ejecución y detenidos):
+  docker ps -a
+
+- Ver los logs de un contenedor:
+  docker logs [nombre_o_ID_contenedor]
+
+- Ver las imágenes locales:
+  docker images
+
+
+### Interacción con Contenedores
+
+- Abrir una terminal dentro de un contenedor:
+  docker exec -it [nombre_o_ID_contenedor] /bin/bash
+
+- Construir una imagen desde un Dockerfile:
+  docker build -t [nombre_de_imagen] .
+

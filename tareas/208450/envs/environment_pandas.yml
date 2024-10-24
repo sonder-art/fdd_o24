@@ -1,0 +1,11 @@
+# Channels para usar conda
+channels:
+  - defaults
+
+# Dependencias de Conda
+dependencies:
+  - conda-forge::pandas=2.2.3
+  - setuptools
+  - pip
+  - pip:
+    - ydata-profiling

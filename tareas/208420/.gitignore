@@ -22,3 +22,5 @@ vendor/
 
 # Ignorar archivos de entorno
 .env
+.venv
+.conda

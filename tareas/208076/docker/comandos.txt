@@ -1,0 +1,19 @@
+docker pull: El comando docker pull se utiliza para descargar una imagen de Docker desde un registro (como Docker Hub) a tu máquina local.
+
+docker run: El comando docker run se utiliza para crear y ejecutar un contenedor a partir de una imagen de Docker.
+
+docker ps: El comando docker ps se utiliza para listar los contenedores en ejecución en tu sistema Docker. Es como una herramienta de monitoreo que te muestra el estado de los contenedores activos.
+
+docker run --options: El comando docker run --options es una estructura genérica donde --options representa las diversas opciones o banderas que puedes añadir a docker run para personalizar cómo se ejecuta un contenedor. Estas opciones permiten controlar aspectos como el modo de ejecución, los recursos asignados, la red, el mapeo de puertos, el acceso a volúmenes, entre otros.
+
+docker stop: docker stop se utiliza para detener un contenedor en ejecución de forma controlada. Docker envía una señal SIGTERM al proceso principal del contenedor, dándole tiempo para finalizar correctamente, y después de un tiempo de espera (si el contenedor no ha terminado), envía una señal SIGKILL para forzar su detención.
+
+docker start: El comando docker start se utiliza para iniciar un contenedor que está detenido. A diferencia de docker run, que crea y ejecuta un nuevo contenedor a partir de una imagen, docker start se aplica a contenedores que ya existen pero que han sido detenidos previamente.
+
+docker ports: El comando docker port se utiliza para mostrar los puertos mapeados de un contenedor en ejecución. Es decir, te muestra qué puertos del contenedor están mapeados a los puertos del host (tu máquina local).
+
+docker logs: El comando docker logs se utiliza para ver los registros (logs) generados por un contenedor de Docker. Estos registros incluyen la salida estándar (stdout) y la salida de error estándar (stderr) del proceso principal que se está ejecutando dentro del contenedor.
+
+docker exec -it: El comando docker exec -it se utiliza para ejecutar un comando dentro de un contenedor en ejecución de manera interactiva, permitiéndote interactuar con él a través de una terminal.
+
+
