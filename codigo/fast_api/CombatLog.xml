@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Context Name="CombatLog" Style="FontNormal16">
+	
+	<!-- Expanded World Tracker Combatlog Panel-->
+	<Box ID="ExpandedCombatlogPanelBG" Anchor="L,B" Offset="14,270" Size="390,202" Color="0,0,0,255"    Hidden="1" ConsumeMouse="1"/>
+	<Box ID="ExpandedCombatlogPanel"   Anchor="L,B" Offset="15,271" Size="388,200" Color="15,56,89,255" Hidden="1">
+		<Image Size="parent,parent" Texture="Controls_Gradient" Color="80,133,177,60"/>
+		<Image Size="123,126" Offset="0,25"/>
+		<Image Size="parent-4,4" Offset="2,25" Texture="Controls_DecoMapScale" StretchMode="Tile" Color="42,75,108,255"/>
+		<Container Size="parent,parent"	Offset="0,0" >
+			<Stack ID="ExpandedCombatlogLogStack" Anchor="L,T" Offset="0,0" StackGrowth="Bottom">
+				<!-- The scrolling area -->
+				<ScrollPanel ID="ExpandedCombatlogLogPanel" Anchor="L,T" Offset="8,34" Vertical="1" Size="360,162" HideScrollBar="0">
+					<ScrollBar Style="Slider_Blue" Offset="-18,0" Anchor="R,T"/>
+					<Stack ID="ExpandedCombatlogEntryStack" Anchor="L,B" StackGrowth="Bottom" StackPadding="4"/>
+				</ScrollPanel>
+			</Stack>
+			<Button ID="PanelCombatlogCloseButton" Anchor="R,T" Offset="5,5" Size="20,17" TextureOffset="0,64" StateOffsetIncrement="0,17" Texture="Controls_ButtonExtendSmall2.dds"
+			 ToolTip="Hide the Combat Log Panel"
+			 />
+			 <!-- ToolTip="LOC_HUD_CHAT_COLLAPSE_TOOLTIP" -->
+			<Label ID="CombatlogHeadline" Anchor="L,T" Size="200,50" Offset="15,5" Color1="0,0,0,150" Style="FontNormal16" String="Combat Log"/>
+		</Container>
+	</Box>
+
+
+	<!-- Button to extend the Combat Log -->
+	<Image ID="CombatlogExpandButtonImage" Anchor="R,T" Offset="0,0" Size="47,16" Hidden="1">
+		<Button ID="CombatlogExpandButton" Anchor="R,T" AnchorSide="I,O" Offset="0,0" Size="47,16" Hidden="0" ConsumeAllMouse="1" Texture="Controls_ButtonExtend.dds" ToolTip="Expand Combat Log"/>
+		<Button ID="CombatlogCloseButton" Anchor="R,T" AnchorSide="I,O" Offset="0,0" Size="47,16" Hidden="1" ConsumeAllMouse="1" Texture="Controls_Collapse.dds" ToolTip="Hide Combat Log"/>
+	</Image>
+
+
+	<!-- ==================================================================== -->
+	<!--	INSTANCES -->
+	<!-- ==================================================================== -->
+	<Instance Name="CombatlogEntry">
+		<Container ID="CombatlogRoot" Anchor="L,C" Size="370,16">
+			<Label ID="CombatlogString" Anchor="L,C" WrapWidth="370" Color1="0,0,0,150" Style="FontNormal13" />
+		</Container>
+	</Instance>
+
+</Context>
