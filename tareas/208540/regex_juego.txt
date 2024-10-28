@@ -1,0 +1,9 @@
+Warmup. Que contenga la palabra "foo", foo
+1. Que termine con "ick", ick$
+2. Que no haya nada después de la "u", u(?!.)
+3. Que haya 4 letras seguidas de la "a" a la "f", [a-f]{4}
+4. Que se repita en algún lugar de la palabra la primera cadena de 3, (...).*\1
+5. La primera parte ^(?!(.)+\1) asegura que no haya caracteres repetidos consecutivamente, es decir, busca cadenas donde cada carácter sea único de forma consecutiva; la segunda parte .u coincide con cualquier carácter seguido de una letra "u", ^(?!(.)+\1)|.u
+6. Busca cadenas que comiencen y terminen con el mismo carácter (capturado por (.)), y que el segundo carácter no sea "p" ([^p]). Entre estos extremos, puede haber cualquier secuencia de caracteres (.*),  ^(.)[^p].*\1$
+7. Evita cadenas compuestas por secuencias repetidas de "xx", como "xxxx", pero permitiría otras combinaciones que no sigan este patrón exacto de repetición, ^(?!(xx+)\1+$)
+8. Busca una cadena que tenga un carácter cualquiera (capturado por (.)), seguido de tres secuencias donde otro carácter (cualquiera) es seguido por el mismo carácter capturado al inicio (.)(.\1){3}

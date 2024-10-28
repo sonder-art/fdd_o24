@@ -1,0 +1,54 @@
+1. Warmup
+- Solution: foo
+- Details: todos los de la izquierda tienen foo, y ninguno de la derecha lo tiene
+
+2. Anchors
+- Sol: k$
+- Details: el dolar indica el final de la cadena, que debe ser k
+
+3. It never ends
+- u\b
+- busca palabras que terminen con u, para ello el \b
+
+4. Ranges
+- ^[a-f]*$
+- el hat es para decir que lo siguiente, patron, es desde el comienzo de la palabra
+- el a-f es conjunto y el * para decir q puede haber mas de 0 ocurrencias 
+
+5. Backrefs
+- (...).*\1
+- el (...) indica cualesquiera 3 valores
+- el '.' cualquiera 1 caracter y junto al *, que puede haber mas
+- \1 dice que se repetira, en algun punto, los 3 primeros
+
+6. Abba
+- ^(?!.*(.)\1)|ef
+- el () captura y con ? es negacion, es decir, que no debe estar eso capturado despues del ()
+- .* ya lo vimos arriba
+- (.) ya lo vimos, captura otro caracter
+- \1 indica que no debe repetirse lo capturado
+- |ef es un or, o ef o lo otro
+
+7. A man, a plan 
+- ^(.)[^p].*\1$	
+- inicio el hat de la palabra
+- captura el primer caracter
+- el segundo puede ser lo q sea menos p, para un caso
+- .* ya lo vimos
+- \1 inserto el capturado 
+
+8. Prime
+- ^(?!(..+)\1+$)
+- la cadena no debe tener el patron de adentro
+- patron:
+	- captura 2 cualesquiera y con el mas, dice que puede haber más (asegura que hayan 2)
+	- inserta lo capturado apenas, y con el +, asegura 1 pero puede haber más 	
+- basicamente hace que algo q se repita 2 o mas ocasiones (xx) no conforme una palabra, que no haya por ejemplo una palabra con 12 (xx) pero si 12(xx) y uno extra
+
+9. Four
+- (.)(.\1){3}
+- captura el primero
+- uso el primer capturado para buscar en la cadena si esta pegado a otro caracter
+	- 3 veces consec
+- agarro un caracter, ejemplo a, y busco si inmediatamente despues, el caracter no es a y luego si (tres veces)
+

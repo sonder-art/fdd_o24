@@ -1,0 +1,36 @@
+Warmup
+foo
+
+Anchors
+ick$
+Para decir que esta al final
+
+It nevers ends 
+fu\b
+Para decir que esta al final, pero sin usar $
+
+Ranges 
+^[^mujhgtilt]+$
+Negue lo que no queria se apareciera 
+
+Backrefs
+Le pregunte a chatgpt y me dijo que (...).*\1 funcionba. Investigaba que funcionba asi:
+    Los primeros paréntesis (...) capturan algo
+    .* permite que aparezca cualquier secuencia de caracteres
+    \1 exige que la misma secuencia que se capturó vuelva a apareciera
+
+Abba
+Me recuerda que es un palindromo (recuerdos a AyP) entonces use
+^(?!.*(\w)(\w)\2\1)\w+$
+
+A man a plan 
+Lo busque en la wiki de regex ^(.)(.).*?\2\1$
+Lo nuevo que use fue lo de .*?, permite que cualquier cosa este entre los primeros 
+
+Prime
+^(?!(..+)\1+$)
+Con ?! estamos buscando cadenas que no coincidan, ..+ captura al menos 2 caracteres
+
+Four 
+([aeiou]).\1.\1.\1
+Capture las vocales que se repiten 4 veces 
