@@ -1,0 +1,41 @@
+# Ignore Python cache files
+
+**pycache**/
+_.pyc
+_.pyo
+
+# Ignore virtual environment directories
+
+venv/
+ENV/
+env/
+
+# Ignore log files
+
+\*.log
+
+# Ignore system files
+
+.DS_Store
+Thumbs.db
+
+# Ignore configuration files
+
+_.env
+_.yml
+\*.yaml
+
+# Ignore documentation and markdown files
+
+\*.md
+docs/
+
+# Ignore version control directories
+
+.git/
+.gitignore
+
+# Ignore other unnecessary files
+
+_.zip
+_.tar.gz

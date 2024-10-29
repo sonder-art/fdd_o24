@@ -1,0 +1,6 @@
+Brayan Alberto Chavez Marquez 195581
+
+Cuenta de docker: https://hub.docker.com/u/albertomarquez794
+
+Link a imagen: 
+https://hub.docker.com/layers/albertomarquez794/c_alberto/v1/images/sha256-01c51db8630324fedd01bf9eb977375551747c31a5e3c173b4d6ceb319919850?context=explore

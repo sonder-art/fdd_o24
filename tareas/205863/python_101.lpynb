@@ -1,0 +1,189 @@
+import numpy as np
+import time
+from multiprocessing import Pool, cpu_count
+from joblib import Parallel, delayed
+import csv
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+'''
+# Crear dos arreglos grandes de números aleatorios
+size = 10**6
+a = np.random.rand(size)
+b = np.random.rand(size)
+
+# Usando un bucle 'for' (versión lenta)
+start_time = time.time()
+c = np.zeros(size)
+for i in range(size):
+    c[i] = a[i] + b[i]**2
+print(f"Tiempo con 'for': {time.time() - start_time} segundos")
+
+## Vectorizado
+# Crear dos arreglos grandes de números aleatorios
+size = 10**6
+a = np.random.rand(size)
+b = np.random.rand(size)
+
+# Usando NumPy (versión vectorizada)
+start_time = time.time()
+c = a + b**2
+print(f"Tiempo con NumPy: {time.time() - start_time} segundos")
+
+### Con joblb
+size = 10**6
+a = np.random.rand(size)
+b = np.random.rand(size)
+
+# Definir la operación que se ejecutará en paralelo
+def compute_element(i):
+    return a[i] + b[i]**2
+
+# Usando joblib para paralelizar
+start_time = time.time()
+c = Parallel(n_jobs=-1)(delayed(compute_element)(i) for i in range(size))
+c = np.array(c)  # Convertimos la lista resultante a un array de NumPy
+print(f"Tiempo con joblib: {time.time() - start_time} segundos")
+
+## multiprocessing
+import numpy as np
+import time
+from multiprocessing import Pool, cpu_count
+
+# Crear dos arreglos grandes de números aleatorios
+size = 10**6
+a = np.random.rand(size)
+b = np.random.rand(size)
+
+# Definir la función que hará el cálculo para cada elemento
+def compute_element(i):
+    return a[i] + b[i]**2
+
+if __name__ == '__main__':
+    # Medir el tiempo de ejecución
+    start_time = time.time()
+
+    # Crear un pool de procesos con tantos workers como núcleos disponibles
+    with Pool(processes=cpu_count()) as pool:
+        # Ejecutar la función en paralelo para cada índice del arreglo
+        c = pool.map(compute_element, range(size))
+
+    # Convertir la lista resultante en un array de NumPy
+    c = np.array(c)
+    print(f"Tiempo con multiprocessing: {time.time() - start_time} segundos")
+
+## Experimento varias veces
+# Crear dos arreglos grandes de números aleatorios (global para todas las simulaciones)
+size = 10**6
+a = np.random.rand(size)
+b = np.random.rand(size)
+
+# Definir la función para el bucle 'for'
+def for_loop():
+    c = np.zeros(size)
+    for i in range(size):
+        c[i] = a[i] + b[i]**2
+
+# Definir la función para NumPy
+def numpy_operation():
+    c = a + b**2
+
+# Definir la función para 'joblib'
+def joblib_operation():
+    def compute_element(i):
+        return a[i] + b[i]**2
+    c = Parallel(n_jobs=-1)(delayed(compute_element)(i) for i in range(size))
+    d = np.array(c)
+
+# Definir la función para 'multiprocessing'
+def multiprocessing_operation():
+    def compute_element(i):
+        return a[i] + b[i]**2
+    with Pool(processes=cpu_count()) as pool:
+        c = pool.map(compute_element, range(size))
+    d = np.array(c)
+
+# Función para medir el tiempo de ejecución de un experimento
+def measure_time(func):
+    start_time = time.time()
+    func()
+    return time.time() - start_time
+
+# Función para ejecutar las simulaciones y guardar los resultados
+def run_experiments(num_simulations=5, output_file="results.csv"):
+    results = []
+
+    for i in range(num_simulations):
+        print(f"Simulación {i+1}/{num_simulations}")
+
+        # Medir y almacenar los tiempos de ejecución para cada método
+        time_for = measure_time(for_loop)
+        time_numpy = measure_time(numpy_operation)
+        time_joblib = measure_time(joblib_operation)
+        time_multiprocessing = measure_time(multiprocessing_operation)
+
+        # Guardar los resultados en una lista
+        results.append([time_for, time_numpy, time_joblib, time_multiprocessing])
+
+    # Guardar los resultados en un archivo CSV
+    with open(output_file, mode='w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(["for_loop", "numpy", "joblib", "multiprocessing"])
+        writer.writerows(results)
+
+    print(f"Resultados guardados en {output_file}")
+
+if __name__ == '__main__':
+    # Ejecutar las simulaciones
+    run_experiments(num_simulations=10)  # Cambia el número de simulaciones según lo necesites
+##graficar los resultados
+
+
+
+# Cargar los resultados desde el archivo CSV
+def load_data(file="results.csv"):
+    return pd.read_csv(file)
+
+# Calcular estadísticas básicas
+def compute_statistics(df):
+    stats = df.describe()  # Esto te da la media, std, min, max, etc.
+    print("Estadísticas básicas:\n", stats)
+    return stats
+
+# Graficar los resultados de los tiempos de ejecución
+def plot_times(df):
+    plt.figure(figsize=(10, 6))
+    sns.boxplot(data=df)
+    plt.title("Comparación de Tiempos de Ejecución por Método")
+    plt.ylabel("Tiempo (segundos)")
+    plt.xlabel("Método")
+    plt.show()
+
+# Graficar la distribución de tiempos por método
+def plot_distribution(df):
+    plt.figure(figsize=(10, 6))
+    for column in df.columns:
+        sns.kdeplot(df[column], label=column, shade=True)
+    plt.title("Distribución de Tiempos de Ejecución por Método")
+    plt.xlabel("Tiempo (segundos)")
+    plt.ylabel("Densidad")
+    plt.legend()
+    plt.show()
+
+# Comparar con estadísticas básicas y graficar
+def analyze_results(file="results.csv"):
+    # Cargar los datos
+    df = load_data(file)
+
+    # Calcular estadísticas
+    stats = compute_statistics(df)
+
+    # Graficar comparaciones
+    plot_times(df)          # Caja y bigote (boxplot) para comparar tiempos
+    plot_distribution(df)   # Distribución de tiempos para cada método
+
+if __name__ == '__main__':
+    # Ejecutar análisis de resultados
+    analyze_results("results.csv")
+'''
+

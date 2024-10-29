@@ -1,0 +1,16 @@
+# Ignorar carpetas de entornos virtuales
+venv/
+env/
+.env/
+
+# Ignorar archivos binarios de Python
+*.pyc
+__pycache__/
+
+# Ignorar el archivo de configuración de entornos
+.env
+
+# Ignorar entornos virtuales de Conda
+envs/
+.conda/
+.env/

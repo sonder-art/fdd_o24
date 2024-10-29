@@ -8,13 +8,32 @@ Thumbs.db
 *.swo
 *.log
 
-# Archivos de Python (si es el caso)
+# Archivos de Python
 __pycache__/
 *.pyc
 *.pyo
+*.pyd
+*.pdb
+*.egg-info/
+build/
+dist/
 
 # Archivos de editores
 .vscode/
 *.sublime-project
 *.sublime-workspace
 
+# Entornos virtuales
+.venv
+.conda
+.env
+
+# Archivos específicos de Docker
+.dockerignore
+Dockerfile
+
+# Archivos de configuración de entorno
+.env_ejemplo
+
+# Archivos de checkpoints de Jupyter (si los usas)
+*.ipynb_checkpoints
