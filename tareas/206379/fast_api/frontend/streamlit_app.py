@@ -73,45 +73,33 @@ if page == "Cargar Datos":
 
 elif page == "Visualización":
     st.header("Visualización de Datos")
-    
-    # Obtener estadísticas
-    response = requests.get(f"{API_URL}/wines/stats")
+    response = requests.get(f"{API_URL}/wines/")
     if response.status_code == 200:
-        stats = response.json()
-        
-        # Mostrar estadísticas básicas
-        col1, col2 = st.columns(2)
-        
-        with col1:
-            st.subheader("Distribución de Calidad")
-            quality_dist = pd.DataFrame.from_dict(
-                stats['quality_distribution'], 
-                orient='index', 
-                columns=['count']
-            )
-            fig = px.bar(quality_dist, 
-                        title="Distribución de Calidad de Vinos")
-            st.plotly_chart(fig)
-        
-        with col2:
-            st.subheader("Correlación con Calidad")
-            corr_data = pd.DataFrame.from_dict(
-                stats['correlation_with_quality'], 
-                orient='index', 
-                columns=['correlation']
-            )
-            fig = px.bar(corr_data, 
-                        title="Correlación de Variables con Calidad")
-            st.plotly_chart(fig)
-        
-        # Mostrar valores medios
-        st.subheader("Valores Medios de las Características")
-        mean_values = pd.DataFrame.from_dict(
-            stats['mean_values'], 
-            orient='index', 
-            columns=['valor']
-        )
-        st.dataframe(mean_values)
+        wines = response.json()
+        df = pd.DataFrame(wines)
+    # Obtener estadísticas
+        response = requests.get(f"{API_URL}/wines/columns")
+        if response.status_code == 200:
+            column_list = response.json()['columns']
+            selected_column = st.sidebar.selectbox("Selecciona una columna: ", column_list)
+            
+            # Obtener los datos de los vinos
+            response = requests.post(f"{API_URL}/wines/columns", json={"column_name": selected_column})
+            if response.status_code == 200:
+                available_operations = response.json()['available_operations']
+                selected_operation = st.sidebar.selectbox("Operaciones disponibles para dicha columna: ", available_operations)
+                # Generar visualización de la columna seleccionada
+                st.subheader(f"Distribución de {selected_column}")
+                try:
+                    # Usa getattr para obtener la función y luego llámala en la columna deseada
+                    result = getattr(df[selected_column], selected_operation)()
+                    st.write(f"El resultado de {selected_operation} en la columna {selected_column} es: {result}")
+                except AttributeError:
+                    st.error(f"La operación '{selected_operation}' no es válida para la columna seleccionada.")
+                
+        else:
+            st.error("Error al obtener las columnas de los datos")
+
 
 elif page == "Predicción":
     st.header("Predicción de Calidad")

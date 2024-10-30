@@ -6,7 +6,7 @@ from sklearn.ensemble import RandomForestRegressor
 import numpy as np
 
 from database import engine, get_db
-from models import Base, Wine, WineDB
+from models import Base, Wine, WineDB, ColumnRequest
 
 # Create tables
 Base.metadata.create_all(bind=engine)
@@ -22,11 +22,11 @@ def create_wine(wine: Wine, db: Session = Depends(get_db)):
     return db_wine
 
 @app.get("/wines/", response_model=List[Wine])
-def read_wines(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
-    wines = db.query(WineDB).offset(skip).limit(limit).all()
+def read_wines(db: Session = Depends(get_db)):
+    wines = db.query(WineDB).all()
     return wines
 
-@app.get("/wines/stats")
+@app.get("/wines/columns")
 def get_wine_stats(db: Session = Depends(get_db)):
     wines = db.query(WineDB).all()
     
@@ -55,15 +55,57 @@ def get_wine_stats(db: Session = Depends(get_db)):
     if df.empty:
         return {"error": "No data available"}
     
-    # Calcular estadísticas
-    stats = {
-        "count": len(df),
-        "quality_distribution": df.quality.value_counts().to_dict(),
-        "mean_values": df.mean().to_dict(),
-        "correlation_with_quality": df.corr()['quality'].to_dict()
-    }
+    print(list(df.columns))
+    print(df.dtypes)
+
+    return {"columns": list(df.columns)}
+
+@app.post("/wines/columns")
+def validate_column(request: ColumnRequest, db: Session = Depends(get_db)):
+    column_name = request.column_name
+    # Obtener los datos de los vinos
+    wines = db.query(WineDB).all()
+    wine_dicts = []
+    for wine in wines:
+        wine_dict = {
+            'fixed_acidity': wine.fixed_acidity,
+            'volatile_acidity': wine.volatile_acidity,
+            'citric_acid': wine.citric_acid,
+            'residual_sugar': wine.residual_sugar,
+            'chlorides': wine.chlorides,
+            'free_sulfur_dioxide': wine.free_sulfur_dioxide,
+            'total_sulfur_dioxide': wine.total_sulfur_dioxide,
+            'density': wine.density,
+            'pH': wine.pH,
+            'sulphates': wine.sulphates,
+            'alcohol': wine.alcohol,
+            'quality': wine.quality
+        }
+        wine_dicts.append(wine_dict)
+
+    df = pd.DataFrame(wine_dicts)
     
-    return stats
+    # Validar que la columna exista
+    if column_name not in df.columns:
+        return {"error": f"La columna '{column_name}' no existe en los datos."}
+    
+    # Verificar el tipo de dato de la columna
+    column_dtype = df[column_name].dtype
+    
+    # Determinar las operaciones disponibles
+    available_ops = []
+    if column_dtype in [pd.Int64Dtype(), pd.Float64Dtype(), np.dtype('int64'), np.dtype('float64')]:
+        available_ops = ["mean", "max", "min", "std", "var"]
+    elif column_dtype == pd.StringDtype():
+        available_ops = ["unique", "value_counts"]
+    else:
+        available_ops = ["unique"]
+    
+    return {
+        "column_name": column_name,
+        "column_type": str(column_dtype),
+        "available_operations": available_ops
+    }
 
 @app.delete("/wines/{wine_id}")
 def delete_wine(wine_id: int, db: Session = Depends(get_db)):

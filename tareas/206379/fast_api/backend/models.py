@@ -45,3 +45,7 @@ class Wine(BaseModel):
     
     class Config:
         orm_mode = True
+
+
+class ColumnRequest(BaseModel):
+    column_name: str
