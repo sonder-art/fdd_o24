@@ -77,28 +77,118 @@ elif page == "Visualización":
     if response.status_code == 200:
         wines = response.json()
         df = pd.DataFrame(wines)
-    # Obtener estadísticas
+        
+        # Sidebar for analysis type selection
+        analysis_type = st.sidebar.radio(
+            "Tipo de Análisis",
+            ["Estadísticas", "Visualizaciones"]
+        )
+        
+        # Get columns
         response = requests.get(f"{API_URL}/wines/columns")
         if response.status_code == 200:
             column_list = response.json()['columns']
-            selected_column = st.sidebar.selectbox("Selecciona una columna: ", column_list)
             
-            # Obtener los datos de los vinos
-            response = requests.post(f"{API_URL}/wines/columns", json={"column_name": selected_column})
-            if response.status_code == 200:
-                available_operations = response.json()['available_operations']
-                selected_operation = st.sidebar.selectbox("Operaciones disponibles para dicha columna: ", available_operations)
-                # Generar visualización de la columna seleccionada
-                st.subheader(f"Distribución de {selected_column}")
-                try:
-                    # Usa getattr para obtener la función y luego llámala en la columna deseada
-                    result = getattr(df[selected_column], selected_operation)()
-                    st.write(f"El resultado de {selected_operation} en la columna {selected_column} es: {result}")
-                except AttributeError:
-                    st.error(f"La operación '{selected_operation}' no es válida para la columna seleccionada.")
+            if analysis_type == "Estadísticas":
+                # Original statistical analysis code
+                selected_column = st.sidebar.selectbox("Selecciona una columna: ", column_list)
                 
+                # Get available operations for the selected column
+                response = requests.post(f"{API_URL}/wines/columns", 
+                                      json={"column_name": selected_column})
+                if response.status_code == 200:
+                    available_operations = response.json()['available_operations']
+                    selected_operation = st.sidebar.selectbox(
+                        "Operaciones disponibles para dicha columna: ", 
+                        available_operations
+                    )
+                    
+                    # Generate statistics for selected column
+                    st.subheader(f"Análisis de {selected_column}")
+                    try:
+                        result = getattr(df[selected_column], selected_operation)()
+                        st.write(f"El resultado de {selected_operation} en la columna {selected_column} es: {result}")
+                        
+                        # Add a simple visualization of the result if applicable
+                        if selected_operation in ["mean", "std", "var"]:
+                            fig = px.histogram(df, x=selected_column,
+                                            title=f'Distribución de {selected_column}')
+                            fig.add_vline(x=result, line_dash="dash", line_color="red",
+                                        annotation_text=f"{selected_operation}: {result:.2f}")
+                            st.plotly_chart(fig)
+                            
+                    except AttributeError:
+                        st.error(f"La operación '{selected_operation}' no es válida para la columna seleccionada.")
+            
+            else:  # Visualizations
+                viz_type = st.sidebar.selectbox(
+                    "Tipo de Visualización",
+                    ["Histograma", "Box Plot", "Scatter Plot", "Correlation Matrix"]
+                )
+                
+                if viz_type == "Histograma":
+                    selected_column = st.sidebar.selectbox("Selecciona una columna:", column_list)
+                    bins = st.sidebar.slider("Número de bins:", min_value=5, max_value=50, value=20)
+                    
+                    fig = px.histogram(df, x=selected_column, nbins=bins,
+                                     title=f'Histograma de {selected_column}')
+                    fig.update_layout(
+                        xaxis_title=selected_column,
+                        yaxis_title="Frecuencia",
+                        showlegend=False
+                    )
+                    st.plotly_chart(fig)
+                    
+                elif viz_type == "Box Plot":
+                    selected_column = st.sidebar.selectbox("Selecciona una columna:", column_list)
+                    fig = px.box(df, y=selected_column, 
+                               title=f'Box Plot de {selected_column}')
+                    fig.update_layout(
+                        yaxis_title=selected_column,
+                        showlegend=False
+                    )
+                    st.plotly_chart(fig)
+                    
+                elif viz_type == "Scatter Plot":
+                    col1 = st.sidebar.selectbox("Selecciona primera variable:", column_list)
+                    col2 = st.sidebar.selectbox("Selecciona segunda variable:", 
+                                              [col for col in column_list if col != col1])
+                    
+                    fig = px.scatter(df, x=col1, y=col2,
+                                   title=f'Scatter Plot: {col1} vs {col2}')
+                    fig.update_layout(
+                        xaxis_title=col1,
+                        yaxis_title=col2
+                    )
+                    st.plotly_chart(fig)
+                    
+                    # Show correlation
+                    correlation = df[col1].corr(df[col2])
+                    st.write(f"Correlación entre {col1} y {col2}: {correlation:.3f}")
+                    
+                elif viz_type == "Correlation Matrix":
+                    numeric_cols = df.select_dtypes(include=['float64', 'int64']).columns
+                    corr_matrix = df[numeric_cols].corr()
+                    
+                    fig = px.imshow(corr_matrix,
+                                  title='Matriz de Correlación',
+                                  color_continuous_scale='RdBu',
+                                  aspect='auto')
+                    fig.update_layout(
+                        width=800,
+                        height=800
+                    )
+                    st.plotly_chart(fig)
+                
+                # Option to show descriptive statistics
+                if st.sidebar.checkbox("Mostrar Estadísticas Descriptivas"):
+                    st.subheader("Estadísticas Descriptivas")
+                    st.write(df.describe())
+                    
         else:
             st.error("Error al obtener las columnas de los datos")
+    else:
+        st.error("Error al obtener los datos de vinos")
 
 
 elif page == "Predicción":
