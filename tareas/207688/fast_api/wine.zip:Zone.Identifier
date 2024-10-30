@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://archive.ics.uci.edu/dataset/109/wine
+HostUrl=https://archive.ics.uci.edu/static/public/109/wine.zip
