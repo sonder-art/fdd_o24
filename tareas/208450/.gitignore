@@ -1,0 +1,86 @@
+# Environments
+.env
+.venv/
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.env_ejemplo
+env_ejemplo
+
+# Conda
+.conda/
+conda-env/
+miniconda/
+anaconda/
+.conda
+
+# DSStore
+**/.DS_Store
+Thumbs.db
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# Archivos de IDE y editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Archivos de prueba y cobertura
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Documentación
+docs/_build/
+
+# Jupyter Notebook
+.ipynb_checkpoints

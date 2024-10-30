@@ -1,0 +1,8 @@
+1. foo: busca exactamente la cadena de texto "foo".
+2. k$: busca una "k" al final de la cadena.
+3. ^[a-f]*$: busca cadenas que solo contengan caracteres entre "a" y "f" (inclusive) o estén vacías.
+4. (...).*\1: busca cualquier cadena que contenga una subsecuencia de 3 caracteres que se repite en cualquier parte posterior de la cadena.
+5. ^((?!(.)(.)\3\2).)*$: busca cadenas que no contengan patrones donde los caracteres en las posiciones 1 y 4 son iguales y los caracteres en las posiciones 2 y 3 son iguales.
+6. ^(.)[^p].*\1$: busca cadenas que comiencen y terminen con el mismo carácter, pero con un carácter diferente de "p" en la segunda posición.
+7. ^(?!(xx+)\1+$): busca cadenas que no sean múltiples de una subsecuencia de "xx+" ("+" uno o más caracteres).
+8. (.)(.\1){3}: busca cadenas que tengan un carácter seguido por tres secuencias de dos caracteres donde el segundo carácter es el mismo que el primero.

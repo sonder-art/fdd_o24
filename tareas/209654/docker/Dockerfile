@@ -14,6 +14,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . /app
 
 #RUN touch archivo_imagen_docckerfile.txt
+CMD ["python", "app.py"]
 
 # Define el comando por defecto para ejecutar la aplicación
 # Termina el Dockerfile, debes de agregar las lineas necesarias

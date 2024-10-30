@@ -1,0 +1,1234 @@
+juancasasmartinez@Juans-MacBook-Air Fuentes % ssh bandit5@bandit.labs.overthewire.org -p 2220
+                         _                     _ _ _   
+                        | |__   __ _ _ __   __| (_) |_ 
+                        | '_ \ / _` | '_ \ / _` | | __|
+                        | |_) | (_| | | | | (_| | | |_ 
+                        |_.__/ \__,_|_| |_|\__,_|_|\__|
+                                                       
+
+                      This is an OverTheWire game server. 
+            More information on http://www.overthewire.org/wargames
+
+bandit5@bandit.labs.overthewire.org's password: 
+
+      ,----..            ,----,          .---.
+     /   /   \         ,/   .`|         /. ./|
+    /   .     :      ,`   .'  :     .--'.  ' ;
+   .   /   ;.  \   ;    ;     /    /__./ \ : |
+  .   ;   /  ` ; .'___,/    ,' .--'.  '   \' .
+  ;   |  ; \ ; | |    :     | /___/ \ |    ' '
+  |   :  | ; | ' ;    |.';  ; ;   \  \;      :
+  .   |  ' ' ' : `----'  |  |  \   ;  `      |
+  '   ;  \; /  |     '   :  ;   .   \    .\  ;
+   \   \  ',  /      |   |  '    \   \   ' \ |
+    ;   :    /       '   :  |     :   '  |--"
+     \   \ .'        ;   |.'       \   \ ;
+  www. `---` ver     '---' he       '---" ire.org
+
+
+Welcome to OverTheWire!
+
+If you find any problems, please report them to the #wargames channel on
+discord or IRC.
+
+--[ Playing the games ]--
+
+  This machine might hold several wargames.
+  If you are playing "somegame", then:
+
+    * USERNAMES are somegame0, somegame1, ...
+    * Most LEVELS are stored in /somegame/.
+    * PASSWORDS for each level are stored in /etc/somegame_pass/.
+
+  Write-access to homedirectories is disabled. It is advised to create a
+  working directory with a hard-to-guess name in /tmp/.  You can use the
+  command "mktemp -d" in order to generate a random and hard to guess
+  directory in /tmp/.  Read-access to both /tmp/ is disabled and to /proc
+  restricted so that users cannot snoop on eachother. Files and directories
+  with easily guessable or short names will be periodically deleted! The /tmp
+  directory is regularly wiped.
+  Please play nice:
+
+    * don't leave orphan processes running
+    * don't leave exploit-files laying around
+    * don't annoy other players
+    * don't post passwords or spoilers
+    * again, DONT POST SPOILERS!
+      This includes writeups of your solution on your blog or website!
+
+--[ Tips ]--
+
+  This machine has a 64bit processor and many security-features enabled
+  by default, although ASLR has been switched off.  The following
+  compiler flags might be interesting:
+
+    -m32                    compile for 32bit
+    -fno-stack-protector    disable ProPolice
+    -Wl,-z,norelro          disable relro
+
+  In addition, the execstack tool can be used to flag the stack as
+  executable on ELF binaries.
+
+  Finally, network-access is limited for most levels by a local
+  firewall.
+
+--[ Tools ]--
+
+ For your convenience we have installed a few useful tools which you can find
+ in the following locations:
+
+    * gef (https://github.com/hugsy/gef) in /opt/gef/
+    * pwndbg (https://github.com/pwndbg/pwndbg) in /opt/pwndbg/
+    * peda (https://github.com/longld/peda.git) in /opt/peda/
+    * gdbinit (https://github.com/gdbinit/Gdbinit) in /opt/gdbinit/
+    * pwntools (https://github.com/Gallopsled/pwntools)
+    * radare2 (http://www.radare.org/)
+
+--[ More information ]--
+
+  For more information regarding individual wargames, visit
+  http://www.overthewire.org/wargames/
+
+  For support, questions or comments, contact us on discord or IRC.
+
+  Enjoy your stay!
+
+bandit5@bandit:~$ ls
+inhere
+bandit5@bandit:~$ cd inhere
+bandit5@bandit:~/inhere$ ls
+maybehere00  maybehere02  maybehere04  maybehere06  maybehere08  maybehere10  maybehere12  maybehere14  maybehere16  maybehere18
+maybehere01  maybehere03  maybehere05  maybehere07  maybehere09  maybehere11  maybehere13  maybehere15  maybehere17  maybehere19
+bandit5@bandit:~/inhere$ ls -r
+maybehere19  maybehere17  maybehere15  maybehere13  maybehere11  maybehere09  maybehere07  maybehere05  maybehere03  maybehere01
+maybehere18  maybehere16  maybehere14  maybehere12  maybehere10  maybehere08  maybehere06  maybehere04  maybehere02  maybehere00
+bandit5@bandit:~/inhere$ ls -l
+total 80
+drwxr-x--- 2 root bandit5 4096 Jul 17 15:57 maybehere00
+drwxr-x--- 2 root bandit5 4096 Jul 17 15:57 maybehere01
+drwxr-x--- 2 root bandit5 4096 Jul 17 15:57 maybehere02
+drwxr-x--- 2 root bandit5 4096 Jul 17 15:57 maybehere03
+drwxr-x--- 2 root bandit5 4096 Jul 17 15:57 maybehere04
+drwxr-x--- 2 root bandit5 4096 Jul 17 15:57 maybehere05
+drwxr-x--- 2 root bandit5 4096 Jul 17 15:57 maybehere06
+drwxr-x--- 2 root bandit5 4096 Jul 17 15:57 maybehere07
+drwxr-x--- 2 root bandit5 4096 Jul 17 15:57 maybehere08
+drwxr-x--- 2 root bandit5 4096 Jul 17 15:57 maybehere09
+drwxr-x--- 2 root bandit5 4096 Jul 17 15:57 maybehere10
+drwxr-x--- 2 root bandit5 4096 Jul 17 15:57 maybehere11
+drwxr-x--- 2 root bandit5 4096 Jul 17 15:57 maybehere12
+drwxr-x--- 2 root bandit5 4096 Jul 17 15:57 maybehere13
+drwxr-x--- 2 root bandit5 4096 Jul 17 15:57 maybehere14
+drwxr-x--- 2 root bandit5 4096 Jul 17 15:57 maybehere15
+drwxr-x--- 2 root bandit5 4096 Jul 17 15:57 maybehere16
+drwxr-x--- 2 root bandit5 4096 Jul 17 15:57 maybehere17
+drwxr-x--- 2 root bandit5 4096 Jul 17 15:57 maybehere18
+drwxr-x--- 2 root bandit5 4096 Jul 17 15:57 maybehere19
+bandit5@bandit:~/inhere$ find . -readable
+.
+./maybehere07
+./maybehere07/-file3
+./maybehere07/spaces file2
+./maybehere07/-file2
+./maybehere07/spaces file1
+./maybehere07/-file1
+./maybehere07/.file3
+./maybehere07/.file2
+./maybehere07/.file1
+./maybehere07/spaces file3
+./maybehere05
+./maybehere05/-file3
+./maybehere05/spaces file2
+./maybehere05/-file2
+./maybehere05/spaces file1
+./maybehere05/-file1
+./maybehere05/.file3
+./maybehere05/.file2
+./maybehere05/.file1
+./maybehere05/spaces file3
+./maybehere04
+./maybehere04/-file3
+./maybehere04/spaces file2
+./maybehere04/-file2
+./maybehere04/spaces file1
+./maybehere04/-file1
+./maybehere04/.file3
+./maybehere04/.file2
+./maybehere04/.file1
+./maybehere04/spaces file3
+./maybehere08
+./maybehere08/-file3
+./maybehere08/spaces file2
+./maybehere08/-file2
+./maybehere08/spaces file1
+./maybehere08/-file1
+./maybehere08/.file3
+./maybehere08/.file2
+./maybehere08/.file1
+./maybehere08/spaces file3
+./maybehere19
+./maybehere19/-file3
+./maybehere19/spaces file2
+./maybehere19/-file2
+./maybehere19/spaces file1
+./maybehere19/-file1
+./maybehere19/.file3
+./maybehere19/.file2
+./maybehere19/.file1
+./maybehere19/spaces file3
+./maybehere10
+./maybehere10/-file3
+./maybehere10/spaces file2
+./maybehere10/-file2
+./maybehere10/spaces file1
+./maybehere10/-file1
+./maybehere10/.file3
+./maybehere10/.file2
+./maybehere10/.file1
+./maybehere10/spaces file3
+./maybehere15
+./maybehere15/-file3
+./maybehere15/spaces file2
+./maybehere15/-file2
+./maybehere15/spaces file1
+./maybehere15/-file1
+./maybehere15/.file3
+./maybehere15/.file2
+./maybehere15/.file1
+./maybehere15/spaces file3
+./maybehere17
+./maybehere17/-file3
+./maybehere17/spaces file2
+./maybehere17/-file2
+./maybehere17/spaces file1
+./maybehere17/-file1
+./maybehere17/.file3
+./maybehere17/.file2
+./maybehere17/.file1
+./maybehere17/spaces file3
+./maybehere09
+./maybehere09/-file3
+./maybehere09/spaces file2
+./maybehere09/-file2
+./maybehere09/spaces file1
+./maybehere09/-file1
+./maybehere09/.file3
+./maybehere09/.file2
+./maybehere09/.file1
+./maybehere09/spaces file3
+./maybehere11
+./maybehere11/-file3
+./maybehere11/spaces file2
+./maybehere11/-file2
+./maybehere11/spaces file1
+./maybehere11/-file1
+./maybehere11/.file3
+./maybehere11/.file2
+./maybehere11/.file1
+./maybehere11/spaces file3
+./maybehere13
+./maybehere13/-file3
+./maybehere13/spaces file2
+./maybehere13/-file2
+./maybehere13/spaces file1
+./maybehere13/-file1
+./maybehere13/.file3
+./maybehere13/.file2
+./maybehere13/.file1
+./maybehere13/spaces file3
+./maybehere01
+./maybehere01/-file3
+./maybehere01/spaces file2
+./maybehere01/-file2
+./maybehere01/spaces file1
+./maybehere01/-file1
+./maybehere01/.file3
+./maybehere01/.file2
+./maybehere01/.file1
+./maybehere01/spaces file3
+./maybehere02
+./maybehere02/-file3
+./maybehere02/spaces file2
+./maybehere02/-file2
+./maybehere02/spaces file1
+./maybehere02/-file1
+./maybehere02/.file3
+./maybehere02/.file2
+./maybehere02/.file1
+./maybehere02/spaces file3
+./maybehere00
+./maybehere00/-file3
+./maybehere00/spaces file2
+./maybehere00/-file2
+./maybehere00/spaces file1
+./maybehere00/-file1
+./maybehere00/.file3
+./maybehere00/.file2
+./maybehere00/.file1
+./maybehere00/spaces file3
+./maybehere03
+./maybehere03/-file3
+./maybehere03/spaces file2
+./maybehere03/-file2
+./maybehere03/spaces file1
+./maybehere03/-file1
+./maybehere03/.file3
+./maybehere03/.file2
+./maybehere03/.file1
+./maybehere03/spaces file3
+./maybehere18
+./maybehere18/-file3
+./maybehere18/spaces file2
+./maybehere18/-file2
+./maybehere18/spaces file1
+./maybehere18/-file1
+./maybehere18/.file3
+./maybehere18/.file2
+./maybehere18/.file1
+./maybehere18/spaces file3
+./maybehere14
+./maybehere14/-file3
+./maybehere14/spaces file2
+./maybehere14/-file2
+./maybehere14/spaces file1
+./maybehere14/-file1
+./maybehere14/.file3
+./maybehere14/.file2
+./maybehere14/.file1
+./maybehere14/spaces file3
+./maybehere16
+./maybehere16/-file3
+./maybehere16/spaces file2
+./maybehere16/-file2
+./maybehere16/spaces file1
+./maybehere16/-file1
+./maybehere16/.file3
+./maybehere16/.file2
+./maybehere16/.file1
+./maybehere16/spaces file3
+./maybehere06
+./maybehere06/-file3
+./maybehere06/spaces file2
+./maybehere06/-file2
+./maybehere06/spaces file1
+./maybehere06/-file1
+./maybehere06/.file3
+./maybehere06/.file2
+./maybehere06/.file1
+./maybehere06/spaces file3
+./maybehere12
+./maybehere12/-file3
+./maybehere12/spaces file2
+./maybehere12/-file2
+./maybehere12/spaces file1
+./maybehere12/-file1
+./maybehere12/.file3
+./maybehere12/.file2
+./maybehere12/.file1
+./maybehere12/spaces file3
+bandit5@bandit:~/inhere$ find . -readable -size 1033c
+./maybehere07/.file2
+bandit5@bandit:~/inhere$ cat ./maybehere07/.file2
+HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+bandit5@bandit:~/inhere$ exit -d
+logout
+-bash: exit: -d: numeric argument required
+Connection to bandit.labs.overthewire.org closed.
+juancasasmartinez@Juans-MacBook-Air Fuentes % ssh bandit6@bandit.labs.overthewire.org -p 2220
+                         _                     _ _ _   
+                        | |__   __ _ _ __   __| (_) |_ 
+                        | '_ \ / _` | '_ \ / _` | | __|
+                        | |_) | (_| | | | | (_| | | |_ 
+                        |_.__/ \__,_|_| |_|\__,_|_|\__|
+                                                       
+
+                      This is an OverTheWire game server. 
+            More information on http://www.overthewire.org/wargames
+
+bandit6@bandit.labs.overthewire.org's password: 
+
+Permission denied, please try again.
+bandit6@bandit.labs.overthewire.org's password: 
+Permission denied, please try again.
+bandit6@bandit.labs.overthewire.org's password: 
+
+juancasasmartinez@Juans-MacBook-Air Fuentes % ssh bandit5@bandit.labs.overthewire.org -p 2220
+                         _                     _ _ _   
+                        | |__   __ _ _ __   __| (_) |_ 
+                        | '_ \ / _` | '_ \ / _` | | __|
+                        | |_) | (_| | | | | (_| | | |_ 
+                        |_.__/ \__,_|_| |_|\__,_|_|\__|
+                                                       
+
+                      This is an OverTheWire game server. 
+            More information on http://www.overthewire.org/wargames
+
+bandit5@bandit.labs.overthewire.org's password: 
+Permission denied, please try again.
+bandit5@bandit.labs.overthewire.org's password: 
+Permission denied, please try again.
+bandit5@bandit.labs.overthewire.org's password: 
+^C
+juancasasmartinez@Juans-MacBook-Air Fuentes % ssh bandit6@bandit.labs.overthewire.org -p 2220
+                         _                     _ _ _   
+                        | |__   __ _ _ __   __| (_) |_ 
+                        | '_ \ / _` | '_ \ / _` | | __|
+                        | |_) | (_| | | | | (_| | | |_ 
+                        |_.__/ \__,_|_| |_|\__,_|_|\__|
+                                                       
+
+                      This is an OverTheWire game server. 
+            More information on http://www.overthewire.org/wargames
+
+bandit6@bandit.labs.overthewire.org's password: 
+
+      ,----..            ,----,          .---.
+     /   /   \         ,/   .`|         /. ./|
+    /   .     :      ,`   .'  :     .--'.  ' ;
+   .   /   ;.  \   ;    ;     /    /__./ \ : |
+  .   ;   /  ` ; .'___,/    ,' .--'.  '   \' .
+  ;   |  ; \ ; | |    :     | /___/ \ |    ' '
+  |   :  | ; | ' ;    |.';  ; ;   \  \;      :
+  .   |  ' ' ' : `----'  |  |  \   ;  `      |
+  '   ;  \; /  |     '   :  ;   .   \    .\  ;
+   \   \  ',  /      |   |  '    \   \   ' \ |
+    ;   :    /       '   :  |     :   '  |--"
+     \   \ .'        ;   |.'       \   \ ;
+  www. `---` ver     '---' he       '---" ire.org
+
+
+Welcome to OverTheWire!
+
+If you find any problems, please report them to the #wargames channel on
+discord or IRC.
+
+--[ Playing the games ]--
+
+  This machine might hold several wargames.
+  If you are playing "somegame", then:
+
+    * USERNAMES are somegame0, somegame1, ...
+    * Most LEVELS are stored in /somegame/.
+    * PASSWORDS for each level are stored in /etc/somegame_pass/.
+
+  Write-access to homedirectories is disabled. It is advised to create a
+  working directory with a hard-to-guess name in /tmp/.  You can use the
+  command "mktemp -d" in order to generate a random and hard to guess
+  directory in /tmp/.  Read-access to both /tmp/ is disabled and to /proc
+  restricted so that users cannot snoop on eachother. Files and directories
+  with easily guessable or short names will be periodically deleted! The /tmp
+  directory is regularly wiped.
+  Please play nice:
+
+    * don't leave orphan processes running
+    * don't leave exploit-files laying around
+    * don't annoy other players
+    * don't post passwords or spoilers
+    * again, DONT POST SPOILERS!
+      This includes writeups of your solution on your blog or website!
+
+--[ Tips ]--
+
+  This machine has a 64bit processor and many security-features enabled
+  by default, although ASLR has been switched off.  The following
+  compiler flags might be interesting:
+
+    -m32                    compile for 32bit
+    -fno-stack-protector    disable ProPolice
+    -Wl,-z,norelro          disable relro
+
+  In addition, the execstack tool can be used to flag the stack as
+  executable on ELF binaries.
+
+  Finally, network-access is limited for most levels by a local
+  firewall.
+
+--[ Tools ]--
+
+ For your convenience we have installed a few useful tools which you can find
+ in the following locations:
+
+    * gef (https://github.com/hugsy/gef) in /opt/gef/
+    * pwndbg (https://github.com/pwndbg/pwndbg) in /opt/pwndbg/
+    * peda (https://github.com/longld/peda.git) in /opt/peda/
+    * gdbinit (https://github.com/gdbinit/Gdbinit) in /opt/gdbinit/
+    * pwntools (https://github.com/Gallopsled/pwntools)
+    * radare2 (http://www.radare.org/)
+
+--[ More information ]--
+
+  For more information regarding individual wargames, visit
+  http://www.overthewire.org/wargames/
+
+  For support, questions or comments, contact us on discord or IRC.
+
+  Enjoy your stay!
+
+bandit6@bandit:~$ find / -type f -user bandit7
+find: ‘/sys/kernel/tracing’: Permission denied
+find: ‘/sys/kernel/debug’: Permission denied
+find: ‘/sys/fs/pstore’: Permission denied
+find: ‘/sys/fs/bpf’: Permission denied
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/cgroup.procs
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/cgroup.threads
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/cgroup.events
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/memory.events
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/io.pressure
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/cgroup.procs
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/memory.events.local
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/memory.swap.peak
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/memory.swap.current
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/memory.swap.max
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/memory.zswap.current
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/cpu.weight
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/memory.swap.events
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/cgroup.max.descendants
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/cpu.stat
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/cpu.weight.nice
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/memory.pressure
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/memory.current
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/pids.current
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/memory.stat
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/pids.events
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/memory.low
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/cpu.pressure
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/cgroup.type
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/cgroup.stat
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/memory.swap.high
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/cpu.idle
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/cpu.stat.local
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/cgroup.events
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/memory.events
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/io.pressure
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/cgroup.procs
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/memory.events.local
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/memory.swap.peak
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/memory.swap.current
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/memory.swap.max
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/memory.zswap.current
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/memory.swap.events
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/cgroup.max.descendants
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/cpu.stat
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/memory.pressure
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/memory.current
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/pids.current
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/memory.stat
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/pids.events
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/memory.low
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/cpu.pressure
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/cgroup.type
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/cgroup.stat
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/memory.swap.high
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/cpu.stat.local
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/cgroup.threads
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/memory.numa_stat
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/cgroup.kill
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/memory.peak
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/cgroup.freeze
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/memory.min
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/cgroup.controllers
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/memory.oom.group
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/memory.zswap.writeback
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/memory.max
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/memory.high
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/pids.max
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/memory.zswap.max
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/cgroup.subtree_control
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/memory.reclaim
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/pids.peak
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/cgroup.max.depth
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/dbus.socket/cgroup.pressure
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/cgroup.threads
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/memory.numa_stat
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/cgroup.kill
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/cgroup.events
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/memory.events
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/io.pressure
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/cgroup.procs
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/memory.events.local
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/memory.swap.peak
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/memory.swap.current
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/memory.swap.max
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/memory.zswap.current
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/memory.swap.events
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/cgroup.max.descendants
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/cpu.stat
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/memory.pressure
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/memory.current
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/pids.current
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/memory.stat
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/pids.events
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/memory.low
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/cpu.pressure
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/cgroup.type
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/cgroup.stat
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/memory.swap.high
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/cpu.stat.local
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/cgroup.threads
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/memory.numa_stat
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/cgroup.kill
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/memory.peak
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/cgroup.freeze
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/memory.min
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/cgroup.controllers
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/memory.oom.group
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/memory.zswap.writeback
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/memory.max
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/memory.high
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/pids.max
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/memory.zswap.max
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/cgroup.subtree_control
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/memory.reclaim
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/pids.peak
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/cgroup.max.depth
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/gpg-agent-ssh.socket/cgroup.pressure
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/memory.peak
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/cgroup.freeze
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/memory.min
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/cpu.max.burst
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/cgroup.controllers
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/cpu.max
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/memory.oom.group
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/memory.zswap.writeback
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/memory.max
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/cpu.uclamp.min
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/memory.high
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/pids.max
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/memory.zswap.max
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/cgroup.subtree_control
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/memory.reclaim
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/pids.peak
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/cgroup.max.depth
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/cgroup.pressure
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/app.slice/cpu.uclamp.max
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/cgroup.events
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/memory.events
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/io.pressure
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/cgroup.procs
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/memory.events.local
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/memory.swap.peak
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/memory.swap.current
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/memory.swap.max
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/memory.zswap.current
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/cpu.weight
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/memory.swap.events
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/cgroup.max.descendants
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/cpu.stat
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/cpu.weight.nice
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/memory.pressure
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/memory.current
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/pids.current
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/memory.stat
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/pids.events
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/memory.low
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/cpu.pressure
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/cgroup.type
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/cgroup.stat
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/memory.swap.high
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/cpu.idle
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/cpu.stat.local
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/cgroup.threads
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/memory.numa_stat
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/cgroup.kill
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/memory.peak
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/cgroup.freeze
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/memory.min
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/cpu.max.burst
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/cgroup.controllers
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/cpu.max
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/memory.oom.group
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/memory.zswap.writeback
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/memory.max
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/cpu.uclamp.min
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/memory.high
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/pids.max
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/memory.zswap.max
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/cgroup.subtree_control
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/memory.reclaim
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/pids.peak
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/cgroup.max.depth
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/cgroup.pressure
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/init.scope/cpu.uclamp.max
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/memory.oom.group
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/cgroup.subtree_control
+/sys/fs/cgroup/user.slice/user-11007.slice/user@11007.service/memory.reclaim
+find: ‘/snap’: Permission denied
+find: ‘/run/lock/lvm’: Permission denied
+find: ‘/run/systemd/inaccessible/dir’: Permission denied
+find: ‘/run/systemd/propagate/systemd-udevd.service’: Permission denied
+find: ‘/run/systemd/propagate/systemd-resolved.service’: Permission denied
+find: ‘/run/systemd/propagate/systemd-networkd.service’: Permission denied
+find: ‘/run/systemd/propagate/systemd-logind.service’: Permission denied
+find: ‘/run/systemd/propagate/irqbalance.service’: Permission denied
+find: ‘/run/systemd/propagate/chrony.service’: Permission denied
+find: ‘/run/systemd/propagate/polkit.service’: Permission denied
+find: ‘/run/systemd/propagate/ModemManager.service’: Permission denied
+find: ‘/run/systemd/propagate/fwupd.service’: Permission denied
+find: ‘/run/lvm’: Permission denied
+find: ‘/run/log/journal/ec27119cecabde24cec12615c2a9a184’: Permission denied
+find: ‘/run/cryptsetup’: Permission denied
+find: ‘/run/multipath’: Permission denied
+find: ‘/run/screen/S-bandit20’: Permission denied
+find: ‘/run/screen/S-bandit16’: Permission denied
+find: ‘/run/screen/S-bandit25’: Permission denied
+find: ‘/run/screen/S-bandit23’: Permission denied
+find: ‘/run/screen/S-bandit19’: Permission denied
+find: ‘/run/screen/S-bandit24’: Permission denied
+find: ‘/run/screen/S-bandit1’: Permission denied
+find: ‘/run/screen/S-bandit0’: Permission denied
+find: ‘/run/sudo’: Permission denied
+find: ‘/run/user/11012’: Permission denied
+find: ‘/run/user/11000’: Permission denied
+find: ‘/run/user/11024’: Permission denied
+find: ‘/run/user/11005’: Permission denied
+find: ‘/run/user/11023’: Permission denied
+find: ‘/run/user/11020’: Permission denied
+find: ‘/run/user/11001’: Permission denied
+find: ‘/run/user/11006/systemd/inaccessible/dir’: Permission denied
+find: ‘/run/user/11013’: Permission denied
+find: ‘/run/user/11016’: Permission denied
+find: ‘/run/user/11022’: Permission denied
+find: ‘/run/user/11014’: Permission denied
+find: ‘/run/user/11004’: Permission denied
+find: ‘/run/user/11003’: Permission denied
+find: ‘/run/user/11011’: Permission denied
+find: ‘/run/user/11008’: Permission denied
+find: ‘/run/user/11002’: Permission denied
+find: ‘/run/user/11007’: Permission denied
+find: ‘/run/user/11015’: Permission denied
+find: ‘/run/user/11018’: Permission denied
+find: ‘/run/user/11010’: Permission denied
+find: ‘/run/user/11032’: Permission denied
+find: ‘/run/user/11019’: Permission denied
+find: ‘/run/user/11031’: Permission denied
+find: ‘/run/user/8002’: Permission denied
+find: ‘/run/user/11009’: Permission denied
+find: ‘/run/user/11025’: Permission denied
+find: ‘/run/user/11027’: Permission denied
+find: ‘/run/user/11029’: Permission denied
+find: ‘/run/user/11030’: Permission denied
+find: ‘/run/chrony’: Permission denied
+find: ‘/run/udisks2’: Permission denied
+find: ‘/boot/efi’: Permission denied
+find: ‘/boot/lost+found’: Permission denied
+find: ‘/home/drifter8/chroot’: Permission denied
+find: ‘/home/bandit5/inhere’: Permission denied
+find: ‘/home/bandit31-git’: Permission denied
+find: ‘/home/bandit29-git’: Permission denied
+find: ‘/home/ubuntu’: Permission denied
+find: ‘/home/bandit30-git’: Permission denied
+find: ‘/home/bandit28-git’: Permission denied
+find: ‘/home/drifter6/data’: Permission denied
+find: ‘/home/bandit27-git’: Permission denied
+find: ‘/proc/tty/driver’: Permission denied
+find: ‘/proc/1028577/task/1028577/fdinfo/6’: No such file or directory
+find: ‘/proc/1028577/fdinfo/5’: No such file or directory
+find: ‘/drifter/drifter14_src/axTLS’: Permission denied
+find: ‘/etc/stunnel’: Permission denied
+find: ‘/etc/multipath’: Permission denied
+find: ‘/etc/sudoers.d’: Permission denied
+find: ‘/etc/credstore.encrypted’: Permission denied
+/etc/bandit_pass/bandit7
+find: ‘/etc/ssl/private’: Permission denied
+find: ‘/etc/credstore’: Permission denied
+find: ‘/etc/xinetd.d’: Permission denied
+find: ‘/etc/polkit-1/rules.d’: Permission denied
+find: ‘/root’: Permission denied
+find: ‘/tmp’: Permission denied
+find: ‘/lost+found’: Permission denied
+find: ‘/dev/shm’: Permission denied
+find: ‘/dev/mqueue’: Permission denied
+find: ‘/var/spool/bandit24’: Permission denied
+find: ‘/var/spool/rsyslog’: Permission denied
+find: ‘/var/spool/cron/crontabs’: Permission denied
+find: ‘/var/lib/udisks2’: Permission denied
+/var/lib/dpkg/info/bandit7.password
+find: ‘/var/lib/snapd/void’: Permission denied
+find: ‘/var/lib/snapd/cookie’: Permission denied
+find: ‘/var/lib/ubuntu-advantage/apt-esm/var/lib/apt/lists/partial’: Permission denied
+find: ‘/var/lib/private’: Permission denied
+find: ‘/var/lib/update-notifier/package-data-downloads/partial’: Permission denied
+find: ‘/var/lib/amazon’: Permission denied
+find: ‘/var/lib/chrony’: Permission denied
+find: ‘/var/lib/apt/lists/partial’: Permission denied
+find: ‘/var/lib/polkit-1’: Permission denied
+find: ‘/var/log/unattended-upgrades’: Permission denied
+find: ‘/var/log/private’: Permission denied
+find: ‘/var/log/amazon’: Permission denied
+find: ‘/var/log/chrony’: Permission denied
+find: ‘/var/tmp’: Permission denied
+find: ‘/var/cache/private’: Permission denied
+find: ‘/var/cache/ldconfig’: Permission denied
+find: ‘/var/cache/pollinate’: Permission denied
+find: ‘/var/cache/apt/archives/partial’: Permission denied
+find: ‘/var/cache/apparmor/baad73a1.0’: Permission denied
+find: ‘/var/cache/apparmor/2425d902.0’: Permission denied
+bandit6@bandit:~$ find / -type f -user bandit7 -group bandit6
+find: ‘/sys/kernel/tracing’: Permission denied
+find: ‘/sys/kernel/debug’: Permission denied
+find: ‘/sys/fs/pstore’: Permission denied
+find: ‘/sys/fs/bpf’: Permission denied
+find: ‘/snap’: Permission denied
+find: ‘/run/lock/lvm’: Permission denied
+find: ‘/run/systemd/inaccessible/dir’: Permission denied
+find: ‘/run/systemd/propagate/systemd-udevd.service’: Permission denied
+find: ‘/run/systemd/propagate/systemd-resolved.service’: Permission denied
+find: ‘/run/systemd/propagate/systemd-networkd.service’: Permission denied
+find: ‘/run/systemd/propagate/systemd-logind.service’: Permission denied
+find: ‘/run/systemd/propagate/irqbalance.service’: Permission denied
+find: ‘/run/systemd/propagate/chrony.service’: Permission denied
+find: ‘/run/systemd/propagate/polkit.service’: Permission denied
+find: ‘/run/systemd/propagate/ModemManager.service’: Permission denied
+find: ‘/run/systemd/propagate/fwupd.service’: Permission denied
+find: ‘/run/lvm’: Permission denied
+find: ‘/run/log/journal/ec27119cecabde24cec12615c2a9a184’: Permission denied
+find: ‘/run/cryptsetup’: Permission denied
+find: ‘/run/multipath’: Permission denied
+find: ‘/run/screen/S-bandit20’: Permission denied
+find: ‘/run/screen/S-bandit16’: Permission denied
+find: ‘/run/screen/S-bandit25’: Permission denied
+find: ‘/run/screen/S-bandit23’: Permission denied
+find: ‘/run/screen/S-bandit19’: Permission denied
+find: ‘/run/screen/S-bandit24’: Permission denied
+find: ‘/run/screen/S-bandit1’: Permission denied
+find: ‘/run/screen/S-bandit0’: Permission denied
+find: ‘/run/sudo’: Permission denied
+find: ‘/run/user/11012’: Permission denied
+find: ‘/run/user/11000’: Permission denied
+find: ‘/run/user/11024’: Permission denied
+find: ‘/run/user/11005’: Permission denied
+find: ‘/run/user/11023’: Permission denied
+find: ‘/run/user/11020’: Permission denied
+find: ‘/run/user/11001’: Permission denied
+find: ‘/run/user/11006/systemd/inaccessible/dir’: Permission denied
+find: ‘/run/user/11013’: Permission denied
+find: ‘/run/user/11016’: Permission denied
+find: ‘/run/user/11022’: Permission denied
+find: ‘/run/user/11014’: Permission denied
+find: ‘/run/user/11004’: Permission denied
+find: ‘/run/user/11003’: Permission denied
+find: ‘/run/user/11011’: Permission denied
+find: ‘/run/user/11008’: Permission denied
+find: ‘/run/user/11002’: Permission denied
+find: ‘/run/user/11007’: Permission denied
+find: ‘/run/user/11015’: Permission denied
+find: ‘/run/user/11018’: Permission denied
+find: ‘/run/user/11010’: Permission denied
+find: ‘/run/user/11032’: Permission denied
+find: ‘/run/user/11019’: Permission denied
+find: ‘/run/user/11031’: Permission denied
+find: ‘/run/user/8002’: Permission denied
+find: ‘/run/user/11009’: Permission denied
+find: ‘/run/user/11025’: Permission denied
+find: ‘/run/user/11027’: Permission denied
+find: ‘/run/user/11029’: Permission denied
+find: ‘/run/user/11030’: Permission denied
+find: ‘/run/chrony’: Permission denied
+find: ‘/run/udisks2’: Permission denied
+find: ‘/boot/efi’: Permission denied
+find: ‘/boot/lost+found’: Permission denied
+find: ‘/home/drifter8/chroot’: Permission denied
+find: ‘/home/bandit5/inhere’: Permission denied
+find: ‘/home/bandit31-git’: Permission denied
+find: ‘/home/bandit29-git’: Permission denied
+find: ‘/home/ubuntu’: Permission denied
+find: ‘/home/bandit30-git’: Permission denied
+find: ‘/home/bandit28-git’: Permission denied
+find: ‘/home/drifter6/data’: Permission denied
+find: ‘/home/bandit27-git’: Permission denied
+find: ‘/proc/tty/driver’: Permission denied
+find: ‘/proc/1028908/task/1028908/fdinfo/6’: No such file or directory
+find: ‘/proc/1028908/fdinfo/5’: No such file or directory
+find: ‘/drifter/drifter14_src/axTLS’: Permission denied
+find: ‘/etc/stunnel’: Permission denied
+find: ‘/etc/multipath’: Permission denied
+find: ‘/etc/sudoers.d’: Permission denied
+find: ‘/etc/credstore.encrypted’: Permission denied
+find: ‘/etc/ssl/private’: Permission denied
+find: ‘/etc/credstore’: Permission denied
+find: ‘/etc/xinetd.d’: Permission denied
+find: ‘/etc/polkit-1/rules.d’: Permission denied
+find: ‘/root’: Permission denied
+find: ‘/tmp’: Permission denied
+find: ‘/lost+found’: Permission denied
+find: ‘/dev/shm’: Permission denied
+find: ‘/dev/mqueue’: Permission denied
+find: ‘/var/spool/bandit24’: Permission denied
+find: ‘/var/spool/rsyslog’: Permission denied
+find: ‘/var/spool/cron/crontabs’: Permission denied
+find: ‘/var/lib/udisks2’: Permission denied
+/var/lib/dpkg/info/bandit7.password
+find: ‘/var/lib/snapd/void’: Permission denied
+find: ‘/var/lib/snapd/cookie’: Permission denied
+find: ‘/var/lib/ubuntu-advantage/apt-esm/var/lib/apt/lists/partial’: Permission denied
+find: ‘/var/lib/private’: Permission denied
+find: ‘/var/lib/update-notifier/package-data-downloads/partial’: Permission denied
+find: ‘/var/lib/amazon’: Permission denied
+find: ‘/var/lib/chrony’: Permission denied
+find: ‘/var/lib/apt/lists/partial’: Permission denied
+find: ‘/var/lib/polkit-1’: Permission denied
+find: ‘/var/log/unattended-upgrades’: Permission denied
+find: ‘/var/log/private’: Permission denied
+find: ‘/var/log/amazon’: Permission denied
+find: ‘/var/log/chrony’: Permission denied
+find: ‘/var/tmp’: Permission denied
+find: ‘/var/cache/private’: Permission denied
+find: ‘/var/cache/ldconfig’: Permission denied
+find: ‘/var/cache/pollinate’: Permission denied
+find: ‘/var/cache/apt/archives/partial’: Permission denied
+find: ‘/var/cache/apparmor/baad73a1.0’: Permission denied
+find: ‘/var/cache/apparmor/2425d902.0’: Permission denied
+bandit6@bandit:~$ find / -type f -user bandit7 -group bandit6 -size 33
+find: ‘/sys/kernel/tracing’: Permission denied
+find: ‘/sys/kernel/debug’: Permission denied
+find: ‘/sys/fs/pstore’: Permission denied
+find: ‘/sys/fs/bpf’: Permission denied
+find: ‘/snap’: Permission denied
+find: ‘/run/lock/lvm’: Permission denied
+find: ‘/run/systemd/inaccessible/dir’: Permission denied
+find: ‘/run/systemd/propagate/systemd-udevd.service’: Permission denied
+find: ‘/run/systemd/propagate/systemd-resolved.service’: Permission denied
+find: ‘/run/systemd/propagate/systemd-networkd.service’: Permission denied
+find: ‘/run/systemd/propagate/systemd-logind.service’: Permission denied
+find: ‘/run/systemd/propagate/irqbalance.service’: Permission denied
+find: ‘/run/systemd/propagate/chrony.service’: Permission denied
+find: ‘/run/systemd/propagate/polkit.service’: Permission denied
+find: ‘/run/systemd/propagate/ModemManager.service’: Permission denied
+find: ‘/run/systemd/propagate/fwupd.service’: Permission denied
+find: ‘/run/lvm’: Permission denied
+find: ‘/run/log/journal/ec27119cecabde24cec12615c2a9a184’: Permission denied
+find: ‘/run/cryptsetup’: Permission denied
+find: ‘/run/multipath’: Permission denied
+find: ‘/run/screen/S-bandit20’: Permission denied
+find: ‘/run/screen/S-bandit16’: Permission denied
+find: ‘/run/screen/S-bandit25’: Permission denied
+find: ‘/run/screen/S-bandit23’: Permission denied
+find: ‘/run/screen/S-bandit19’: Permission denied
+find: ‘/run/screen/S-bandit24’: Permission denied
+find: ‘/run/screen/S-bandit1’: Permission denied
+find: ‘/run/screen/S-bandit0’: Permission denied
+find: ‘/run/sudo’: Permission denied
+find: ‘/run/user/11012’: Permission denied
+find: ‘/run/user/11000’: Permission denied
+find: ‘/run/user/11024’: Permission denied
+find: ‘/run/user/11005’: Permission denied
+find: ‘/run/user/11023’: Permission denied
+find: ‘/run/user/11020’: Permission denied
+find: ‘/run/user/11001’: Permission denied
+find: ‘/run/user/11006/systemd/inaccessible/dir’: Permission denied
+find: ‘/run/user/11013’: Permission denied
+find: ‘/run/user/11016’: Permission denied
+find: ‘/run/user/11022’: Permission denied
+find: ‘/run/user/11014’: Permission denied
+find: ‘/run/user/11004’: Permission denied
+find: ‘/run/user/11003’: Permission denied
+find: ‘/run/user/11011’: Permission denied
+find: ‘/run/user/11008’: Permission denied
+find: ‘/run/user/11002’: Permission denied
+find: ‘/run/user/11007’: Permission denied
+find: ‘/run/user/11015’: Permission denied
+find: ‘/run/user/11018’: Permission denied
+find: ‘/run/user/11010’: Permission denied
+find: ‘/run/user/11032’: Permission denied
+find: ‘/run/user/11019’: Permission denied
+find: ‘/run/user/11031’: Permission denied
+find: ‘/run/user/8002’: Permission denied
+find: ‘/run/user/11009’: Permission denied
+find: ‘/run/user/11025’: Permission denied
+find: ‘/run/user/11027’: Permission denied
+find: ‘/run/user/11029’: Permission denied
+find: ‘/run/user/11030’: Permission denied
+find: ‘/run/chrony’: Permission denied
+find: ‘/run/udisks2’: Permission denied
+find: ‘/boot/efi’: Permission denied
+find: ‘/boot/lost+found’: Permission denied
+find: ‘/home/drifter8/chroot’: Permission denied
+find: ‘/home/bandit5/inhere’: Permission denied
+find: ‘/home/bandit31-git’: Permission denied
+find: ‘/home/bandit29-git’: Permission denied
+find: ‘/home/ubuntu’: Permission denied
+find: ‘/home/bandit30-git’: Permission denied
+find: ‘/home/bandit28-git’: Permission denied
+find: ‘/home/drifter6/data’: Permission denied
+find: ‘/home/bandit27-git’: Permission denied
+find: ‘/proc/tty/driver’: Permission denied
+find: ‘/proc/1029744/task/1029744/fdinfo/6’: No such file or directory
+find: ‘/proc/1029744/fdinfo/5’: No such file or directory
+find: ‘/drifter/drifter14_src/axTLS’: Permission denied
+find: ‘/etc/stunnel’: Permission denied
+find: ‘/etc/multipath’: Permission denied
+find: ‘/etc/sudoers.d’: Permission denied
+find: ‘/etc/credstore.encrypted’: Permission denied
+find: ‘/etc/ssl/private’: Permission denied
+find: ‘/etc/credstore’: Permission denied
+find: ‘/etc/xinetd.d’: Permission denied
+find: ‘/etc/polkit-1/rules.d’: Permission denied
+find: ‘/root’: Permission denied
+find: ‘/tmp’: Permission denied
+find: ‘/lost+found’: Permission denied
+find: ‘/dev/shm’: Permission denied
+find: ‘/dev/mqueue’: Permission denied
+find: ‘/var/spool/bandit24’: Permission denied
+find: ‘/var/spool/rsyslog’: Permission denied
+find: ‘/var/spool/cron/crontabs’: Permission denied
+find: ‘/var/lib/udisks2’: Permission denied
+find: ‘/var/lib/snapd/void’: Permission denied
+find: ‘/var/lib/snapd/cookie’: Permission denied
+find: ‘/var/lib/ubuntu-advantage/apt-esm/var/lib/apt/lists/partial’: Permission denied
+find: ‘/var/lib/private’: Permission denied
+find: ‘/var/lib/update-notifier/package-data-downloads/partial’: Permission denied
+find: ‘/var/lib/amazon’: Permission denied
+find: ‘/var/lib/chrony’: Permission denied
+find: ‘/var/lib/apt/lists/partial’: Permission denied
+find: ‘/var/lib/polkit-1’: Permission denied
+find: ‘/var/log/unattended-upgrades’: Permission denied
+find: ‘/var/log/private’: Permission denied
+find: ‘/var/log/amazon’: Permission denied
+find: ‘/var/log/chrony’: Permission denied
+find: ‘/var/tmp’: Permission denied
+find: ‘/var/cache/private’: Permission denied
+find: ‘/var/cache/ldconfig’: Permission denied
+find: ‘/var/cache/pollinate’: Permission denied
+find: ‘/var/cache/apt/archives/partial’: Permission denied
+find: ‘/var/cache/apparmor/baad73a1.0’: Permission denied
+find: ‘/var/cache/apparmor/2425d902.0’: Permission denied
+bandit6@bandit:~$ find / -type f -user bandit7 -group bandit6 -size 33c
+find: ‘/sys/kernel/tracing’: Permission denied
+find: ‘/sys/kernel/debug’: Permission denied
+find: ‘/sys/fs/pstore’: Permission denied
+find: ‘/sys/fs/bpf’: Permission denied
+find: ‘/snap’: Permission denied
+find: ‘/run/lock/lvm’: Permission denied
+find: ‘/run/systemd/inaccessible/dir’: Permission denied
+find: ‘/run/systemd/propagate/systemd-udevd.service’: Permission denied
+find: ‘/run/systemd/propagate/systemd-resolved.service’: Permission denied
+find: ‘/run/systemd/propagate/systemd-networkd.service’: Permission denied
+find: ‘/run/systemd/propagate/systemd-logind.service’: Permission denied
+find: ‘/run/systemd/propagate/irqbalance.service’: Permission denied
+find: ‘/run/systemd/propagate/chrony.service’: Permission denied
+find: ‘/run/systemd/propagate/polkit.service’: Permission denied
+find: ‘/run/systemd/propagate/ModemManager.service’: Permission denied
+find: ‘/run/systemd/propagate/fwupd.service’: Permission denied
+find: ‘/run/lvm’: Permission denied
+find: ‘/run/log/journal/ec27119cecabde24cec12615c2a9a184’: Permission denied
+find: ‘/run/cryptsetup’: Permission denied
+find: ‘/run/multipath’: Permission denied
+find: ‘/run/screen/S-bandit20’: Permission denied
+find: ‘/run/screen/S-bandit16’: Permission denied
+find: ‘/run/screen/S-bandit25’: Permission denied
+find: ‘/run/screen/S-bandit23’: Permission denied
+find: ‘/run/screen/S-bandit19’: Permission denied
+find: ‘/run/screen/S-bandit24’: Permission denied
+find: ‘/run/screen/S-bandit1’: Permission denied
+find: ‘/run/screen/S-bandit0’: Permission denied
+find: ‘/run/sudo’: Permission denied
+find: ‘/run/user/11012’: Permission denied
+find: ‘/run/user/11000’: Permission denied
+find: ‘/run/user/11024’: Permission denied
+find: ‘/run/user/11005’: Permission denied
+find: ‘/run/user/11023’: Permission denied
+find: ‘/run/user/11020’: Permission denied
+find: ‘/run/user/11001’: Permission denied
+find: ‘/run/user/11006/systemd/inaccessible/dir’: Permission denied
+find: ‘/run/user/11013’: Permission denied
+find: ‘/run/user/11016’: Permission denied
+find: ‘/run/user/11022’: Permission denied
+find: ‘/run/user/11014’: Permission denied
+find: ‘/run/user/11004’: Permission denied
+find: ‘/run/user/11003’: Permission denied
+find: ‘/run/user/11011’: Permission denied
+find: ‘/run/user/11008’: Permission denied
+find: ‘/run/user/11002’: Permission denied
+find: ‘/run/user/11007’: Permission denied
+find: ‘/run/user/11015’: Permission denied
+find: ‘/run/user/11018’: Permission denied
+find: ‘/run/user/11010’: Permission denied
+find: ‘/run/user/11032’: Permission denied
+find: ‘/run/user/11019’: Permission denied
+find: ‘/run/user/11031’: Permission denied
+find: ‘/run/user/8002’: Permission denied
+find: ‘/run/user/11009’: Permission denied
+find: ‘/run/user/11025’: Permission denied
+find: ‘/run/user/11027’: Permission denied
+find: ‘/run/user/11029’: Permission denied
+find: ‘/run/user/11030’: Permission denied
+find: ‘/run/chrony’: Permission denied
+find: ‘/run/udisks2’: Permission denied
+find: ‘/boot/efi’: Permission denied
+find: ‘/boot/lost+found’: Permission denied
+find: ‘/home/drifter8/chroot’: Permission denied
+find: ‘/home/bandit5/inhere’: Permission denied
+find: ‘/home/bandit31-git’: Permission denied
+find: ‘/home/bandit29-git’: Permission denied
+find: ‘/home/ubuntu’: Permission denied
+find: ‘/home/bandit30-git’: Permission denied
+find: ‘/home/bandit28-git’: Permission denied
+find: ‘/home/drifter6/data’: Permission denied
+find: ‘/home/bandit27-git’: Permission denied
+find: ‘/proc/tty/driver’: Permission denied
+find: ‘/proc/1030160/task/1030160/fdinfo/6’: No such file or directory
+find: ‘/proc/1030160/fdinfo/5’: No such file or directory
+find: ‘/drifter/drifter14_src/axTLS’: Permission denied
+find: ‘/etc/stunnel’: Permission denied
+find: ‘/etc/multipath’: Permission denied
+find: ‘/etc/sudoers.d’: Permission denied
+find: ‘/etc/credstore.encrypted’: Permission denied
+find: ‘/etc/ssl/private’: Permission denied
+find: ‘/etc/credstore’: Permission denied
+find: ‘/etc/xinetd.d’: Permission denied
+find: ‘/etc/polkit-1/rules.d’: Permission denied
+find: ‘/root’: Permission denied
+find: ‘/tmp’: Permission denied
+find: ‘/lost+found’: Permission denied
+find: ‘/dev/shm’: Permission denied
+find: ‘/dev/mqueue’: Permission denied
+find: ‘/var/spool/bandit24’: Permission denied
+find: ‘/var/spool/rsyslog’: Permission denied
+find: ‘/var/spool/cron/crontabs’: Permission denied
+find: ‘/var/lib/udisks2’: Permission denied
+/var/lib/dpkg/info/bandit7.password
+find: ‘/var/lib/snapd/void’: Permission denied
+find: ‘/var/lib/snapd/cookie’: Permission denied
+find: ‘/var/lib/ubuntu-advantage/apt-esm/var/lib/apt/lists/partial’: Permission denied
+find: ‘/var/lib/private’: Permission denied
+find: ‘/var/lib/update-notifier/package-data-downloads/partial’: Permission denied
+find: ‘/var/lib/amazon’: Permission denied
+find: ‘/var/lib/chrony’: Permission denied
+find: ‘/var/lib/apt/lists/partial’: Permission denied
+find: ‘/var/lib/polkit-1’: Permission denied
+find: ‘/var/log/unattended-upgrades’: Permission denied
+find: ‘/var/log/private’: Permission denied
+find: ‘/var/log/amazon’: Permission denied
+find: ‘/var/log/chrony’: Permission denied
+find: ‘/var/tmp’: Permission denied
+find: ‘/var/cache/private’: Permission denied
+find: ‘/var/cache/ldconfig’: Permission denied
+find: ‘/var/cache/pollinate’: Permission denied
+find: ‘/var/cache/apt/archives/partial’: Permission denied
+find: ‘/var/cache/apparmor/baad73a1.0’: Permission denied
+find: ‘/var/cache/apparmor/2425d902.0’: Permission denied
+bandit6@bandit:~$ cat /var/lib/dpkg/info/bandit7.password
+morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
+bandit6@bandit:~$ ^C
+bandit6@bandit:~$ logout
+Connection to bandit.labs.overthewire.org closed.
+juancasasmartinez@Juans-MacBook-Air Fuentes % ssh bandit7@bandit.labs.overthewire.org -p 2220
+kex_exchange_identification: Connection closed by remote host
+Connection closed by 13.50.165.192 port 2220
+juancasasmartinez@Juans-MacBook-Air Fuentes % ssh bandit7@bandit.labs.overthewire.org -p 2220
+                         _                     _ _ _   
+                        | |__   __ _ _ __   __| (_) |_ 
+                        | '_ \ / _` | '_ \ / _` | | __|
+                        | |_) | (_| | | | | (_| | | |_ 
+                        |_.__/ \__,_|_| |_|\__,_|_|\__|
+                                                       
+
+                      This is an OverTheWire game server. 
+            More information on http://www.overthewire.org/wargames
+
+bandit7@bandit.labs.overthewire.org's password: 
+
+      ,----..            ,----,          .---.
+     /   /   \         ,/   .`|         /. ./|
+    /   .     :      ,`   .'  :     .--'.  ' ;
+   .   /   ;.  \   ;    ;     /    /__./ \ : |
+  .   ;   /  ` ; .'___,/    ,' .--'.  '   \' .
+  ;   |  ; \ ; | |    :     | /___/ \ |    ' '
+  |   :  | ; | ' ;    |.';  ; ;   \  \;      :
+  .   |  ' ' ' : `----'  |  |  \   ;  `      |
+  '   ;  \; /  |     '   :  ;   .   \    .\  ;
+   \   \  ',  /      |   |  '    \   \   ' \ |
+    ;   :    /       '   :  |     :   '  |--"
+     \   \ .'        ;   |.'       \   \ ;
+  www. `---` ver     '---' he       '---" ire.org
+
+
+Welcome to OverTheWire!
+
+If you find any problems, please report them to the #wargames channel on
+discord or IRC.
+
+--[ Playing the games ]--
+
+  This machine might hold several wargames.
+  If you are playing "somegame", then:
+
+    * USERNAMES are somegame0, somegame1, ...
+    * Most LEVELS are stored in /somegame/.
+    * PASSWORDS for each level are stored in /etc/somegame_pass/.
+
+  Write-access to homedirectories is disabled. It is advised to create a
+  working directory with a hard-to-guess name in /tmp/.  You can use the
+  command "mktemp -d" in order to generate a random and hard to guess
+  directory in /tmp/.  Read-access to both /tmp/ is disabled and to /proc
+  restricted so that users cannot snoop on eachother. Files and directories
+  with easily guessable or short names will be periodically deleted! The /tmp
+  directory is regularly wiped.
+  Please play nice:
+
+    * don't leave orphan processes running
+    * don't leave exploit-files laying around
+    * don't annoy other players
+    * don't post passwords or spoilers
+    * again, DONT POST SPOILERS!
+      This includes writeups of your solution on your blog or website!
+
+--[ Tips ]--
+
+  This machine has a 64bit processor and many security-features enabled
+  by default, although ASLR has been switched off.  The following
+  compiler flags might be interesting:
+
+    -m32                    compile for 32bit
+    -fno-stack-protector    disable ProPolice
+    -Wl,-z,norelro          disable relro
+
+  In addition, the execstack tool can be used to flag the stack as
+  executable on ELF binaries.
+
+  Finally, network-access is limited for most levels by a local
+  firewall.
+
+--[ Tools ]--
+
+ For your convenience we have installed a few useful tools which you can find
+ in the following locations:
+
+    * gef (https://github.com/hugsy/gef) in /opt/gef/
+    * pwndbg (https://github.com/pwndbg/pwndbg) in /opt/pwndbg/
+    * peda (https://github.com/longld/peda.git) in /opt/peda/
+    * gdbinit (https://github.com/gdbinit/Gdbinit) in /opt/gdbinit/
+    * pwntools (https://github.com/Gallopsled/pwntools)
+    * radare2 (http://www.radare.org/)
+
+--[ More information ]--
+
+  For more information regarding individual wargames, visit
+  http://www.overthewire.org/wargames/
+
+  For support, questions or comments, contact us on discord or IRC.
+
+  Enjoy your stay!
+
+bandit7@bandit:~$ logout
+Connection to bandit.labs.overthewire.org closed.
+
+
+
+Para el 5: 
+- cheque primero que hay 
+- me fui a inhere
+- hay muchos files, le agrego el -l para ver detalles
+- luego busco los q sean readable con un -readable
+- le agrego lo del size con un -size XX
+	- le agrego una c para indicar q se tratan de bytes 
+- ya luego cateo el que me arrojo
+
+Para el 6: 
+- usando parte de lo anterior, cambio el . por / para buscar en toda la raíz y no en donde estoy
+- agrego la parte de user q dice en instruc
+- tambien lo de archivos regualres, sin directorios con el -type f
+- agrego lo del size como el 5 
+- veo el unico que no tiene lo de denied y lo cateo
+
