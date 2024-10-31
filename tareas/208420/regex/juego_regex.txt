@@ -1,0 +1,17 @@
+Warmup: foo - busca las palabras 
+
+Anchors: ick$ - busca que esté al final de la cadena
+
+It nevers ends: fu\b - busca que esté al final de la palabra
+
+Ranges: ^[^mujhgtilt]+$ - estamos negando lo que no queremos que aparezca
+
+Backrefs: (...).*\1 - (...) capturan algo, .* permite que aparezca cualquier secuencia de caracteres, \1 exige que la misma secuencia que se capturó vuelva a aparecer
+
+Abba: ^(?!.*(\w)(\w)\2\1)\w+$ - busca asegurarse de que una cadena no contenga palíndromos de dos pares de caracteres consecutivos
+
+A man a plan: ^(.)(.).*?\2\1$ - buscar una secuencia de caracteres que empiece y termine con un patrón simétrico, pero con cualquier cosa en el medio 
+
+Prime: ^(?!(..+)\1+$) - excluye cadenas que consisten en repeticiones de un mismo patrón
+
+Four: ([aeiou]).\1.\1.\1 - Captura las vocales que se repiten 4 veces 

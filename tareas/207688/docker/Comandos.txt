@@ -1,0 +1,31 @@
+Comandos 
+
+docker pull <image>
+	descarga una imagen desde un registro a tu máquina local.
+docker images: 
+	lista todas las imágenes almacenadas localmente.
+docker run <image>: 
+	crea y ejecuta un contenedor basado en una imagen.
+docker run -options <image>: 
+	ejecuta un contenedor con opciones adicionales, como puertos, volúmenes o nombres personalizados.
+docker stop <container>: 
+	detiene un contenedor en ejecución.
+docker start <container>: 
+	inicia un contenedor detenido.
+docker ps: 
+	muestra los contenedores en ejecución actualmente.
+docker exec -it <container> <command>: 
+	ejecuta comandos dentro de un contenedor en ejecución de manera interactiva.
+docker logs <container>: 
+	muestra los registros (logs) de un contenedor.
+docker build -t <nombre>:<tag>: 
+	construye una imagen Docker a partir de un Dockerfile y le asigna un nombre y etiqueta.
+docker rm <id>: 
+	elimina un contenedor detenido.
+docker rmi <id>: 
+	elimina una imagen local.
+env: 
+	muestra las variables de entorno del contenedor.
+exit: 
+	salir de la sesión actual de un contenedor.
+

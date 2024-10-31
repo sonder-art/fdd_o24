@@ -1,0 +1,17 @@
+docker pull: se utiliza para descargar una imagen de un hub de docker o registro. docker pull [OPCIONES] IMAGEN[:ETIQUETA|@DIGESTO]
+
+docker run "Image name": crea y ejecuta un contenedor basado en la imagen mencionada y luego ejecuta ese contenedor.
+
+docker ps: lista los contenedores de docker que están en ejecucción en el momento. Dice los detalles de cada contenedor como id, imagen, el comando que se usó, tiempo activo, el estado y el nombre del contenedor.
+
+docker run -options: hay varias opciones para correr un contenedor -d es de detached. -it puedes interactuar con el contenedor y ademas asigna una terminal. -- name te permite asignar un nombre al contenedor. -p publica puertos. -v monta volumenes. --rm elimina el contendor al detenerse. -e establece variables de entorno. etc.
+
+docker stop: se utiliza para detener un contenedor que está funcionando.
+
+docker start: se utiliza para iniciar un contenedor que previamente habia sido creado o detenido.
+
+docker logs: se utiliza para ver los registros de generados por un contenedor ya sea de slaida o de error.
+
+docker exec -it: permite ejecutar un comando dentro del contenedor como si estuvieses usando una terminal dentro de el.
+
+docker build: construye una imagen a partir de un dockerfile
