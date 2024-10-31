@@ -7,7 +7,7 @@ from io import StringIO
 
 # Configuración de la página
 st.set_page_config(page_title="Análisis de Vinos", page_icon="🍷", layout="wide")
-API_URL = "http://localhost:8000"
+API_URL = "http://backend:8000"
 
 # Título principal
 st.title("🍷 Análisis y Predicción de Calidad de Vinos")
