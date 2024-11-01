@@ -1,0 +1,14 @@
++------------------+
+|  FastAPI Backend  |
+| ------------------|
+|  - Reads data     |
+|  - Analyzes data  |
+|  - Exposes API    |
++------------------+
+
++-------------------+
+|  Streamlit Frontend|
+| -------------------|
+|  - Calls FastAPI   |
+|  - Displays results|
++-------------------+
