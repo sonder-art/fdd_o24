@@ -1,0 +1,12 @@
+fastapi==0.109.1
+uvicorn==0.27.0
+sqlalchemy==2.0.25
+pydantic==2.6.1
+pandas==2.2.0
+scikit-learn==1.4.0
+numpy==1.26.3
+python-multipart==0.0.9
+streamlit==1.31.0
+pandas==2.2.0
+plotly==5.18.0
+requests==2.31.0
