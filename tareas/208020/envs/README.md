@@ -8,9 +8,15 @@ Para asegurarte que funciono correctamente debe ser capaz de ejecutar `python ap
 
 ### Instrucciones
 #### Instalacion
-`pip install ....`
+`pip install virtualenv`
+`Si no lo tienes instalado, correr:`
+`curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py`
+`python3 get-pip.py`
 #### Activar virtualenv
-`activate .... `
+`python3 -m venv .venv`
+`source .venv/bin/activate`
+#### Instala los requerimientos (ya dentro del entorno virtual)
+`pip install -r requirements_pandas.txt`
 
 # Conda
 Instrucciones para crear un ambiente de conda `environment.yml.` Adapta las instrucciones al repositorio actual, no son exactas.
@@ -23,9 +29,9 @@ Para asegurarte que funciono correctamente debe ser capaz de ejecutar `python ap
 
 ### Instrucciones
 #### Instalacion
-`conda  ....`
+`conda  env create -f environment_pandas.yml`
 #### Activar conda env
-`activate .... `
+`conda activate nombre_del_ambiente`
 
 
 # .gitignore
@@ -50,6 +56,8 @@ Ahora tienes que crear un docker que utilice `virtualenv` (no pipenv sino virtua
 # Entrega de Ejercicios
 Una vez que esten los ejercicios listos, sube tu imagen de docker a tu repositorio de docker hub y agrega la liga de ese contenedor aqui:  
 ## Docker
-[liga de docker](url)  
+https://hub.docker.com/r/barbaffer/mi_virtualenv  
+`docker build -t mi_virtualenv -f Dockerfile.ejemplo .`
+`docker run -it -p 8501:8501 mi_virtualenv `
 ## Github
 Pide un pull request con las modificaciones necesarias.

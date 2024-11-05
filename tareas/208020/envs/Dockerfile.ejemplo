@@ -1,11 +1,26 @@
 # Usa una imagen base de Python
-FROM python:3.9-slim
+FROM python:3.12-slim
 
-# Establece el directorio de trabajo en /app
+# Establece el directorio de trabajo en el contenedor
 WORKDIR /app
 
-# Codigo para manejar ambientes y el codigo necesario
+# Copia el archivo de requisitos a la imagen
+COPY requirements_pandas.txt .
 
+# Instala virtualenv para gestionar el entorno virtual
+RUN pip install virtualenv
 
-# Define el comando por defecto para ejecutar la aplicación
-CMD ["python", "app.py"]
+# Crea un entorno virtual dentro del contenedor
+RUN virtualenv venv
+
+# Activa el entorno virtual e instala las dependencias
+RUN ./venv/bin/pip install -r requirements_pandas.txt
+
+# Copia el código de la aplicación al contenedor
+COPY . .
+
+# Expone el puerto en el que la aplicación se ejecutará (si aplica, cámbialo si es necesario)
+EXPOSE 8501
+
+# Especifica el comando predeterminado para ejecutar la aplicación
+CMD ["./venv/bin/python", "app.py"]
