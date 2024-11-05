@@ -1,0 +1,26 @@
+# Entornos virtuales locales
+env/
+venv/
+.virtualenv/
+*.pyenv/
+
+# Archivos de configuración y credenciales
+.env
+*.env
+.env_ejemplo
+
+# Archivos compilados de Python
+*.pyc
+*.pyo
+__pycache__/
+
+# Carpetas de conda
+*.conda
+*.condarc
+conda-meta/
+conda-bld/
+
+# Otros
+*.log
+.DS_Store
+.ipynb_checkpoints/
