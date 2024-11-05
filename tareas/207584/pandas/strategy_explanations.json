@@ -1,8 +1,0 @@
-{
-    "mean": "Replaces NaN values with the mean of the column for balanced data.",
-    "median": "Replaces NaN values with the median of the column for skewed data.",
-    "identificador": "Replaces NaN values in categorical columns with a placeholder like 'missing'.",
-    "placeholder_date": "Replaces NaN values in date columns with a default date (e.g., '1900-01-01').",
-    "default_bool": "Replaces NaN values in boolean columns with a default False value.",
-    "sin_imputacion": "Indicates no imputation was needed because no NaN values were present."
-}
