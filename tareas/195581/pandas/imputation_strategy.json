@@ -1,0 +1,606 @@
+{
+    "Unnamed: 0": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "id": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "member_id": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "loan_amnt": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "funded_amnt": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "funded_amnt_inv": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "term": {
+        "estrategia": "identificador: en estas columnas, la ausencia del dato es que falta. Debe de estar ah\u00ed, porque lo tiene (como la colificacion o fecha), pero no se registr\u00f3. Por lo tanto usamos missing",
+        "valor": "missing"
+    },
+    "int_rate": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "installment": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "grade": {
+        "estrategia": "identificador: en estas columnas, la ausencia del dato es que falta. Debe de estar ah\u00ed, porque lo tiene (como la colificacion o fecha), pero no se registr\u00f3. Por lo tanto usamos missing",
+        "valor": "missing"
+    },
+    "sub_grade": {
+        "estrategia": "identificador: en estas columnas, la ausencia del dato es que falta. Debe de estar ah\u00ed, porque lo tiene (como la colificacion o fecha), pero no se registr\u00f3. Por lo tanto usamos missing",
+        "valor": "missing"
+    },
+    "emp_title": {
+        "estrategia": "identificador: en estas columnas, la ausencia del dato es que falta. Debe de estar ah\u00ed, porque lo tiene (como la colificacion o fecha), pero no se registr\u00f3. Por lo tanto usamos missing",
+        "valor": "missing"
+    },
+    "emp_length": {
+        "estrategia": "identificador: en estas columnas, la ausencia del dato es que falta. Debe de estar ah\u00ed, porque lo tiene (como la colificacion o fecha), pero no se registr\u00f3. Por lo tanto usamos missing",
+        "valor": "missing"
+    },
+    "home_ownership": {
+        "estrategia": "identificador: en estas columnas, la ausencia del dato es que falta. Debe de estar ah\u00ed, porque lo tiene (como la colificacion o fecha), pero no se registr\u00f3. Por lo tanto usamos missing",
+        "valor": "missing"
+    },
+    "annual_inc": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "verification_status": {
+        "estrategia": "identificador: en estas columnas, la ausencia del dato es que falta. Debe de estar ah\u00ed, porque lo tiene (como la colificacion o fecha), pero no se registr\u00f3. Por lo tanto usamos missing",
+        "valor": "missing"
+    },
+    "issue_d": {
+        "estrategia": "identificador: en estas columnas, la ausencia del dato es que falta. Debe de estar ah\u00ed, porque lo tiene (como la colificacion o fecha), pero no se registr\u00f3. Por lo tanto usamos missing",
+        "valor": "missing"
+    },
+    "loan_status": {
+        "estrategia": "identificador: en estas columnas, la ausencia del dato es que falta. Debe de estar ah\u00ed, porque lo tiene (como la colificacion o fecha), pero no se registr\u00f3. Por lo tanto usamos missing",
+        "valor": "missing"
+    },
+    "pymnt_plan": {
+        "estrategia": "identificador: en estas columnas, la ausencia del dato es que falta. Debe de estar ah\u00ed, porque lo tiene (como la colificacion o fecha), pero no se registr\u00f3. Por lo tanto usamos missing",
+        "valor": "missing"
+    },
+    "desc": {
+        "estrategia": "identificador: en estas columnas, la ausencia del dato es que falta. Debe de estar ah\u00ed, porque lo tiene (como la colificacion o fecha), pero no se registr\u00f3. Por lo tanto usamos missing",
+        "valor": "missing"
+    },
+    "purpose": {
+        "estrategia": "identificador: en estas columnas, la ausencia del dato es que falta. Debe de estar ah\u00ed, porque lo tiene (como la colificacion o fecha), pero no se registr\u00f3. Por lo tanto usamos missing",
+        "valor": "missing"
+    },
+    "title": {
+        "estrategia": "identificador: en estas columnas, la ausencia del dato es que falta. Debe de estar ah\u00ed, porque lo tiene (como la colificacion o fecha), pero no se registr\u00f3. Por lo tanto usamos missing",
+        "valor": "missing"
+    },
+    "zip_code": {
+        "estrategia": "identificador: en estas columnas, la ausencia del dato es que falta. Debe de estar ah\u00ed, porque lo tiene (como la colificacion o fecha), pero no se registr\u00f3. Por lo tanto usamos missing",
+        "valor": "missing"
+    },
+    "addr_state": {
+        "estrategia": "identificador: en estas columnas, la ausencia del dato es que falta. Debe de estar ah\u00ed, porque lo tiene (como la colificacion o fecha), pero no se registr\u00f3. Por lo tanto usamos missing",
+        "valor": "missing"
+    },
+    "dti": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "delinq_2yrs": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "earliest_cr_line": {
+        "estrategia": "identificador: en estas columnas, la ausencia del dato es que falta. Debe de estar ah\u00ed, porque lo tiene (como la colificacion o fecha), pero no se registr\u00f3. Por lo tanto usamos missing",
+        "valor": "missing"
+    },
+    "fico_range_low": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "fico_range_high": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "inq_last_6mths": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "mths_since_last_delinq": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "mths_since_last_record": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "open_acc": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "pub_rec": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "revol_bal": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "revol_util": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "total_acc": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "initial_list_status": {
+        "estrategia": "identificador: en estas columnas, la ausencia del dato es que falta. Debe de estar ah\u00ed, porque lo tiene (como la colificacion o fecha), pero no se registr\u00f3. Por lo tanto usamos missing",
+        "valor": "missing"
+    },
+    "out_prncp": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "out_prncp_inv": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "total_pymnt": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "total_pymnt_inv": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "total_rec_prncp": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "total_rec_int": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "total_rec_late_fee": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "recoveries": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "collection_recovery_fee": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "last_pymnt_d": {
+        "estrategia": "identificador: en estas columnas, la ausencia del dato es que falta. Debe de estar ah\u00ed, porque lo tiene (como la colificacion o fecha), pero no se registr\u00f3. Por lo tanto usamos missing",
+        "valor": "missing"
+    },
+    "last_pymnt_amnt": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "next_pymnt_d": {
+        "estrategia": "identificador: en estas columnas, la ausencia del dato es que falta. Debe de estar ah\u00ed, porque lo tiene (como la colificacion o fecha), pero no se registr\u00f3. Por lo tanto usamos missing",
+        "valor": "missing"
+    },
+    "last_credit_pull_d": {
+        "estrategia": "identificador: en estas columnas, la ausencia del dato es que falta. Debe de estar ah\u00ed, porque lo tiene (como la colificacion o fecha), pero no se registr\u00f3. Por lo tanto usamos missing",
+        "valor": "missing"
+    },
+    "last_fico_range_high": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "last_fico_range_low": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "collections_12_mths_ex_med": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "mths_since_last_major_derog": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "policy_code": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "application_type": {
+        "estrategia": "identificador: en estas columnas, la ausencia del dato es que falta. Debe de estar ah\u00ed, porque lo tiene (como la colificacion o fecha), pero no se registr\u00f3. Por lo tanto usamos missing",
+        "valor": "missing"
+    },
+    "annual_inc_joint": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "dti_joint": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "verification_status_joint": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "acc_now_delinq": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "tot_coll_amt": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "tot_cur_bal": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "open_acc_6m": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "open_act_il": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "open_il_12m": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "open_il_24m": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "mths_since_rcnt_il": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "total_bal_il": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "il_util": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "open_rv_12m": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "open_rv_24m": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "max_bal_bc": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "all_util": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "total_rev_hi_lim": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "inq_fi": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "total_cu_tl": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "inq_last_12m": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "acc_open_past_24mths": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "avg_cur_bal": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "bc_open_to_buy": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "bc_util": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "chargeoff_within_12_mths": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "delinq_amnt": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "mo_sin_old_il_acct": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "mo_sin_old_rev_tl_op": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "mo_sin_rcnt_rev_tl_op": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "mo_sin_rcnt_tl": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "mort_acc": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "mths_since_recent_bc": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "mths_since_recent_bc_dlq": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "mths_since_recent_inq": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "mths_since_recent_revol_delinq": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "num_accts_ever_120_pd": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "num_actv_bc_tl": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "num_actv_rev_tl": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "num_bc_sats": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "num_bc_tl": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "num_il_tl": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "num_op_rev_tl": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "num_rev_accts": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "num_rev_tl_bal_gt_0": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "num_sats": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "num_tl_120dpd_2m": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "num_tl_30dpd": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "num_tl_90g_dpd_24m": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "num_tl_op_past_12m": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "pct_tl_nvr_dlq": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "percent_bc_gt_75": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "pub_rec_bankruptcies": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "tax_liens": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "tot_hi_cred_lim": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "total_bal_ex_mort": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "total_bc_limit": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "total_il_high_credit_limit": {
+        "estrategia": "identificador: son numero. Si no se registro un pago o balance, se puede interpretar como que valio 0. Su asuencia se puede interpretar como un 0. Son balances o cantidades",
+        "valor": 0
+    },
+    "revol_bal_joint": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "sec_app_fico_range_low": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "sec_app_fico_range_high": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "sec_app_earliest_cr_line": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "sec_app_inq_last_6mths": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "sec_app_mort_acc": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "sec_app_open_acc": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "sec_app_revol_util": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "sec_app_open_act_il": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "sec_app_num_rev_accts": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "sec_app_chargeoff_within_12_mths": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "sec_app_collections_12_mths_ex_med": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "sec_app_mths_since_last_major_derog": {
+        "estrategia": "None: estas son columnas llenas de Nan, por lo que las dejamos as\u00ed. Aunque podemos esperar ciertos valores por las descripciones de las columnas, lo deje asi porque el Nan tambien indica que no hay dato y nos permite idneitficar estas columnas.",
+        "valor": "NaN"
+    },
+    "hardship_flag": {
+        "estrategia": "identificador: en estas columnas, la ausencia del dato significa que no fue verdadero, por lo tanto, lo podemos interpretar como false",
+        "valor": "False"
+    },
+    "hardship_type": {
+        "estrategia": "identificador: en estas columnas si no se tiene el valor es porque no aplica. Porque la bandera estuvo en false, por lo tanto lo cambiamos por ",
+        "valor": ""
+    },
+    "hardship_reason": {
+        "estrategia": "identificador: en estas columnas si no se tiene el valor es porque no aplica. Porque la bandera estuvo en false, por lo tanto lo cambiamos por ",
+        "valor": ""
+    },
+    "hardship_status": {
+        "estrategia": "identificador: en estas columnas si no se tiene el valor es porque no aplica. Porque la bandera estuvo en false, por lo tanto lo cambiamos por ",
+        "valor": ""
+    },
+    "deferral_term": {
+        "estrategia": "identificador: en estas columnas si no se tiene el valor es porque no aplica. Porque la bandera estuvo en false, por lo tanto lo cambiamos por ",
+        "valor": ""
+    },
+    "hardship_amount": {
+        "estrategia": "identificador: en estas columnas si no se tiene el valor es porque no aplica. Porque la bandera estuvo en false, por lo tanto lo cambiamos por ",
+        "valor": ""
+    },
+    "hardship_start_date": {
+        "estrategia": "identificador: en estas columnas si no se tiene el valor es porque no aplica. Porque la bandera estuvo en false, por lo tanto lo cambiamos por ",
+        "valor": ""
+    },
+    "hardship_end_date": {
+        "estrategia": "identificador: en estas columnas si no se tiene el valor es porque no aplica. Porque la bandera estuvo en false, por lo tanto lo cambiamos por ",
+        "valor": ""
+    },
+    "payment_plan_start_date": {
+        "estrategia": "identificador: en estas columnas si no se tiene el valor es porque no aplica. Porque la bandera estuvo en false, por lo tanto lo cambiamos por ",
+        "valor": ""
+    },
+    "hardship_length": {
+        "estrategia": "identificador: en estas columnas si no se tiene el valor es porque no aplica. Porque la bandera estuvo en false, por lo tanto lo cambiamos por ",
+        "valor": ""
+    },
+    "hardship_dpd": {
+        "estrategia": "identificador: en estas columnas si no se tiene el valor es porque no aplica. Porque la bandera estuvo en false, por lo tanto lo cambiamos por ",
+        "valor": ""
+    },
+    "hardship_loan_status": {
+        "estrategia": "identificador: en estas columnas si no se tiene el valor es porque no aplica. Porque la bandera estuvo en false, por lo tanto lo cambiamos por ",
+        "valor": ""
+    },
+    "orig_projected_additional_accrued_interest": {
+        "estrategia": "identificador: en estas columnas si no se tiene el valor es porque no aplica. Porque la bandera estuvo en false, por lo tanto lo cambiamos por ",
+        "valor": ""
+    },
+    "hardship_payoff_balance_amount": {
+        "estrategia": "identificador: en estas columnas si no se tiene el valor es porque no aplica. Porque la bandera estuvo en false, por lo tanto lo cambiamos por ",
+        "valor": ""
+    },
+    "hardship_last_payment_amount": {
+        "estrategia": "identificador: en estas columnas si no se tiene el valor es porque no aplica. Porque la bandera estuvo en false, por lo tanto lo cambiamos por ",
+        "valor": ""
+    },
+    "disbursement_method": {
+        "estrategia": "identificador: en estas columnas, la ausencia del dato es que falta. Debe de estar ah\u00ed, porque lo tiene (como la colificacion o fecha), pero no se registr\u00f3. Por lo tanto usamos missing",
+        "valor": "missing"
+    },
+    "debt_settlement_flag": {
+        "estrategia": "identificador: en estas columnas, la ausencia del dato significa que no fue verdadero, por lo tanto, lo podemos interpretar como false",
+        "valor": "False"
+    },
+    "debt_settlement_flag_date": {
+        "estrategia": "identificador: en estas columnas si no se tiene el valor es porque no aplica. Porque la bandera estuvo en false, por lo tanto lo cambiamos por ",
+        "valor": ""
+    },
+    "settlement_status": {
+        "estrategia": "identificador: en estas columnas si no se tiene el valor es porque no aplica. Porque la bandera estuvo en false, por lo tanto lo cambiamos por ",
+        "valor": ""
+    },
+    "settlement_date": {
+        "estrategia": "identificador: en estas columnas si no se tiene el valor es porque no aplica. Porque la bandera estuvo en false, por lo tanto lo cambiamos por ",
+        "valor": ""
+    },
+    "settlement_amount": {
+        "estrategia": "identificador: en estas columnas si no se tiene el valor es porque no aplica. Porque la bandera estuvo en false, por lo tanto lo cambiamos por ",
+        "valor": ""
+    },
+    "settlement_percentage": {
+        "estrategia": "identificador: en estas columnas si no se tiene el valor es porque no aplica. Porque la bandera estuvo en false, por lo tanto lo cambiamos por ",
+        "valor": ""
+    },
+    "settlement_term": {
+        "estrategia": "identificador: en estas columnas si no se tiene el valor es porque no aplica. Porque la bandera estuvo en false, por lo tanto lo cambiamos por ",
+        "valor": ""
+    }
+}
