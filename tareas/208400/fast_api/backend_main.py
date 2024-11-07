@@ -1,19 +1,25 @@
-# backend_main.py
-
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import JSONResponse
 import pandas as pd
 
 app = FastAPI()
 
-# Load CSV data at startup
-data = pd.read_csv("data.csv")
+# Load CSV data at startup and print detected data types
+try:
+    data = pd.read_csv("data.csv")
+    print("Detected data types:")
+    print(data.dtypes)
+except Exception as e:
+    raise RuntimeError(f"Failed to load data.csv: {e}")
 
 @app.get("/columns/")
 def get_columns():
     """Fetch numeric column names from the CSV."""
-    columns = data.select_dtypes(include=['float', 'int']).columns.tolist()
-    return columns
+    # Only include numeric columns
+    numeric_columns = data.select_dtypes(include=['float', 'int']).columns.tolist()
+    if not numeric_columns:
+        raise HTTPException(status_code=404, detail="No numeric columns found in the CSV.")
+    return numeric_columns
 
 @app.get("/calculate-stats/{column_name}")
 def calculate_stats(column_name: str):

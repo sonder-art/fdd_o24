@@ -1,0 +1,13 @@
+# Dockerfile.frontend
+
+FROM python:3.9-slim
+
+WORKDIR /app
+
+COPY frontend_main.py /app
+
+RUN pip install streamlit requests
+
+EXPOSE 8501
+
+CMD ["streamlit", "run", "frontend_main.py", "--server.port=8501", "--server.address=0.0.0.0"]
