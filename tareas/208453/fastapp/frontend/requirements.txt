@@ -1,0 +1,8 @@
+fastapi==0.68.2
+streamlink==2.4.0
+urllib3==1.26.5
+uvicorn
+pandas
+python-multipart
+streamlit
+
