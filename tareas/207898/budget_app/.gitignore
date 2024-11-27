@@ -11,6 +11,8 @@ backend/venv/
 backend/.venv/
 frontend/venv/
 frontend/.venv/
+**/venv/
+**/.venv/
 
 # Archivos de Python
 # Byte-compiled / optimized / DLL files
@@ -84,6 +86,3 @@ backend/app/budget.db
 # Archivos de Streamlit
 # Caché de Streamlit
 .streamlit/
-
-# Git specific
-
