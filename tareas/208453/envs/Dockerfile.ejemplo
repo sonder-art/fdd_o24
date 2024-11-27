@@ -1,0 +1,23 @@
+
+
+# Usa una imagen base de Python
+FROM python:3.9
+
+# Configura el directorio de trabajo en el contenedor
+WORKDIR /app
+
+# Copia los archivos necesarios al contenedor
+COPY . /app
+
+# Instala virtualenv y crea el entorno virtual
+RUN pip install virtualenv && \
+    virtualenv venv
+
+# Asegúrate de que el entorno virtual se use por defecto
+ENV PATH="/app/venv/bin:$PATH"
+
+# Instala las dependencias desde requirements_pandas.txt
+RUN pip install --timeout=100 -r requirements_pandas.txt 
+
+# Define el comando de inicio para ejecutar `app.py`
+CMD ["python", "app.py"]
