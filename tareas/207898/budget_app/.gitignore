@@ -1,37 +1,24 @@
-# -----------------------------------
 # Sistema Operativo
-# -----------------------------------
-
 # macOS
 .DS_Store
-
 # Windows
 Thumbs.db
 ehthumbs.db
 Desktop.ini
 
-# -----------------------------------
 # Entornos Virtuales de Python
-# -----------------------------------
-
-# Entornos virtuales estándar
 backend/venv/
 backend/.venv/
 frontend/venv/
 frontend/.venv/
 
-# -----------------------------------
 # Archivos de Python
-# -----------------------------------
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
-
 # C extensions
 *.so
-
 # Distribución / empaquetado
 backend/build/
 backend/dist/
@@ -39,16 +26,12 @@ backend/*.egg-info/
 frontend/build/
 frontend/dist/
 frontend/*.egg-info/
-
 # PyInstaller
-#  Archivos generados por PyInstaller
 *.manifest
 *.spec
-
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
-
 # Unit test / coverage reports
 htmlcov/
 .coverage
@@ -61,65 +44,46 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 
-# -----------------------------------
 # Archivos de Docker
-# -----------------------------------
-
 # Imágenes y contenedores
 *.tar
 *.tgz
 *.gz
-
 # Docker Compose override file
 docker-compose.override.yml
-
 # Volúmenes de Docker
 docker-data/
 docker-volume/
 
-# -----------------------------------
 # Archivos de Logs y Bases de Datos
-# -----------------------------------
-
 # Logs
 *.log
-
 # Bases de datos
+backend/app/budget.db
 *.db
 
-# -----------------------------------
 # Otros Archivos y Carpetas
-# -----------------------------------
-
 # Archivos temporales
 *.tmp
 *.temp
-
 # Archivos de respaldo
 *.bak
 *.swp
 
-# -----------------------------------
 # Archivos de Configuración de la Aplicación
-# -----------------------------------
-
 # Archivos de configuración sensibles
 .env
 *.env
 
-# -----------------------------------
 # Archivos de IDE
-# -----------------------------------
-
 # VSCode
 .vscode/
-
 # PyCharm
 .idea/
 
-# -----------------------------------
 # Archivos de Streamlit
-# -----------------------------------
-
 # Caché de Streamlit
 .streamlit/
+
+# Git specific
+.gitignore
