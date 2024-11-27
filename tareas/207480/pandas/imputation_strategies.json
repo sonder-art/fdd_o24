@@ -1,0 +1,614 @@
+{
+    "member_id": {
+        "estrategia": "Dropeamos columna - todos valores NaN",
+        "valor": null
+    },
+    "annual_inc_joint": {
+        "estrategia": "Dropeamos columna - todos valores NaN",
+        "valor": null
+    },
+    "dti_joint": {
+        "estrategia": "Dropeamos columna - todos valores NaN",
+        "valor": null
+    },
+    "verification_status_joint": {
+        "estrategia": "Dropeamos columna - todos valores NaN",
+        "valor": null
+    },
+    "open_acc_6m": {
+        "estrategia": "Dropeamos columna - todos valores NaN",
+        "valor": null
+    },
+    "open_act_il": {
+        "estrategia": "Dropeamos columna - todos valores NaN",
+        "valor": null
+    },
+    "open_il_12m": {
+        "estrategia": "Dropeamos columna - todos valores NaN",
+        "valor": null
+    },
+    "open_il_24m": {
+        "estrategia": "Dropeamos columna - todos valores NaN",
+        "valor": null
+    },
+    "mths_since_rcnt_il": {
+        "estrategia": "Dropeamos columna - todos valores NaN",
+        "valor": null
+    },
+    "total_bal_il": {
+        "estrategia": "Dropeamos columna - todos valores NaN",
+        "valor": null
+    },
+    "il_util": {
+        "estrategia": "Dropeamos columna - todos valores NaN",
+        "valor": null
+    },
+    "open_rv_12m": {
+        "estrategia": "Dropeamos columna - todos valores NaN",
+        "valor": null
+    },
+    "open_rv_24m": {
+        "estrategia": "Dropeamos columna - todos valores NaN",
+        "valor": null
+    },
+    "max_bal_bc": {
+        "estrategia": "Dropeamos columna - todos valores NaN",
+        "valor": null
+    },
+    "all_util": {
+        "estrategia": "Dropeamos columna - todos valores NaN",
+        "valor": null
+    },
+    "inq_fi": {
+        "estrategia": "Dropeamos columna - todos valores NaN",
+        "valor": null
+    },
+    "total_cu_tl": {
+        "estrategia": "Dropeamos columna - todos valores NaN",
+        "valor": null
+    },
+    "inq_last_12m": {
+        "estrategia": "Dropeamos columna - todos valores NaN",
+        "valor": null
+    },
+    "revol_bal_joint": {
+        "estrategia": "Dropeamos columna - todos valores NaN",
+        "valor": null
+    },
+    "sec_app_fico_range_low": {
+        "estrategia": "Dropeamos columna - todos valores NaN",
+        "valor": null
+    },
+    "sec_app_fico_range_high": {
+        "estrategia": "Dropeamos columna - todos valores NaN",
+        "valor": null
+    },
+    "sec_app_earliest_cr_line": {
+        "estrategia": "Dropeamos columna - todos valores NaN",
+        "valor": null
+    },
+    "sec_app_inq_last_6mths": {
+        "estrategia": "Dropeamos columna - todos valores NaN",
+        "valor": null
+    },
+    "sec_app_mort_acc": {
+        "estrategia": "Dropeamos columna - todos valores NaN",
+        "valor": null
+    },
+    "sec_app_open_acc": {
+        "estrategia": "Dropeamos columna - todos valores NaN",
+        "valor": null
+    },
+    "sec_app_revol_util": {
+        "estrategia": "Dropeamos columna - todos valores NaN",
+        "valor": null
+    },
+    "sec_app_open_act_il": {
+        "estrategia": "Dropeamos columna - todos valores NaN",
+        "valor": null
+    },
+    "sec_app_num_rev_accts": {
+        "estrategia": "Dropeamos columna - todos valores NaN",
+        "valor": null
+    },
+    "sec_app_chargeoff_within_12_mths": {
+        "estrategia": "Dropeamos columna - todos valores NaN",
+        "valor": null
+    },
+    "sec_app_collections_12_mths_ex_med": {
+        "estrategia": "Dropeamos columna - todos valores NaN",
+        "valor": null
+    },
+    "sec_app_mths_since_last_major_derog": {
+        "estrategia": "Dropeamos columna - todos valores NaN",
+        "valor": null
+    },
+    "emp_length": {
+        "estrategia": "Indicar que no con identificador negativo, un 0 implicaria cosas",
+        "valor": -1
+    },
+    "mths_since_last_delinq": {
+        "estrategia": "Indicar que no con identificador negativo, un 0 implicaria cosas",
+        "valor": -1
+    },
+    "mths_since_last_record": {
+        "estrategia": "Indicar que no con identificador negativo, un 0 implicaria cosas",
+        "valor": -1
+    },
+    "mths_since_last_major_derog": {
+        "estrategia": "Indicar que no con identificador negativo, un 0 implicaria cosas",
+        "valor": -1
+    },
+    "mo_sin_old_il_acct": {
+        "estrategia": "Indicar que no con identificador negativo, un 0 implicaria cosas",
+        "valor": -1
+    },
+    "mths_since_recent_bc": {
+        "estrategia": "Indicar que no con identificador negativo, un 0 implicaria cosas",
+        "valor": -1
+    },
+    "mths_since_recent_bc_dlq": {
+        "estrategia": "Indicar que no con identificador negativo, un 0 implicaria cosas",
+        "valor": -1
+    },
+    "mths_since_recent_inq": {
+        "estrategia": "Indicar que no con identificador negativo, un 0 implicaria cosas",
+        "valor": -1
+    },
+    "mths_since_recent_revol_delinq": {
+        "estrategia": "Indicar que no con identificador negativo, un 0 implicaria cosas",
+        "valor": -1
+    },
+    "bc_open_to_buy": {
+        "estrategia": "Identificador para decir que es nada",
+        "valor": 0
+    },
+    "num_tl_120dpd_2m": {
+        "estrategia": "Identificador para decir que es nada",
+        "valor": 0
+    },
+    "percent_bc_gt_75": {
+        "estrategia": "Identificador para decir que es nada",
+        "valor": 0
+    },
+    "deferral_term": {
+        "estrategia": "Identificador para decir que es nada",
+        "valor": 0
+    },
+    "hardship_amount": {
+        "estrategia": "Identificador para decir que es nada",
+        "valor": 0
+    },
+    "hardship_length": {
+        "estrategia": "Identificador para decir que es nada",
+        "valor": 0
+    },
+    "hardship_dpd": {
+        "estrategia": "Identificador para decir que es nada",
+        "valor": 0
+    },
+    "orig_projected_additional_accrued_interest": {
+        "estrategia": "Identificador para decir que es nada",
+        "valor": 0
+    },
+    "hardship_payoff_balance_amount": {
+        "estrategia": "Identificador para decir que es nada",
+        "valor": 0
+    },
+    "hardship_last_payment_amount": {
+        "estrategia": "Identificador para decir que es nada",
+        "valor": 0
+    },
+    "settlement_amount": {
+        "estrategia": "Identificador para decir que es nada",
+        "valor": 0
+    },
+    "settlement_percentage": {
+        "estrategia": "Identificador para decir que es nada",
+        "valor": 0
+    },
+    "settlement_term": {
+        "estrategia": "Identificador para decir que es nada",
+        "valor": 0
+    },
+    "hardship_start_date": {
+        "estrategia": "Indicador que no hay fecha registrada",
+        "valor": "1900-01-01"
+    },
+    "last_pymnt_d": {
+        "estrategia": "Indicador que no hay fecha registrada",
+        "valor": "1900-01-01"
+    },
+    "next_pymnt_d": {
+        "estrategia": "Indicador que no hay fecha registrada",
+        "valor": "1900-01-01"
+    },
+    "last_credit_pull_d": {
+        "estrategia": "Indicador que no hay fecha registrada",
+        "valor": "1900-01-01"
+    },
+    "hardship_end_date": {
+        "estrategia": "Indicador que no hay fecha registrada",
+        "valor": "1900-01-01"
+    },
+    "payment_plan_start_date": {
+        "estrategia": "Indicador que no hay fecha registrada",
+        "valor": "1900-01-01"
+    },
+    "debt_settlement_flag_date": {
+        "estrategia": "Indicador que no hay fecha registrada",
+        "valor": "1900-01-01"
+    },
+    "settlement_date": {
+        "estrategia": "Indicador que no hay fecha registrada",
+        "valor": "1900-01-01"
+    },
+    "revol_util": [
+        {
+            "estrategia": "median imputation",
+            "valor": 56.0
+        },
+        {
+            "estrategia": "identificador",
+            "valor": 0
+        }
+    ],
+    "bc_util": [
+        {
+            "estrategia": "median imputation",
+            "valor": 68.7
+        },
+        {
+            "estrategia": "identificador",
+            "valor": 0
+        }
+    ],
+    "hardship_type": {
+        "estrategia": "Identificador categorico",
+        "valor": "MISSING"
+    },
+    "hardship_reason": {
+        "estrategia": "Identificador categorico",
+        "valor": "MISSING"
+    },
+    "hardship_status": {
+        "estrategia": "Identificador categorico",
+        "valor": "MISSING"
+    },
+    "hardship_loan_status": {
+        "estrategia": "Identificador categorico",
+        "valor": "MISSING"
+    },
+    "settlement_status": {
+        "estrategia": "Identificador categorico",
+        "valor": "MISSING"
+    },
+    "id": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "loan_amnt": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "funded_amnt": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "funded_amnt_inv": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "term": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "int_rate": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "installment": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "grade": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "sub_grade": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "emp_title": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "home_ownership": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "annual_inc": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "verification_status": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "issue_d": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "loan_status": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "pymnt_plan": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "desc": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "purpose": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "title": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "zip_code": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "addr_state": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "dti": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "delinq_2yrs": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "earliest_cr_line": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "fico_range_low": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "fico_range_high": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "inq_last_6mths": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "open_acc": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "pub_rec": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "revol_bal": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "total_acc": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "initial_list_status": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "out_prncp": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "out_prncp_inv": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "total_pymnt": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "total_pymnt_inv": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "total_rec_prncp": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "total_rec_int": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "total_rec_late_fee": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "recoveries": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "collection_recovery_fee": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "last_pymnt_amnt": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "last_fico_range_high": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "last_fico_range_low": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "collections_12_mths_ex_med": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "policy_code": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "application_type": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "acc_now_delinq": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "tot_coll_amt": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "tot_cur_bal": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "total_rev_hi_lim": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "acc_open_past_24mths": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "avg_cur_bal": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "chargeoff_within_12_mths": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "delinq_amnt": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "mo_sin_old_rev_tl_op": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "mo_sin_rcnt_rev_tl_op": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "mo_sin_rcnt_tl": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "mort_acc": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "num_accts_ever_120_pd": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "num_actv_bc_tl": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "num_actv_rev_tl": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "num_bc_sats": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "num_bc_tl": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "num_il_tl": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "num_op_rev_tl": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "num_rev_accts": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "num_rev_tl_bal_gt_0": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "num_sats": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "num_tl_30dpd": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "num_tl_90g_dpd_24m": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "num_tl_op_past_12m": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "pct_tl_nvr_dlq": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "pub_rec_bankruptcies": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "tax_liens": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "tot_hi_cred_lim": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "total_bal_ex_mort": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "total_bc_limit": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "total_il_high_credit_limit": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "hardship_flag": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "disbursement_method": {
+        "estrategia": "no imputation",
+        "valor": null
+    },
+    "debt_settlement_flag": {
+        "estrategia": "no imputation",
+        "valor": null
+    }
+}
