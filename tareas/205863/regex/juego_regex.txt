@@ -3,7 +3,7 @@ Anchors -> ick$: que la palabra termine con ick
 It never ends -> u(?!.): que no haya nada después de la u
 Rangers -> [a-f]{4}: que haya 4 letras de la "a" a la "f"
 Backrefs -> (...).*\1: los primeros 3 caracteres forman un gruoo, ese grupo se tiene que repetir en la cadena 
-Abba -> ^(?!(.)+\1)|ef: Asegura que no haya una secuencia donde un caracter se repita con caracteres intermedios y luego aparezca al final. |ef indica que las palabras con "ef" se incluyan
+Abba -> ^(?!.*(.)(.)\2\1): Aegura que una cadena de 4 caracteres donde los dos primeros se repiten en orden inverso
 A man, a plan -> ^(.)[^p].*\1$: Indica que el caracter con el que inica, termine la palabra, pero sin que "p" sea la segunda letra
 Prime -> ^(?!(xx+)\1+$): Significa que todos los grupos que tenagn "x" en cantidades pares no pasen. \1 referencia al grupo del lock y el más indica que se puede repetir una o más veces, mientras que $ especifica que al final de la cadena. Es parecido al ejemplo visto en clase donde agrupábamos dos caracteres de forma par o impar y la longitud tenía que poder dividirse o no en grupos de caracteres de dos.
 Four -> (.)(.\1){3}: El caracter capturado (.) sea seguido por uno cualquiera y que este patrón se repita 3 veces, de manera que quede el caracter capturado (cc) caracter cualquiera (ccq) 3 veces, cc,ccq,cc,ccq,cc.
