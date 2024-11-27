@@ -86,4 +86,4 @@ backend/app/budget.db
 .streamlit/
 
 # Git specific
-.gitignore
+
