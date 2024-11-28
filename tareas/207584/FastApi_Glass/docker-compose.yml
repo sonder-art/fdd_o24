@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  backend:
+    build:
+      context: ./backend
+    volumes:
+      - ./data:/data  # Mount the data file
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "8501:8501"
+    depends_on:
+      - backend
