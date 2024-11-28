@@ -37,3 +37,7 @@ Dockerfile
 
 # Archivos de checkpoints de Jupyter (si los usas)
 *.ipynb_checkpoints
+
+
+
+../../fdd_o24/
