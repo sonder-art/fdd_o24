@@ -1,0 +1,5 @@
+fastapi
+pydantic
+uvicorn
+pandas==2.0.3
+python-multipart==0.0.5

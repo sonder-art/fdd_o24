@@ -1,0 +1,17 @@
+# Ignorar entornos virtuales y configuraciones sensibles
+venv/
+envs/
+*.env
+
+# Ignorar archivos compilados de Python y temporales
+__pycache__/
+*.py[cod]
+*.pyo
+*.log
+*.tmp
+.DS_Store
+
+# Ignorar configuraciones de IDEs y checkpoints de Jupyter Notebook
+.vscode/
+.idea/
+.ipynb_checkpoints/

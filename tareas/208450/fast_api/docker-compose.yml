@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+  backend:
+    build: ./backend
+    container_name: backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongodb
+    volumes:
+      - ./online_retail.xlsx:/app/online_retail.xlsx
+
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    ports:
+      - "8501:8501"
+    depends_on:
+      - backend
+
+  mongodb:
+    image: mongo:4.4
+    container_name: mongodb
+    ports:
+      - "27017:27017"  # Expose MongoDB on localhost
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
+
+

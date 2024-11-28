@@ -1,0 +1,8 @@
+[Usuario] --sube archivo CSV--> [Streamlit (Frontend)] --envía archivo--> [FastAPI (Backend)]
+      ^                                                                |
+      |                                                                |
+      |                           <--- estadísticas JSON ---           |
+      |                                                                |
+      <-------------------- muestra estadísticas en pantalla ---------->
+
+

@@ -1,0 +1,60 @@
+
+1. docker build:
+   Builds a Docker image from a Dockerfile and a context.
+   Usage: docker build -t image_name .
+
+2. docker run:
+   Runs a container from a Docker image.
+   Usage: docker run image_name
+
+3. docker ps:
+   Lists running Docker containers.
+   Usage: docker ps
+
+4. docker ps -a:
+   Lists all Docker containers, both running and stopped.
+   Usage: docker ps -a
+
+5. docker stop:
+   Stops a running container.
+   Usage: docker stop container_id
+
+6. docker start:
+   Starts a stopped container.
+   Usage: docker start container_id
+
+7. docker rm:
+   Removes a container.
+   Usage: docker rm container_id
+
+8. docker rmi:
+   Removes a Docker image.
+   Usage: docker rmi image_id
+
+9. docker exec:
+   Runs a command inside a running container.
+   Usage: docker exec -it container_id command
+
+10. docker logs:
+    Fetches logs from a container.
+    Usage: docker logs container_id
+
+11. docker pull:
+    Pulls an image from a Docker registry (like Docker Hub).
+    Usage: docker pull image_name
+
+12. docker images:
+    Lists all Docker images on your system.
+    Usage: docker images
+
+13. docker inspect:
+    Displays detailed information about a container or image.
+    Usage: docker inspect container_id_or_image_id
+
+14. docker network ls:
+    Lists all Docker networks.
+    Usage: docker network ls
+
+15. docker volume ls:
+    Lists all Docker volumes.
+    Usage: docker volume ls

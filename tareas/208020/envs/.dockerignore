@@ -1,0 +1,21 @@
+# Ignorar archivos de configuración y credenciales locales
+.env
+*.env
+.env_ejemplo
+
+# Ignorar entornos virtuales
+env/
+venv/
+.virtualenv/
+
+# Ignorar archivos compilados de Python y carpetas innecesarias
+__pycache__/
+*.pyc
+*.pyo
+*.conda
+*.log
+.DS_Store
+
+# Otros archivos de git
+.git
+.gitignore
