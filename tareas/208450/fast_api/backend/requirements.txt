@@ -1,0 +1,6 @@
+fastapi
+pandas
+pymongo
+motor
+uvicorn
+openpyxl
