@@ -1,0 +1,51 @@
+Cheatsheet
+
+docker pull
+Jala imagen de repositorio a local
+
+docker images
+Checar imagenes que tenemos 
+
+docker run
+Inicializa la imagen en un nuevo contenedor
+Puedes hacer esto y el pull al mismo tiempo
+si pones el tag nombre:tag
+
+docker run --options
+-d Empezar a correr el contenedor de forma detached. Nos da el id del contenedor.
+-pMiPort:SuPort especifica port por si tenemos 2 imagenes de 2 versiones distintas de python
+--name le damos nombre
+
+docker stop
+Para parar el contenedor, se necesita el id al final de la linea.
+
+docker start
+Para empezar a correr de nuevo el contenedor.
+
+docker ps 
+Da estatus de los contenedores docker corriendo
+-a muestra todos contenedores corriendo o no.
+
+docker exec -it 
+Obtener terminal de docker container especificado.
+
+docker logs
+Ver los logs que un contenedor produce, con id o nombre
+
+---
+
+docker build -t nombre:tag
+Crea una imagen de un Dockerfile
+
+docker rm (id)
+Eliminar contenedor
+
+docker rmi (id)
+Eliminar una imagen
+
+env
+Nos da enviromental variables de un container, se hace dentro de temrinal de container
+
+exit
+Salir de docker terminal
+
